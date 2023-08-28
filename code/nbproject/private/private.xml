@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="1">
+        <file>
+            <url>Application.c</url>
+            <bookmark id="1">
+                <name/>
+                <line>13</line>
+                <key/>
+            </bookmark>
+        </file>
+    </editor-bookmarks>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/Users/Yossri/Downloads/projects/Smart%20Home%20Project/code/MCAL_Layer/SPI/hal_spi.h</file>
+            <file>file:/C:/Users/Yossri/Downloads/projects/Smart%20Home%20Project/code/MCAL_Layer/std_libraries.h</file>
+            <file>file:/C:/Users/Yossri/Downloads/projects/Smart%20Home%20Project/code/MCAL_Layer/Interrupt/mcal_interrupt_gen_cfg.h</file>
+            <file>file:/C:/Users/Yossri/Downloads/projects/Smart%20Home%20Project/code/ECU_Layer/Ch_LCD/ecu_ch_lcd.h</file>
+            <file>file:/C:/Users/Yossri/Downloads/projects/Smart%20Home%20Project/code/MCAL_Layer/Device_config.c</file>
+            <file>file:/C:/Users/Yossri/Downloads/projects/Smart%20Home%20Project/code/ECU_Layer/Ch_LCD/ecu_ch_lcd.c</file>
+            <file>file:/C:/Users/Yossri/Downloads/projects/Smart%20Home%20Project/code/MCAL_Layer/Device_config.h</file>
+            <file>file:/C:/Users/Yossri/Downloads/projects/Smart%20Home%20Project/code/MCAL_Layer/SPI/hal_spi.c</file>
+            <file>file:/C:/Users/Yossri/Downloads/projects/Smart%20Home%20Project/code/Application.c</file>
+            <file>file:/C:/Users/Yossri/Downloads/projects/Smart%20Home%20Project/code/ECU_Layer/ecu_intialize.c</file>
+            <file>file:/C:/Users/Yossri/Downloads/projects/Smart%20Home%20Project/code/MCAL_Layer/Timer0/mcal_timer0.c</file>
+            <file>file:/C:/Users/Yossri/Downloads/projects/Smart%20Home%20Project/code/Application.h</file>
+            <file>file:/C:/Users/Yossri/Downloads/projects/Smart%20Home%20Project/code/MCAL_Layer/Timer0/mcal_timer0.h</file>
+        </group>
+    </open-files>
+</project-private>

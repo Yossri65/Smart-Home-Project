@@ -5497,7 +5497,7 @@ Std_ReturnType MSSP_I2C_Master_Read_Blocking(const mssp_i2c_t *i2c_obj, uint8 ac
 Std_ReturnType MSSP_I2C_Master_Write_NBlocking(const mssp_i2c_t *i2c_obj, uint8 i2c_data, uint8 *_ack);
 Std_ReturnType MSSP_I2C_Master_Read_NBlocking(const mssp_i2c_t *i2c_obj, uint8 ack, uint8 *i2c_data);
 # 27 "./Application.h" 2
-# 104 "./Application.h"
+# 107 "./Application.h"
 extern Ch_LCD lcd1;
 extern Key_Pad_t key_pad1;
 
@@ -5523,6 +5523,9 @@ uint8 eeprom_digit_read = 0xFF;
 uint8 Admin_pass_flag = (uint8)0;
 
 uint8 Guest_pass_flag = (uint8)0;
+
+
+uint8 Degree_sent = 0;
 
 volatile uint8 spi_slave_reader = 0;
 volatile uint8 count_sec_timer_flag = 0;
@@ -5736,6 +5739,9 @@ int main(void) {
 
     ret = Timer0_Intialization(&timer0);
 
+
+
+
     while(1)
     {
 
@@ -5783,7 +5789,7 @@ int main(void) {
             } while (0 == key_status);
             _delay((unsigned long)((300)*(4000000UL/4000.0)));
 
-            while('1' != key_status &&'2' != key_status &&'3' != key_status &&'4' != key_status ){
+            while('1' != key_status &&'2' != key_status &&'3' != key_status &&'4' != key_status && '@' != key_status){
                 ret = lcd_send_command(&lcd1 , 0x01);
                     ret = lcd_send_ATpos_string_data(&lcd1 , 1 , 1 , "Wrong choice");
                     _delay((unsigned long)((500)*(4000000UL/4000.0)));
@@ -5795,7 +5801,6 @@ int main(void) {
 
 
                 ret = lcd_send_ATpos_string_data(&lcd1 , 1 , 1 , "Room1 S:");
-
                 switch(spi_slave_reader)
                 {
                     case 1: ret = lcd_send_ATpos_string_data(&lcd1 , 1 , 9 , "ON "); break;
@@ -5831,6 +5836,7 @@ int main(void) {
                 key_status = '1';
                 _delay((unsigned long)((500)*(4000000UL/4000.0)));
             }
+
             while('2' == key_status){
                 ret = lcd_send_command(&lcd1 , 0x01);
                 ret = lcd_send_ATpos_string_data(&lcd1 , 1 , 1 , "Room2 S:");
@@ -5862,7 +5868,9 @@ int main(void) {
                 }
                 key_status = '2';
                 _delay((unsigned long)((500)*(4000000UL/4000.0)));
-            }while('3' == key_status){
+            }
+
+            while('3' == key_status){
                 ret = lcd_send_command(&lcd1 , 0x01);
                 ret = lcd_send_ATpos_string_data(&lcd1 , 1 , 1 , "Room3 S:");
                 switch(spi_slave_reader)
@@ -5982,6 +5990,7 @@ int main(void) {
                             key_status = '1';
                             _delay((unsigned long)((500)*(4000000UL/4000.0)));
                         }
+
                     while ('2' == key_status){
                         ret = lcd_send_command(&lcd1, 0x01);
                             ret = lcd_send_ATpos_string_data(&lcd1, 1, 1, "TV S:");
@@ -6014,8 +6023,81 @@ int main(void) {
                             key_status = '2';
                             _delay((unsigned long)((500)*(4000000UL/4000.0)));
                     }
-                    while('3' == key_status){
 
+                    while('3' == key_status){
+                        ret = lcd_send_command(&lcd1, 0x01);
+                      ret = lcd_send_ATpos_string_data(&lcd1 , 1 , 1 , "air conditioner:-");
+                      ret = lcd_send_ATpos_string_data(&lcd1 , 2 , 1 , "1:Control");
+                      ret = lcd_send_ATpos_string_data(&lcd1 , 3 , 1 , "2:Set Temperature");
+                      ret = lcd_send_ATpos_string_data(&lcd1, 4, 1, "0:Ret");
+                      key_status = 0;
+                      do {
+                            ret = Key_Pad_Get_Value(&key_pad1, &key_status);
+                         } while (0 == key_status);
+                      _delay((unsigned long)((300)*(4000000UL/4000.0)));
+                      ret = lcd_send_command(&lcd1, 0x01);
+
+                      while('1' == key_status){
+                          ret = lcd_send_ATpos_string_data(&lcd1 , 1 , 1 , "air conditioner:-");
+                          ret = lcd_send_ATpos_string_data(&lcd1, 2, 1, "1:air conditioner on");
+                          ret = lcd_send_ATpos_string_data(&lcd1, 3, 1, "2:air conditioner off");
+                          ret = lcd_send_ATpos_string_data(&lcd1, 4, 1, "0:Ret");
+                          key_status = 0;
+                          do {
+                                ret = Key_Pad_Get_Value(&key_pad1, &key_status);
+                             } while (0 == key_status);
+                          _delay((unsigned long)((300)*(4000000UL/4000.0)));
+                          switch (key_status) {
+                                case '1': ret = SPI_Send_Byte((uint8)10); spi_slave_reader = 1; break;
+                                case '2': ret = SPI_Send_Byte((uint8)11); spi_slave_reader = 0; break;
+                            }
+
+                          if ('0' == key_status) {
+                                ret = lcd_send_command(&lcd1, 0x01);
+                                break;
+                            } else if('1' != key_status && '2' != key_status){
+                                ret = lcd_send_command(&lcd1, 0x01);
+                                ret = lcd_send_ATpos_string_data(&lcd1, 1, 1, "Wrong choice");
+                                _delay((unsigned long)((500)*(4000000UL/4000.0)));
+                            }
+                            key_status = '1';
+                            _delay((unsigned long)((500)*(4000000UL/4000.0)));
+                      }
+
+                      if('2' == key_status){
+                          ret = lcd_send_command(&lcd1, 0x01);
+                          ret = lcd_send_ATpos_string_data(&lcd1, 2, 1, "Set Temperature:--");
+
+                          key_status = 0;
+                          do {
+                                ret = Key_Pad_Get_Value(&key_pad1, &key_status);
+                             } while (0 == key_status);
+                          _delay((unsigned long)((300)*(4000000UL/4000.0)));
+                          ret = lcd_send_command(&lcd1, 0X10);
+                          ret = lcd_send_command(&lcd1, 0X10);
+                          ret = lcd_send_char_data(&lcd1, key_status);
+                          Degree_sent = (key_status - (uint8)'0') * 10;
+
+
+                          key_status = 0;
+                          do {
+                                ret = Key_Pad_Get_Value(&key_pad1, &key_status);
+                             } while (0 == key_status);
+                          _delay((unsigned long)((300)*(4000000UL/4000.0)));
+                          ret = lcd_send_char_data(&lcd1, key_status);
+                          Degree_sent += (key_status - (uint8)'0');
+                          _delay((unsigned long)((500)*(4000000UL/4000.0)));
+                      }
+                      key_status = '3';
+                      if ('0' == key_status) {
+                                ret = lcd_send_command(&lcd1, 0x01);
+                                break;
+                            } else if('1' != key_status && '2' != key_status && '3' != key_status){
+                                ret = lcd_send_command(&lcd1, 0x01);
+                                ret = lcd_send_ATpos_string_data(&lcd1, 1, 1, "Wrong choice");
+                                _delay((unsigned long)((500)*(4000000UL/4000.0)));
+                            }
+                            _delay((unsigned long)((500)*(4000000UL/4000.0)));
                     }
                     if('0' == key_status){
                         ret = lcd_send_command(&lcd1 , 0x01);
@@ -6046,17 +6128,16 @@ void timer0_isr(void){
     if(2 == count_sec_timer_flag && (uint8)4 == Guest_pass_flag)
     {
         ret = lcd_send_command(&lcd1 , 0x01);
-        ret = lcd_send_ATpos_string_data(&lcd1 , 1 , 1 , "session timeout");
-        ret = lcd_send_ATpos_string_data(&lcd1 , 2 , 1 , "restart the system ");
-        ret = lcd_send_ATpos_string_data(&lcd1 , 3 , 1 , "to enter again");
+        ret = lcd_send_ATpos_string_data(&lcd1 , 2 , 1 , "session timeout");
         _delay((unsigned long)((1000)*(4000000UL/4000.0)));
-        void softwareReset();
+        softwareReset();
     }
 }
 void softwareReset()
 {
 
     WDTCONbits.SWDTEN = 1;
+    if(!RCONbits.TO);
 
     while (1);
 }

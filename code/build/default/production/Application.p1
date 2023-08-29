@@ -4,8 +4,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;./MCAL_Layer/Timer0/mcal_timer0.h: 60: {
 [s S284 `*F3249 1 `uc 1 `us 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :4 `uc 1 ]
 [n S284 . TIMER0_IntterruptHandeler Prescaler_Select TIMER0_PRE_LOAD_VALUE TIMER0_PRESCALER_STATUS Timer0_Source_Edge Timer0_Mode Timer0_SELECT_BIT_Mode Timer0_Resreved ]
-"133 ./Application.h
-[; ;./Application.h: 133: void timer0_isr(void);
+"139 ./Application.h
+[; ;./Application.h: 139: void timer0_isr(void);
 [v _timer0_isr `(v ~T0 @X0 0 ef ]
 "53 ./MCAL_Layer/SPI/hal_spi.h
 [; ;./MCAL_Layer/SPI/hal_spi.h: 53: typedef struct{
@@ -29,8 +29,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "84
 [; ;./ECU_Layer/Ch_LCD/ecu_ch_lcd.h: 84: Std_ReturnType lcd_send_command(const Ch_LCD *_LCD_ ,uint8 command);
 [v _lcd_send_command `(ui ~T0 @X0 0 ef2`*CS280`uc ]
-"104 ./Application.h
-[; ;./Application.h: 104: extern Ch_LCD lcd1;
+"107 ./Application.h
+[; ;./Application.h: 107: extern Ch_LCD lcd1;
 [v _lcd1 `S280 ~T0 @X0 0 e ]
 "92 ./ECU_Layer/Ch_LCD/ecu_ch_lcd.h
 [; ;./ECU_Layer/Ch_LCD/ecu_ch_lcd.h: 92: Std_ReturnType lcd_send_ATpos_string_data(const Ch_LCD *_LCD_ ,uint8 row ,uint8 coulmns , uint8 *str);
@@ -49,8 +49,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "28
 [; ;./ECU_Layer/Key_Pad/ecu_key_pad.h: 28: Std_ReturnType Key_Pad_Get_Value(const Key_Pad_t *_key_pad ,uint8 *value);
 [v _Key_Pad_Get_Value `(ui ~T0 @X0 0 ef2`*CS278`*uc ]
-"105 ./Application.h
-[; ;./Application.h: 105: extern Key_Pad_t key_pad1;
+"108 ./Application.h
+[; ;./Application.h: 108: extern Key_Pad_t key_pad1;
 [v _key_pad1 `S278 ~T0 @X0 0 e ]
 "37 ./MCAL_Layer/EEPROM/mcal_eeprom.h
 [; ;./MCAL_Layer/EEPROM/mcal_eeprom.h: 37: Std_ReturnType EEPROM_Data_WriteByte(uint16 bAdd ,uint8 bData);
@@ -68,24 +68,30 @@ Version 4.0 HI-TECH Software Intermediate Code
 "51
 [; ;./ECU_Layer/LED/ecu_Led.h: 51: Std_ReturnType Led_Turn_On(const Led_t *Led);
 [v _Led_Turn_On `(ui ~T0 @X0 0 ef1`*CS273 ]
-"107 ./Application.h
-[; ;./Application.h: 107: extern Led_t led_Block;
+"110 ./Application.h
+[; ;./Application.h: 110: extern Led_t led_Block;
 [v _led_Block `S273 ~T0 @X0 0 e ]
-"108
-[; ;./Application.h: 108: extern Led_t led_Guest;
+"111
+[; ;./Application.h: 111: extern Led_t led_Guest;
 [v _led_Guest `S273 ~T0 @X0 0 e ]
-"109
-[; ;./Application.h: 109: extern Led_t led_Admin;
+"112
+[; ;./Application.h: 112: extern Led_t led_Admin;
 [v _led_Admin `S273 ~T0 @X0 0 e ]
 "74 ./MCAL_Layer/SPI/hal_spi.h
 [; ;./MCAL_Layer/SPI/hal_spi.h: 74: Std_ReturnType SPI_Send_Byte( const uint8 _data);
 [v _SPI_Send_Byte `(ui ~T0 @X0 0 ef1`Cuc ]
+"86 ./ECU_Layer/Ch_LCD/ecu_ch_lcd.h
+[; ;./ECU_Layer/Ch_LCD/ecu_ch_lcd.h: 86: Std_ReturnType lcd_send_char_data(const Ch_LCD *_LCD_ ,uint8 data);
+[v _lcd_send_char_data `(ui ~T0 @X0 0 ef2`*CS280`uc ]
 "27 ./ECU_Layer/ecu_intialize.h
 [; ;./ECU_Layer/ecu_intialize.h: 27: Std_ReturnType ecu_intialize();
 [v _ecu_intialize `(ui ~T0 @X0 0 e? ]
 "72 ./MCAL_Layer/SPI/hal_spi.h
 [; ;./MCAL_Layer/SPI/hal_spi.h: 72: Std_ReturnType SPI_Init(const SPI_Config *_SPI_);
 [v _SPI_Init `(ui ~T0 @X0 0 ef1`*CS299 ]
+"161 ./Application.h
+[; ;./Application.h: 161: void softwareReset();
+[v _softwareReset `(v ~T0 @X0 0 e? ]
 "5488 C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4620.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4620.h: 5488:     struct {
 [s S229 :1 `uc 1 ]
@@ -101,6 +107,41 @@ Version 4.0 HI-TECH Software Intermediate Code
 "5495
 [; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4620.h: 5495: extern volatile WDTCONbits_t WDTCONbits __attribute__((address(0xFD1)));
 [v _WDTCONbits `VS228 ~T0 @X0 0 e@4049 ]
+"5355
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4620.h: 5355:     struct {
+[s S221 :1 `uc 1 ]
+[n S221 . NOT_BOR ]
+"5358
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4620.h: 5358:     struct {
+[s S222 :1 `uc 1 :1 `uc 1 ]
+[n S222 . . NOT_POR ]
+"5362
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4620.h: 5362:     struct {
+[s S223 :2 `uc 1 :1 `uc 1 ]
+[n S223 . . NOT_PD ]
+"5366
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4620.h: 5366:     struct {
+[s S224 :3 `uc 1 :1 `uc 1 ]
+[n S224 . . NOT_TO ]
+"5370
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4620.h: 5370:     struct {
+[s S225 :4 `uc 1 :1 `uc 1 ]
+[n S225 . . NOT_RI ]
+"5374
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4620.h: 5374:     struct {
+[s S226 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S226 . nBOR nPOR nPD nTO nRI . SBOREN IPEN ]
+"5384
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4620.h: 5384:     struct {
+[s S227 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S227 . BOR POR PD TO RI ]
+"5354
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4620.h: 5354: typedef union {
+[u S220 `S221 1 `S222 1 `S223 1 `S224 1 `S225 1 `S226 1 `S227 1 ]
+[n S220 . . . . . . . . ]
+"5392
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4620.h: 5392: extern volatile RCONbits_t RCONbits __attribute__((address(0xFD0)));
+[v _RCONbits `VS220 ~T0 @X0 0 e@4048 ]
 "55 C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4620.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4620.h: 55: __asm("PORTA equ 0F80h");
 [; <" PORTA equ 0F80h ;# ">
@@ -512,92 +553,98 @@ Version 4.0 HI-TECH Software Intermediate Code
 "6716
 [; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4620.h: 6716: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"112 ./Application.h
-[; ;./Application.h: 112: uint8 Admin_pass_status = (uint8)0xFF;
+"115 ./Application.h
+[; ;./Application.h: 115: uint8 Admin_pass_status = (uint8)0xFF;
 [v _Admin_pass_status `uc ~T0 @X0 1 e ]
 [i _Admin_pass_status
 -> -> 255 `i `uc
 ]
-"113
-[; ;./Application.h: 113: uint8 Guest_pass_status = (uint8)0xFF;
+"116
+[; ;./Application.h: 116: uint8 Guest_pass_status = (uint8)0xFF;
 [v _Guest_pass_status `uc ~T0 @X0 1 e ]
 [i _Guest_pass_status
 -> -> 255 `i `uc
 ]
-"115
-[; ;./Application.h: 115: uint8 Admin_Start_address = (uint16)0X102;
+"118
+[; ;./Application.h: 118: uint8 Admin_Start_address = (uint16)0X102;
 [v _Admin_Start_address `uc ~T0 @X0 1 e ]
 [i _Admin_Start_address
 -> -> -> 258 `i `us `uc
 ]
-"116
-[; ;./Application.h: 116: uint8 Guest_Start_address = (uint16)0X106;
+"119
+[; ;./Application.h: 119: uint8 Guest_Start_address = (uint16)0X106;
 [v _Guest_Start_address `uc ~T0 @X0 1 e ]
 [i _Guest_Start_address
 -> -> -> 262 `i `us `uc
 ]
-"118
-[; ;./Application.h: 118: uint8 key_status = 0;
+"121
+[; ;./Application.h: 121: uint8 key_status = 0;
 [v _key_status `uc ~T0 @X0 1 e ]
 [i _key_status
 -> -> 0 `i `uc
 ]
-"119
-[; ;./Application.h: 119: uint8 cursor = 12;
+"122
+[; ;./Application.h: 122: uint8 cursor = 12;
 [v _cursor `uc ~T0 @X0 1 e ]
 [i _cursor
 -> -> 12 `i `uc
 ]
-"121
-[; ;./Application.h: 121: uint8 pass_counter = 1;
+"124
+[; ;./Application.h: 124: uint8 pass_counter = 1;
 [v _pass_counter `uc ~T0 @X0 1 e ]
 [i _pass_counter
 -> -> 1 `i `uc
 ]
-"122
-[; ;./Application.h: 122: uint8 admin_pass_tries = (uint8)3;
+"125
+[; ;./Application.h: 125: uint8 admin_pass_tries = (uint8)3;
 [v _admin_pass_tries `uc ~T0 @X0 1 e ]
 [i _admin_pass_tries
 -> -> 3 `i `uc
 ]
-"123
-[; ;./Application.h: 123: uint8 Guest_pass_tries = (uint8)3;
+"126
+[; ;./Application.h: 126: uint8 Guest_pass_tries = (uint8)3;
 [v _Guest_pass_tries `uc ~T0 @X0 1 e ]
 [i _Guest_pass_tries
 -> -> 3 `i `uc
 ]
-"125
-[; ;./Application.h: 125: uint8 eeprom_digit_read = 0xFF;
+"128
+[; ;./Application.h: 128: uint8 eeprom_digit_read = 0xFF;
 [v _eeprom_digit_read `uc ~T0 @X0 1 e ]
 [i _eeprom_digit_read
 -> -> 255 `i `uc
 ]
-"126
-[; ;./Application.h: 126: uint8 Admin_pass_flag = (uint8)0;
+"129
+[; ;./Application.h: 129: uint8 Admin_pass_flag = (uint8)0;
 [v _Admin_pass_flag `uc ~T0 @X0 1 e ]
 [i _Admin_pass_flag
 -> -> 0 `i `uc
 ]
-"128
-[; ;./Application.h: 128: uint8 Guest_pass_flag = (uint8)0;
+"131
+[; ;./Application.h: 131: uint8 Guest_pass_flag = (uint8)0;
 [v _Guest_pass_flag `uc ~T0 @X0 1 e ]
 [i _Guest_pass_flag
 -> -> 0 `i `uc
 ]
-"130
-[; ;./Application.h: 130: volatile uint8 spi_slave_reader = 0;
+"134
+[; ;./Application.h: 134: uint8 Degree_sent = 0;
+[v _Degree_sent `uc ~T0 @X0 1 e ]
+[i _Degree_sent
+-> -> 0 `i `uc
+]
+"136
+[; ;./Application.h: 136: volatile uint8 spi_slave_reader = 0;
 [v _spi_slave_reader `Vuc ~T0 @X0 1 e ]
 [i _spi_slave_reader
 -> -> 0 `i `uc
 ]
-"131
-[; ;./Application.h: 131: volatile uint8 count_sec_timer_flag = 0;
+"137
+[; ;./Application.h: 137: volatile uint8 count_sec_timer_flag = 0;
 [v _count_sec_timer_flag `Vuc ~T0 @X0 1 e ]
 [i _count_sec_timer_flag
 -> -> 0 `i `uc
 ]
-"134
-[; ;./Application.h: 134: Timer0_conf_t timer0 =
+"140
+[; ;./Application.h: 140: Timer0_conf_t timer0 =
 [v _timer0 `S284 ~T0 @X0 1 e ]
 [i _timer0
 :U ..
@@ -612,8 +659,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ..
 ]
-"145
-[; ;./Application.h: 145: SPI_Config spi_master =
+"151
+[; ;./Application.h: 151: SPI_Config spi_master =
 [v _spi_master `S299 ~T0 @X0 1 e ]
 [i _spi_master
 :U ..
@@ -1211,96 +1258,96 @@ Version 4.0 HI-TECH Software Intermediate Code
 "192
 [; ;Application.c: 192:     ret = Timer0_Intialization(&timer0);
 [e = _ret ( _Timer0_Intialization (1 -> &U _timer0 `*CS284 ]
-"194
-[; ;Application.c: 194:     while(1)
-[e :U 348 ]
-"195
-[; ;Application.c: 195:     {
-{
 "197
-[; ;Application.c: 197:         if (0 == admin_pass_tries) {
+[; ;Application.c: 197:     while(1)
+[e :U 348 ]
+"198
+[; ;Application.c: 198:     {
+{
+"200
+[; ;Application.c: 200:         if (0 == admin_pass_tries) {
 [e $ ! == -> 0 `i -> _admin_pass_tries `i 350  ]
 {
-"198
-[; ;Application.c: 198:             ret = lcd_send_ATpos_string_data(&lcd1 , 1 , 1 , "loading blocked..");
-[e = _ret ( _lcd_send_ATpos_string_data (4 , , , -> &U _lcd1 `*CS280 -> -> 1 `i `uc -> -> 1 `i `uc :s 22C ]
-"199
-[; ;Application.c: 199:             ret = lcd_send_ATpos_string_data(&lcd1 , 2 , 1 , "wait  10 sec");
-[e = _ret ( _lcd_send_ATpos_string_data (4 , , , -> &U _lcd1 `*CS280 -> -> 2 `i `uc -> -> 1 `i `uc :s 23C ]
-"200
-[; ;Application.c: 200:             ret = Led_Turn_On(&led_Block);
-[e = _ret ( _Led_Turn_On (1 -> &U _led_Block `*CS273 ]
 "201
-[; ;Application.c: 201:             _delay((unsigned long)(((uint32)10000)*(4000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> -> 10000 `i `ui `d / -> -> 4000000 `ul `d .4000.0 `ul ]
+[; ;Application.c: 201:             ret = lcd_send_ATpos_string_data(&lcd1 , 1 , 1 , "loading blocked..");
+[e = _ret ( _lcd_send_ATpos_string_data (4 , , , -> &U _lcd1 `*CS280 -> -> 1 `i `uc -> -> 1 `i `uc :s 22C ]
 "202
-[; ;Application.c: 202:             break;
-[e $U 349  ]
+[; ;Application.c: 202:             ret = lcd_send_ATpos_string_data(&lcd1 , 2 , 1 , "wait  10 sec");
+[e = _ret ( _lcd_send_ATpos_string_data (4 , , , -> &U _lcd1 `*CS280 -> -> 2 `i `uc -> -> 1 `i `uc :s 23C ]
 "203
-[; ;Application.c: 203:         }else{ }
+[; ;Application.c: 203:             ret = Led_Turn_On(&led_Block);
+[e = _ret ( _Led_Turn_On (1 -> &U _led_Block `*CS273 ]
+"204
+[; ;Application.c: 204:             _delay((unsigned long)(((uint32)10000)*(4000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> -> 10000 `i `ui `d / -> -> 4000000 `ul `d .4000.0 `ul ]
+"205
+[; ;Application.c: 205:             break;
+[e $U 349  ]
+"206
+[; ;Application.c: 206:         }else{ }
 }
 [e $U 351  ]
 [e :U 350 ]
 {
 }
 [e :U 351 ]
-"205
-[; ;Application.c: 205:         if (0 == Guest_pass_tries) {
+"208
+[; ;Application.c: 208:         if (0 == Guest_pass_tries) {
 [e $ ! == -> 0 `i -> _Guest_pass_tries `i 352  ]
 {
-"206
-[; ;Application.c: 206:             count_sec_timer_flag = 0;
-[e = _count_sec_timer_flag -> -> 0 `i `uc ]
-"207
-[; ;Application.c: 207:             ret = lcd_send_ATpos_string_data(&lcd1 , 1 , 1 , "loading blocked..");
-[e = _ret ( _lcd_send_ATpos_string_data (4 , , , -> &U _lcd1 `*CS280 -> -> 1 `i `uc -> -> 1 `i `uc :s 24C ]
-"208
-[; ;Application.c: 208:             ret = lcd_send_ATpos_string_data(&lcd1 , 2 , 1 , "wait  10 sec");
-[e = _ret ( _lcd_send_ATpos_string_data (4 , , , -> &U _lcd1 `*CS280 -> -> 2 `i `uc -> -> 1 `i `uc :s 25C ]
 "209
-[; ;Application.c: 209:             ret = Led_Turn_On(&led_Block);
-[e = _ret ( _Led_Turn_On (1 -> &U _led_Block `*CS273 ]
+[; ;Application.c: 209:             count_sec_timer_flag = 0;
+[e = _count_sec_timer_flag -> -> 0 `i `uc ]
 "210
-[; ;Application.c: 210:             _delay((unsigned long)(((uint32)10000)*(4000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> -> 10000 `i `ui `d / -> -> 4000000 `ul `d .4000.0 `ul ]
+[; ;Application.c: 210:             ret = lcd_send_ATpos_string_data(&lcd1 , 1 , 1 , "loading blocked..");
+[e = _ret ( _lcd_send_ATpos_string_data (4 , , , -> &U _lcd1 `*CS280 -> -> 1 `i `uc -> -> 1 `i `uc :s 24C ]
 "211
-[; ;Application.c: 211:             break;
-[e $U 349  ]
+[; ;Application.c: 211:             ret = lcd_send_ATpos_string_data(&lcd1 , 2 , 1 , "wait  10 sec");
+[e = _ret ( _lcd_send_ATpos_string_data (4 , , , -> &U _lcd1 `*CS280 -> -> 2 `i `uc -> -> 1 `i `uc :s 25C ]
 "212
-[; ;Application.c: 212:         }else{ }
+[; ;Application.c: 212:             ret = Led_Turn_On(&led_Block);
+[e = _ret ( _Led_Turn_On (1 -> &U _led_Block `*CS273 ]
+"213
+[; ;Application.c: 213:             _delay((unsigned long)(((uint32)10000)*(4000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> -> 10000 `i `ui `d / -> -> 4000000 `ul `d .4000.0 `ul ]
+"214
+[; ;Application.c: 214:             break;
+[e $U 349  ]
+"215
+[; ;Application.c: 215:         }else{ }
 }
 [e $U 353  ]
 [e :U 352 ]
 {
 }
 [e :U 353 ]
-"214
-[; ;Application.c: 214:         while((uint8)4 == Guest_pass_flag || (uint8)4 == Admin_pass_flag){
+"217
+[; ;Application.c: 217:         while((uint8)4 == Guest_pass_flag || (uint8)4 == Admin_pass_flag){
 [e $U 354  ]
 [e :U 355 ]
 {
-"215
-[; ;Application.c: 215:             if((uint8)4 == Guest_pass_flag){
+"218
+[; ;Application.c: 218:             if((uint8)4 == Guest_pass_flag){
 [e $ ! == -> -> -> 4 `i `uc `i -> _Guest_pass_flag `i 357  ]
 {
-"216
-[; ;Application.c: 216:                 ret = lcd_send_ATpos_string_data(&lcd1 , 1 , 1 , "Guest Mode:-");
+"219
+[; ;Application.c: 219:                 ret = lcd_send_ATpos_string_data(&lcd1 , 1 , 1 , "Guest Mode:-");
 [e = _ret ( _lcd_send_ATpos_string_data (4 , , , -> &U _lcd1 `*CS280 -> -> 1 `i `uc -> -> 1 `i `uc :s 26C ]
-"217
-[; ;Application.c: 217:             }else if((uint8)4 == Admin_pass_flag){
+"220
+[; ;Application.c: 220:             }else if((uint8)4 == Admin_pass_flag){
 }
 [e $U 358  ]
 [e :U 357 ]
 [e $ ! == -> -> -> 4 `i `uc `i -> _Admin_pass_flag `i 359  ]
 {
-"218
-[; ;Application.c: 218:                 ret = lcd_send_command(&lcd1 , 0x01);
+"221
+[; ;Application.c: 221:                 ret = lcd_send_command(&lcd1 , 0x01);
 [e = _ret ( _lcd_send_command (2 , -> &U _lcd1 `*CS280 -> -> 1 `i `uc ]
-"219
-[; ;Application.c: 219:                 ret = lcd_send_ATpos_string_data(&lcd1 , 1 , 1 , "Admin Mode:-");
+"222
+[; ;Application.c: 222:                 ret = lcd_send_ATpos_string_data(&lcd1 , 1 , 1 , "Admin Mode:-");
 [e = _ret ( _lcd_send_ATpos_string_data (4 , , , -> &U _lcd1 `*CS280 -> -> 1 `i `uc -> -> 1 `i `uc :s 27C ]
-"220
-[; ;Application.c: 220:             }else{ }
+"223
+[; ;Application.c: 223:             }else{ }
 }
 [e $U 360  ]
 [e :U 359 ]
@@ -1308,40 +1355,40 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e :U 360 ]
 [e :U 358 ]
-"222
-[; ;Application.c: 222:             ret = lcd_send_ATpos_string_data(&lcd1 , 2 , 1 , "1:Room1");
-[e = _ret ( _lcd_send_ATpos_string_data (4 , , , -> &U _lcd1 `*CS280 -> -> 2 `i `uc -> -> 1 `i `uc :s 28C ]
-"223
-[; ;Application.c: 223:             ret = lcd_send_ATpos_string_data(&lcd1 , 2 , 11 , "2:Room2");
-[e = _ret ( _lcd_send_ATpos_string_data (4 , , , -> &U _lcd1 `*CS280 -> -> 2 `i `uc -> -> 11 `i `uc :s 29C ]
-"224
-[; ;Application.c: 224:             ret = lcd_send_ATpos_string_data(&lcd1 , 3 , 1 , "3:Room3");
-[e = _ret ( _lcd_send_ATpos_string_data (4 , , , -> &U _lcd1 `*CS280 -> -> 3 `i `uc -> -> 1 `i `uc :s 30C ]
 "225
-[; ;Application.c: 225:             if((uint8)4 == Guest_pass_flag){
+[; ;Application.c: 225:             ret = lcd_send_ATpos_string_data(&lcd1 , 2 , 1 , "1:Room1");
+[e = _ret ( _lcd_send_ATpos_string_data (4 , , , -> &U _lcd1 `*CS280 -> -> 2 `i `uc -> -> 1 `i `uc :s 28C ]
+"226
+[; ;Application.c: 226:             ret = lcd_send_ATpos_string_data(&lcd1 , 2 , 11 , "2:Room2");
+[e = _ret ( _lcd_send_ATpos_string_data (4 , , , -> &U _lcd1 `*CS280 -> -> 2 `i `uc -> -> 11 `i `uc :s 29C ]
+"227
+[; ;Application.c: 227:             ret = lcd_send_ATpos_string_data(&lcd1 , 3 , 1 , "3:Room3");
+[e = _ret ( _lcd_send_ATpos_string_data (4 , , , -> &U _lcd1 `*CS280 -> -> 3 `i `uc -> -> 1 `i `uc :s 30C ]
+"228
+[; ;Application.c: 228:             if((uint8)4 == Guest_pass_flag){
 [e $ ! == -> -> -> 4 `i `uc `i -> _Guest_pass_flag `i 361  ]
 {
-"226
-[; ;Application.c: 226:                 ret = lcd_send_ATpos_string_data(&lcd1 , 3 , 11 , "4:Room4");
+"229
+[; ;Application.c: 229:                 ret = lcd_send_ATpos_string_data(&lcd1 , 3 , 11 , "4:Room4");
 [e = _ret ( _lcd_send_ATpos_string_data (4 , , , -> &U _lcd1 `*CS280 -> -> 3 `i `uc -> -> 11 `i `uc :s 31C ]
-"227
-[; ;Application.c: 227:                 ret = Led_Turn_On(&led_Guest);
+"230
+[; ;Application.c: 230:                 ret = Led_Turn_On(&led_Guest);
 [e = _ret ( _Led_Turn_On (1 -> &U _led_Guest `*CS273 ]
-"228
-[; ;Application.c: 228:             }else if((uint8)4 == Admin_pass_flag){
+"231
+[; ;Application.c: 231:             }else if((uint8)4 == Admin_pass_flag){
 }
 [e $U 362  ]
 [e :U 361 ]
 [e $ ! == -> -> -> 4 `i `uc `i -> _Admin_pass_flag `i 363  ]
 {
-"229
-[; ;Application.c: 229:                 ret = lcd_send_ATpos_string_data(&lcd1 , 3 , 11 , "4:More");
+"232
+[; ;Application.c: 232:                 ret = lcd_send_ATpos_string_data(&lcd1 , 3 , 11 , "4:More");
 [e = _ret ( _lcd_send_ATpos_string_data (4 , , , -> &U _lcd1 `*CS280 -> -> 3 `i `uc -> -> 11 `i `uc :s 32C ]
-"230
-[; ;Application.c: 230:                 ret = Led_Turn_On(&led_Admin);
+"233
+[; ;Application.c: 233:                 ret = Led_Turn_On(&led_Admin);
 [e = _ret ( _Led_Turn_On (1 -> &U _led_Admin `*CS273 ]
-"231
-[; ;Application.c: 231:             }else{ }
+"234
+[; ;Application.c: 234:             }else{ }
 }
 [e $U 364  ]
 [e :U 363 ]
@@ -1349,78 +1396,78 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e :U 364 ]
 [e :U 362 ]
-"235
-[; ;Application.c: 235:             key_status = 0;
+"238
+[; ;Application.c: 238:             key_status = 0;
 [e = _key_status -> -> 0 `i `uc ]
-"236
-[; ;Application.c: 236:             do {
+"239
+[; ;Application.c: 239:             do {
 [e :U 367 ]
 {
-"237
-[; ;Application.c: 237:                 ret = Key_Pad_Get_Value(&key_pad1, &key_status);
+"240
+[; ;Application.c: 240:                 ret = Key_Pad_Get_Value(&key_pad1, &key_status);
 [e = _ret ( _Key_Pad_Get_Value (2 , -> &U _key_pad1 `*CS278 &U _key_status ]
-"238
-[; ;Application.c: 238:             } while (0 == key_status);
+"241
+[; ;Application.c: 241:             } while (0 == key_status);
 }
 [e $ == -> 0 `i -> _key_status `i 367  ]
 [e :U 366 ]
-"239
-[; ;Application.c: 239:             _delay((unsigned long)((300)*(4000000UL/4000.0)));
+"242
+[; ;Application.c: 242:             _delay((unsigned long)((300)*(4000000UL/4000.0)));
 [e ( __delay (1 -> * -> -> 300 `i `d / -> -> 4000000 `ul `d .4000.0 `ul ]
-"241
-[; ;Application.c: 241:             while('1' != key_status &&'2' != key_status &&'3' != key_status &&'4' != key_status ){
+"244
+[; ;Application.c: 244:             while('1' != key_status &&'2' != key_status &&'3' != key_status &&'4' != key_status && '@' != key_status){
 [e $U 368  ]
 [e :U 369 ]
 {
-"242
-[; ;Application.c: 242:                 ret = lcd_send_command(&lcd1 , 0x01);
-[e = _ret ( _lcd_send_command (2 , -> &U _lcd1 `*CS280 -> -> 1 `i `uc ]
-"243
-[; ;Application.c: 243:                     ret = lcd_send_ATpos_string_data(&lcd1 , 1 , 1 , "Wrong choice");
-[e = _ret ( _lcd_send_ATpos_string_data (4 , , , -> &U _lcd1 `*CS280 -> -> 1 `i `uc -> -> 1 `i `uc :s 33C ]
-"244
-[; ;Application.c: 244:                     _delay((unsigned long)((500)*(4000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 4000000 `ul `d .4000.0 `ul ]
 "245
-[; ;Application.c: 245:                     break;
-[e $U 370  ]
+[; ;Application.c: 245:                 ret = lcd_send_command(&lcd1 , 0x01);
+[e = _ret ( _lcd_send_command (2 , -> &U _lcd1 `*CS280 -> -> 1 `i `uc ]
 "246
-[; ;Application.c: 246:             }
+[; ;Application.c: 246:                     ret = lcd_send_ATpos_string_data(&lcd1 , 1 , 1 , "Wrong choice");
+[e = _ret ( _lcd_send_ATpos_string_data (4 , , , -> &U _lcd1 `*CS280 -> -> 1 `i `uc -> -> 1 `i `uc :s 33C ]
+"247
+[; ;Application.c: 247:                     _delay((unsigned long)((500)*(4000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 4000000 `ul `d .4000.0 `ul ]
+"248
+[; ;Application.c: 248:                     break;
+[e $U 370  ]
+"249
+[; ;Application.c: 249:             }
 }
 [e :U 368 ]
-"241
-[; ;Application.c: 241:             while('1' != key_status &&'2' != key_status &&'3' != key_status &&'4' != key_status ){
-[e $ && && && != -> 49 `ui -> _key_status `ui != -> 50 `ui -> _key_status `ui != -> 51 `ui -> _key_status `ui != -> 52 `ui -> _key_status `ui 369  ]
+"244
+[; ;Application.c: 244:             while('1' != key_status &&'2' != key_status &&'3' != key_status &&'4' != key_status && '@' != key_status){
+[e $ && && && && != -> 49 `ui -> _key_status `ui != -> 50 `ui -> _key_status `ui != -> 51 `ui -> _key_status `ui != -> 52 `ui -> _key_status `ui != -> 64 `ui -> _key_status `ui 369  ]
 [e :U 370 ]
-"248
-[; ;Application.c: 248:             while('1' == key_status){
+"251
+[; ;Application.c: 251:             while('1' == key_status){
 [e $U 371  ]
 [e :U 372 ]
 {
-"249
-[; ;Application.c: 249:                 ret = lcd_send_command(&lcd1 , 0x01);
-[e = _ret ( _lcd_send_command (2 , -> &U _lcd1 `*CS280 -> -> 1 `i `uc ]
 "252
-[; ;Application.c: 252:                 ret = lcd_send_ATpos_string_data(&lcd1 , 1 , 1 , "Room1 S:");
-[e = _ret ( _lcd_send_ATpos_string_data (4 , , , -> &U _lcd1 `*CS280 -> -> 1 `i `uc -> -> 1 `i `uc :s 34C ]
-"254
-[; ;Application.c: 254:                 switch(spi_slave_reader)
-[e $U 375  ]
+[; ;Application.c: 252:                 ret = lcd_send_command(&lcd1 , 0x01);
+[e = _ret ( _lcd_send_command (2 , -> &U _lcd1 `*CS280 -> -> 1 `i `uc ]
 "255
-[; ;Application.c: 255:                 {
-{
+[; ;Application.c: 255:                 ret = lcd_send_ATpos_string_data(&lcd1 , 1 , 1 , "Room1 S:");
+[e = _ret ( _lcd_send_ATpos_string_data (4 , , , -> &U _lcd1 `*CS280 -> -> 1 `i `uc -> -> 1 `i `uc :s 34C ]
 "256
-[; ;Application.c: 256:                     case 1: ret = lcd_send_ATpos_string_data(&lcd1 , 1 , 9 , "ON "); break;
+[; ;Application.c: 256:                 switch(spi_slave_reader)
+[e $U 375  ]
+"257
+[; ;Application.c: 257:                 {
+{
+"258
+[; ;Application.c: 258:                     case 1: ret = lcd_send_ATpos_string_data(&lcd1 , 1 , 9 , "ON "); break;
 [e :U 376 ]
 [e = _ret ( _lcd_send_ATpos_string_data (4 , , , -> &U _lcd1 `*CS280 -> -> 1 `i `uc -> -> 9 `i `uc :s 35C ]
 [e $U 374  ]
-"257
-[; ;Application.c: 257:                     case 0: ret = lcd_send_ATpos_string_data(&lcd1 , 1 , 9 , "OFF"); break;
+"259
+[; ;Application.c: 259:                     case 0: ret = lcd_send_ATpos_string_data(&lcd1 , 1 , 9 , "OFF"); break;
 [e :U 377 ]
 [e = _ret ( _lcd_send_ATpos_string_data (4 , , , -> &U _lcd1 `*CS280 -> -> 1 `i `uc -> -> 9 `i `uc :s 36C ]
 [e $U 374  ]
-"258
-[; ;Application.c: 258:                 }
+"260
+[; ;Application.c: 260:                 }
 }
 [e $U 374  ]
 [e :U 375 ]
@@ -1428,65 +1475,65 @@ Version 4.0 HI-TECH Software Intermediate Code
  , $ -> 0 `i 377
  374 ]
 [e :U 374 ]
-"259
-[; ;Application.c: 259:                 ret = lcd_send_ATpos_string_data(&lcd1 , 2 , 1 , "1:led on");
-[e = _ret ( _lcd_send_ATpos_string_data (4 , , , -> &U _lcd1 `*CS280 -> -> 2 `i `uc -> -> 1 `i `uc :s 37C ]
-"260
-[; ;Application.c: 260:                 ret = lcd_send_ATpos_string_data(&lcd1 , 3 , 1 , "2:led off");
-[e = _ret ( _lcd_send_ATpos_string_data (4 , , , -> &U _lcd1 `*CS280 -> -> 3 `i `uc -> -> 1 `i `uc :s 38C ]
 "261
-[; ;Application.c: 261:                 ret = lcd_send_ATpos_string_data(&lcd1 , 4 , 1 , "0:Ret");
-[e = _ret ( _lcd_send_ATpos_string_data (4 , , , -> &U _lcd1 `*CS280 -> -> 4 `i `uc -> -> 1 `i `uc :s 39C ]
+[; ;Application.c: 261:                 ret = lcd_send_ATpos_string_data(&lcd1 , 2 , 1 , "1:led on");
+[e = _ret ( _lcd_send_ATpos_string_data (4 , , , -> &U _lcd1 `*CS280 -> -> 2 `i `uc -> -> 1 `i `uc :s 37C ]
 "262
-[; ;Application.c: 262:                 key_status = 0;
-[e = _key_status -> -> 0 `i `uc ]
+[; ;Application.c: 262:                 ret = lcd_send_ATpos_string_data(&lcd1 , 3 , 1 , "2:led off");
+[e = _ret ( _lcd_send_ATpos_string_data (4 , , , -> &U _lcd1 `*CS280 -> -> 3 `i `uc -> -> 1 `i `uc :s 38C ]
 "263
-[; ;Application.c: 263:                 do {
+[; ;Application.c: 263:                 ret = lcd_send_ATpos_string_data(&lcd1 , 4 , 1 , "0:Ret");
+[e = _ret ( _lcd_send_ATpos_string_data (4 , , , -> &U _lcd1 `*CS280 -> -> 4 `i `uc -> -> 1 `i `uc :s 39C ]
+"264
+[; ;Application.c: 264:                 key_status = 0;
+[e = _key_status -> -> 0 `i `uc ]
+"265
+[; ;Application.c: 265:                 do {
 [e :U 380 ]
 {
-"264
-[; ;Application.c: 264:                     ret = Key_Pad_Get_Value(&key_pad1, &key_status);
+"266
+[; ;Application.c: 266:                     ret = Key_Pad_Get_Value(&key_pad1, &key_status);
 [e = _ret ( _Key_Pad_Get_Value (2 , -> &U _key_pad1 `*CS278 &U _key_status ]
-"265
-[; ;Application.c: 265:                 } while (0 == key_status);
+"267
+[; ;Application.c: 267:                 } while (0 == key_status);
 }
 [e $ == -> 0 `i -> _key_status `i 380  ]
 [e :U 379 ]
-"266
-[; ;Application.c: 266:                 _delay((unsigned long)((300)*(4000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 300 `i `d / -> -> 4000000 `ul `d .4000.0 `ul ]
-"267
-[; ;Application.c: 267:                 switch(key_status)
-[e $U 382  ]
 "268
-[; ;Application.c: 268:                 {
-{
+[; ;Application.c: 268:                 _delay((unsigned long)((300)*(4000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 300 `i `d / -> -> 4000000 `ul `d .4000.0 `ul ]
 "269
-[; ;Application.c: 269:                     case '1':
-[e :U 383 ]
+[; ;Application.c: 269:                 switch(key_status)
+[e $U 382  ]
 "270
-[; ;Application.c: 270:                         ret = SPI_Send_Byte((uint8)1);
-[e = _ret ( _SPI_Send_Byte (1 -> -> 1 `i `uc ]
+[; ;Application.c: 270:                 {
+{
 "271
-[; ;Application.c: 271:                         spi_slave_reader = 1;
-[e = _spi_slave_reader -> -> 1 `i `uc ]
+[; ;Application.c: 271:                     case '1':
+[e :U 383 ]
 "272
-[; ;Application.c: 272:                         break;
-[e $U 381  ]
+[; ;Application.c: 272:                         ret = SPI_Send_Byte((uint8)1);
+[e = _ret ( _SPI_Send_Byte (1 -> -> 1 `i `uc ]
 "273
-[; ;Application.c: 273:                     case '2':
-[e :U 384 ]
+[; ;Application.c: 273:                         spi_slave_reader = 1;
+[e = _spi_slave_reader -> -> 1 `i `uc ]
 "274
-[; ;Application.c: 274:                         ret = SPI_Send_Byte((uint8)5);
-[e = _ret ( _SPI_Send_Byte (1 -> -> 5 `i `uc ]
-"275
-[; ;Application.c: 275:                         spi_slave_reader = 0;
-[e = _spi_slave_reader -> -> 0 `i `uc ]
-"276
-[; ;Application.c: 276:                         break;
+[; ;Application.c: 274:                         break;
 [e $U 381  ]
+"275
+[; ;Application.c: 275:                     case '2':
+[e :U 384 ]
+"276
+[; ;Application.c: 276:                         ret = SPI_Send_Byte((uint8)5);
+[e = _ret ( _SPI_Send_Byte (1 -> -> 5 `i `uc ]
 "277
-[; ;Application.c: 277:                 }
+[; ;Application.c: 277:                         spi_slave_reader = 0;
+[e = _spi_slave_reader -> -> 0 `i `uc ]
+"278
+[; ;Application.c: 278:                         break;
+[e $U 381  ]
+"279
+[; ;Application.c: 279:                 }
 }
 [e $U 381  ]
 [e :U 382 ]
@@ -1494,34 +1541,34 @@ Version 4.0 HI-TECH Software Intermediate Code
  , $ -> -> 50 `ui `i 384
  381 ]
 [e :U 381 ]
-"278
-[; ;Application.c: 278:                 if('0' == key_status){
+"280
+[; ;Application.c: 280:                 if('0' == key_status){
 [e $ ! == -> 48 `ui -> _key_status `ui 385  ]
 {
-"279
-[; ;Application.c: 279:                     ret = lcd_send_command(&lcd1 , 0x01);
-[e = _ret ( _lcd_send_command (2 , -> &U _lcd1 `*CS280 -> -> 1 `i `uc ]
-"280
-[; ;Application.c: 280:                     break;
-[e $U 373  ]
 "281
-[; ;Application.c: 281:                 }else if('1' != key_status && '2' != key_status){
+[; ;Application.c: 281:                     ret = lcd_send_command(&lcd1 , 0x01);
+[e = _ret ( _lcd_send_command (2 , -> &U _lcd1 `*CS280 -> -> 1 `i `uc ]
+"282
+[; ;Application.c: 282:                     break;
+[e $U 373  ]
+"283
+[; ;Application.c: 283:                 }else if('1' != key_status && '2' != key_status){
 }
 [e $U 386  ]
 [e :U 385 ]
 [e $ ! && != -> 49 `ui -> _key_status `ui != -> 50 `ui -> _key_status `ui 387  ]
 {
-"282
-[; ;Application.c: 282:                     ret = lcd_send_command(&lcd1 , 0x01);
-[e = _ret ( _lcd_send_command (2 , -> &U _lcd1 `*CS280 -> -> 1 `i `uc ]
-"283
-[; ;Application.c: 283:                     ret = lcd_send_ATpos_string_data(&lcd1 , 1 , 1 , "Wrong choice");
-[e = _ret ( _lcd_send_ATpos_string_data (4 , , , -> &U _lcd1 `*CS280 -> -> 1 `i `uc -> -> 1 `i `uc :s 40C ]
 "284
-[; ;Application.c: 284:                     _delay((unsigned long)((500)*(4000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 4000000 `ul `d .4000.0 `ul ]
+[; ;Application.c: 284:                     ret = lcd_send_command(&lcd1 , 0x01);
+[e = _ret ( _lcd_send_command (2 , -> &U _lcd1 `*CS280 -> -> 1 `i `uc ]
 "285
-[; ;Application.c: 285:                 }else{}
+[; ;Application.c: 285:                     ret = lcd_send_ATpos_string_data(&lcd1 , 1 , 1 , "Wrong choice");
+[e = _ret ( _lcd_send_ATpos_string_data (4 , , , -> &U _lcd1 `*CS280 -> -> 1 `i `uc -> -> 1 `i `uc :s 40C ]
+"286
+[; ;Application.c: 286:                     _delay((unsigned long)((500)*(4000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 4000000 `ul `d .4000.0 `ul ]
+"287
+[; ;Application.c: 287:                 }else{}
 }
 [e $U 388  ]
 [e :U 387 ]
@@ -1529,49 +1576,49 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e :U 388 ]
 [e :U 386 ]
-"286
-[; ;Application.c: 286:                 key_status = '1';
-[e = _key_status -> -> 49 `ui `uc ]
-"287
-[; ;Application.c: 287:                 _delay((unsigned long)((500)*(4000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 4000000 `ul `d .4000.0 `ul ]
 "288
-[; ;Application.c: 288:             }
+[; ;Application.c: 288:                 key_status = '1';
+[e = _key_status -> -> 49 `ui `uc ]
+"289
+[; ;Application.c: 289:                 _delay((unsigned long)((500)*(4000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 4000000 `ul `d .4000.0 `ul ]
+"290
+[; ;Application.c: 290:             }
 }
 [e :U 371 ]
-"248
-[; ;Application.c: 248:             while('1' == key_status){
+"251
+[; ;Application.c: 251:             while('1' == key_status){
 [e $ == -> 49 `ui -> _key_status `ui 372  ]
 [e :U 373 ]
-"289
-[; ;Application.c: 289:             while('2' == key_status){
+"292
+[; ;Application.c: 292:             while('2' == key_status){
 [e $U 389  ]
 [e :U 390 ]
 {
-"290
-[; ;Application.c: 290:                 ret = lcd_send_command(&lcd1 , 0x01);
-[e = _ret ( _lcd_send_command (2 , -> &U _lcd1 `*CS280 -> -> 1 `i `uc ]
-"291
-[; ;Application.c: 291:                 ret = lcd_send_ATpos_string_data(&lcd1 , 1 , 1 , "Room2 S:");
-[e = _ret ( _lcd_send_ATpos_string_data (4 , , , -> &U _lcd1 `*CS280 -> -> 1 `i `uc -> -> 1 `i `uc :s 41C ]
-"292
-[; ;Application.c: 292:                 switch(spi_slave_reader)
-[e $U 393  ]
 "293
-[; ;Application.c: 293:                 {
-{
+[; ;Application.c: 293:                 ret = lcd_send_command(&lcd1 , 0x01);
+[e = _ret ( _lcd_send_command (2 , -> &U _lcd1 `*CS280 -> -> 1 `i `uc ]
 "294
-[; ;Application.c: 294:                     case 1: ret = lcd_send_ATpos_string_data(&lcd1 , 1 , 9 , "ON "); break;
+[; ;Application.c: 294:                 ret = lcd_send_ATpos_string_data(&lcd1 , 1 , 1 , "Room2 S:");
+[e = _ret ( _lcd_send_ATpos_string_data (4 , , , -> &U _lcd1 `*CS280 -> -> 1 `i `uc -> -> 1 `i `uc :s 41C ]
+"295
+[; ;Application.c: 295:                 switch(spi_slave_reader)
+[e $U 393  ]
+"296
+[; ;Application.c: 296:                 {
+{
+"297
+[; ;Application.c: 297:                     case 1: ret = lcd_send_ATpos_string_data(&lcd1 , 1 , 9 , "ON "); break;
 [e :U 394 ]
 [e = _ret ( _lcd_send_ATpos_string_data (4 , , , -> &U _lcd1 `*CS280 -> -> 1 `i `uc -> -> 9 `i `uc :s 42C ]
 [e $U 392  ]
-"295
-[; ;Application.c: 295:                     case 0: ret = lcd_send_ATpos_string_data(&lcd1 , 1 , 9 , "OFF"); break;
+"298
+[; ;Application.c: 298:                     case 0: ret = lcd_send_ATpos_string_data(&lcd1 , 1 , 9 , "OFF"); break;
 [e :U 395 ]
 [e = _ret ( _lcd_send_ATpos_string_data (4 , , , -> &U _lcd1 `*CS280 -> -> 1 `i `uc -> -> 9 `i `uc :s 43C ]
 [e $U 392  ]
-"296
-[; ;Application.c: 296:                 }
+"299
+[; ;Application.c: 299:                 }
 }
 [e $U 392  ]
 [e :U 393 ]
@@ -1579,53 +1626,53 @@ Version 4.0 HI-TECH Software Intermediate Code
  , $ -> 0 `i 395
  392 ]
 [e :U 392 ]
-"297
-[; ;Application.c: 297:                 ret = lcd_send_ATpos_string_data(&lcd1 , 2 , 1 , "1:led on");
-[e = _ret ( _lcd_send_ATpos_string_data (4 , , , -> &U _lcd1 `*CS280 -> -> 2 `i `uc -> -> 1 `i `uc :s 44C ]
-"298
-[; ;Application.c: 298:                 ret = lcd_send_ATpos_string_data(&lcd1 , 3 , 1 , "2:led off");
-[e = _ret ( _lcd_send_ATpos_string_data (4 , , , -> &U _lcd1 `*CS280 -> -> 3 `i `uc -> -> 1 `i `uc :s 45C ]
-"299
-[; ;Application.c: 299:                 ret = lcd_send_ATpos_string_data(&lcd1 , 4 , 1 , "0:Ret");
-[e = _ret ( _lcd_send_ATpos_string_data (4 , , , -> &U _lcd1 `*CS280 -> -> 4 `i `uc -> -> 1 `i `uc :s 46C ]
 "300
-[; ;Application.c: 300:                 key_status = 0;
-[e = _key_status -> -> 0 `i `uc ]
+[; ;Application.c: 300:                 ret = lcd_send_ATpos_string_data(&lcd1 , 2 , 1 , "1:led on");
+[e = _ret ( _lcd_send_ATpos_string_data (4 , , , -> &U _lcd1 `*CS280 -> -> 2 `i `uc -> -> 1 `i `uc :s 44C ]
 "301
-[; ;Application.c: 301:                 do {
+[; ;Application.c: 301:                 ret = lcd_send_ATpos_string_data(&lcd1 , 3 , 1 , "2:led off");
+[e = _ret ( _lcd_send_ATpos_string_data (4 , , , -> &U _lcd1 `*CS280 -> -> 3 `i `uc -> -> 1 `i `uc :s 45C ]
+"302
+[; ;Application.c: 302:                 ret = lcd_send_ATpos_string_data(&lcd1 , 4 , 1 , "0:Ret");
+[e = _ret ( _lcd_send_ATpos_string_data (4 , , , -> &U _lcd1 `*CS280 -> -> 4 `i `uc -> -> 1 `i `uc :s 46C ]
+"303
+[; ;Application.c: 303:                 key_status = 0;
+[e = _key_status -> -> 0 `i `uc ]
+"304
+[; ;Application.c: 304:                 do {
 [e :U 398 ]
 {
-"302
-[; ;Application.c: 302:                     ret = Key_Pad_Get_Value(&key_pad1, &key_status);
+"305
+[; ;Application.c: 305:                     ret = Key_Pad_Get_Value(&key_pad1, &key_status);
 [e = _ret ( _Key_Pad_Get_Value (2 , -> &U _key_pad1 `*CS278 &U _key_status ]
-"303
-[; ;Application.c: 303:                 } while (0 == key_status);
+"306
+[; ;Application.c: 306:                 } while (0 == key_status);
 }
 [e $ == -> 0 `i -> _key_status `i 398  ]
 [e :U 397 ]
-"304
-[; ;Application.c: 304:                 _delay((unsigned long)((300)*(4000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 300 `i `d / -> -> 4000000 `ul `d .4000.0 `ul ]
-"305
-[; ;Application.c: 305:                 switch(key_status)
-[e $U 400  ]
-"306
-[; ;Application.c: 306:                 {
-{
 "307
-[; ;Application.c: 307:                     case '1': ret = SPI_Send_Byte((uint8)2) ; spi_slave_reader = 1; break;
+[; ;Application.c: 307:                 _delay((unsigned long)((300)*(4000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 300 `i `d / -> -> 4000000 `ul `d .4000.0 `ul ]
+"308
+[; ;Application.c: 308:                 switch(key_status)
+[e $U 400  ]
+"309
+[; ;Application.c: 309:                 {
+{
+"310
+[; ;Application.c: 310:                     case '1': ret = SPI_Send_Byte((uint8)2) ; spi_slave_reader = 1; break;
 [e :U 401 ]
 [e = _ret ( _SPI_Send_Byte (1 -> -> 2 `i `uc ]
 [e = _spi_slave_reader -> -> 1 `i `uc ]
 [e $U 399  ]
-"308
-[; ;Application.c: 308:                     case '2': ret = SPI_Send_Byte((uint8)6); spi_slave_reader = 0; break;
+"311
+[; ;Application.c: 311:                     case '2': ret = SPI_Send_Byte((uint8)6); spi_slave_reader = 0; break;
 [e :U 402 ]
 [e = _ret ( _SPI_Send_Byte (1 -> -> 6 `i `uc ]
 [e = _spi_slave_reader -> -> 0 `i `uc ]
 [e $U 399  ]
-"309
-[; ;Application.c: 309:                 }
+"312
+[; ;Application.c: 312:                 }
 }
 [e $U 399  ]
 [e :U 400 ]
@@ -1633,80 +1680,80 @@ Version 4.0 HI-TECH Software Intermediate Code
  , $ -> -> 50 `ui `i 402
  399 ]
 [e :U 399 ]
-"310
-[; ;Application.c: 310:                 if('0' == key_status){
-[e $ ! == -> 48 `ui -> _key_status `ui 403  ]
-{
-"311
-[; ;Application.c: 311:                     ret = lcd_send_command(&lcd1 , 0x01);
-[e = _ret ( _lcd_send_command (2 , -> &U _lcd1 `*CS280 -> -> 1 `i `uc ]
-"312
-[; ;Application.c: 312:                     break;
-[e $U 391  ]
 "313
-[; ;Application.c: 313:                 }else if('1' != key_status && '2' != key_status){
-}
-[e $U 404  ]
-[e :U 403 ]
-[e $ ! && != -> 49 `ui -> _key_status `ui != -> 50 `ui -> _key_status `ui 405  ]
+[; ;Application.c: 313:                 if('0' == key_status){
+[e $ ! == -> 48 `ui -> _key_status `ui 403  ]
 {
 "314
 [; ;Application.c: 314:                     ret = lcd_send_command(&lcd1 , 0x01);
 [e = _ret ( _lcd_send_command (2 , -> &U _lcd1 `*CS280 -> -> 1 `i `uc ]
 "315
-[; ;Application.c: 315:                     ret = lcd_send_ATpos_string_data(&lcd1 , 1 , 1 , "Wrong choice");
-[e = _ret ( _lcd_send_ATpos_string_data (4 , , , -> &U _lcd1 `*CS280 -> -> 1 `i `uc -> -> 1 `i `uc :s 47C ]
+[; ;Application.c: 315:                     break;
+[e $U 391  ]
 "316
-[; ;Application.c: 316:                     _delay((unsigned long)((1000)*(4000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 4000000 `ul `d .4000.0 `ul ]
+[; ;Application.c: 316:                 }else if('1' != key_status && '2' != key_status){
+}
+[e $U 404  ]
+[e :U 403 ]
+[e $ ! && != -> 49 `ui -> _key_status `ui != -> 50 `ui -> _key_status `ui 405  ]
+{
 "317
-[; ;Application.c: 317:                 }
+[; ;Application.c: 317:                     ret = lcd_send_command(&lcd1 , 0x01);
+[e = _ret ( _lcd_send_command (2 , -> &U _lcd1 `*CS280 -> -> 1 `i `uc ]
+"318
+[; ;Application.c: 318:                     ret = lcd_send_ATpos_string_data(&lcd1 , 1 , 1 , "Wrong choice");
+[e = _ret ( _lcd_send_ATpos_string_data (4 , , , -> &U _lcd1 `*CS280 -> -> 1 `i `uc -> -> 1 `i `uc :s 47C ]
+"319
+[; ;Application.c: 319:                     _delay((unsigned long)((1000)*(4000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 4000000 `ul `d .4000.0 `ul ]
+"320
+[; ;Application.c: 320:                 }
 }
 [e :U 405 ]
 [e :U 404 ]
-"318
-[; ;Application.c: 318:                 key_status = '2';
+"321
+[; ;Application.c: 321:                 key_status = '2';
 [e = _key_status -> -> 50 `ui `uc ]
-"319
-[; ;Application.c: 319:                 _delay((unsigned long)((500)*(4000000UL/4000.0)));
+"322
+[; ;Application.c: 322:                 _delay((unsigned long)((500)*(4000000UL/4000.0)));
 [e ( __delay (1 -> * -> -> 500 `i `d / -> -> 4000000 `ul `d .4000.0 `ul ]
-"320
-[; ;Application.c: 320:             }while('3' == key_status){
+"323
+[; ;Application.c: 323:             }
 }
 [e :U 389 ]
-"289
-[; ;Application.c: 289:             while('2' == key_status){
+"292
+[; ;Application.c: 292:             while('2' == key_status){
 [e $ == -> 50 `ui -> _key_status `ui 390  ]
 [e :U 391 ]
-"320
-[; ;Application.c: 320:             }while('3' == key_status){
+"325
+[; ;Application.c: 325:             while('3' == key_status){
 [e $U 406  ]
 [e :U 407 ]
 {
-"321
-[; ;Application.c: 321:                 ret = lcd_send_command(&lcd1 , 0x01);
+"326
+[; ;Application.c: 326:                 ret = lcd_send_command(&lcd1 , 0x01);
 [e = _ret ( _lcd_send_command (2 , -> &U _lcd1 `*CS280 -> -> 1 `i `uc ]
-"322
-[; ;Application.c: 322:                 ret = lcd_send_ATpos_string_data(&lcd1 , 1 , 1 , "Room3 S:");
+"327
+[; ;Application.c: 327:                 ret = lcd_send_ATpos_string_data(&lcd1 , 1 , 1 , "Room3 S:");
 [e = _ret ( _lcd_send_ATpos_string_data (4 , , , -> &U _lcd1 `*CS280 -> -> 1 `i `uc -> -> 1 `i `uc :s 48C ]
-"323
-[; ;Application.c: 323:                 switch(spi_slave_reader)
+"328
+[; ;Application.c: 328:                 switch(spi_slave_reader)
 [e $U 410  ]
-"324
-[; ;Application.c: 324:                 {
+"329
+[; ;Application.c: 329:                 {
 {
-"325
-[; ;Application.c: 325:                     case 1: ret = lcd_send_ATpos_string_data(&lcd1 , 1 , 9 , "ON "); break;
+"330
+[; ;Application.c: 330:                     case 1: ret = lcd_send_ATpos_string_data(&lcd1 , 1 , 9 , "ON "); break;
 [e :U 411 ]
 [e = _ret ( _lcd_send_ATpos_string_data (4 , , , -> &U _lcd1 `*CS280 -> -> 1 `i `uc -> -> 9 `i `uc :s 49C ]
 [e $U 409  ]
-"326
-[; ;Application.c: 326:                     case 0: ret = lcd_send_ATpos_string_data(&lcd1 , 1 , 9 , "OFF"); break;
+"331
+[; ;Application.c: 331:                     case 0: ret = lcd_send_ATpos_string_data(&lcd1 , 1 , 9 , "OFF"); break;
 [e :U 412 ]
 [e = _ret ( _lcd_send_ATpos_string_data (4 , , , -> &U _lcd1 `*CS280 -> -> 1 `i `uc -> -> 9 `i `uc :s 50C ]
 [e $U 409  ]
-"327
-[; ;Application.c: 327:                 }
+"332
+[; ;Application.c: 332:                 }
 }
 [e $U 409  ]
 [e :U 410 ]
@@ -1714,53 +1761,53 @@ Version 4.0 HI-TECH Software Intermediate Code
  , $ -> 0 `i 412
  409 ]
 [e :U 409 ]
-"328
-[; ;Application.c: 328:                 ret = lcd_send_ATpos_string_data(&lcd1 , 2 , 1 , "1:led on");
+"333
+[; ;Application.c: 333:                 ret = lcd_send_ATpos_string_data(&lcd1 , 2 , 1 , "1:led on");
 [e = _ret ( _lcd_send_ATpos_string_data (4 , , , -> &U _lcd1 `*CS280 -> -> 2 `i `uc -> -> 1 `i `uc :s 51C ]
-"329
-[; ;Application.c: 329:                 ret = lcd_send_ATpos_string_data(&lcd1 , 3 , 1 , "2:led off");
+"334
+[; ;Application.c: 334:                 ret = lcd_send_ATpos_string_data(&lcd1 , 3 , 1 , "2:led off");
 [e = _ret ( _lcd_send_ATpos_string_data (4 , , , -> &U _lcd1 `*CS280 -> -> 3 `i `uc -> -> 1 `i `uc :s 52C ]
-"330
-[; ;Application.c: 330:                 ret = lcd_send_ATpos_string_data(&lcd1 , 4 , 1 , "0:Ret");
+"335
+[; ;Application.c: 335:                 ret = lcd_send_ATpos_string_data(&lcd1 , 4 , 1 , "0:Ret");
 [e = _ret ( _lcd_send_ATpos_string_data (4 , , , -> &U _lcd1 `*CS280 -> -> 4 `i `uc -> -> 1 `i `uc :s 53C ]
-"331
-[; ;Application.c: 331:                 key_status = 0;
+"336
+[; ;Application.c: 336:                 key_status = 0;
 [e = _key_status -> -> 0 `i `uc ]
-"332
-[; ;Application.c: 332:                 do {
+"337
+[; ;Application.c: 337:                 do {
 [e :U 415 ]
 {
-"333
-[; ;Application.c: 333:                     ret = Key_Pad_Get_Value(&key_pad1, &key_status);
+"338
+[; ;Application.c: 338:                     ret = Key_Pad_Get_Value(&key_pad1, &key_status);
 [e = _ret ( _Key_Pad_Get_Value (2 , -> &U _key_pad1 `*CS278 &U _key_status ]
-"334
-[; ;Application.c: 334:                 } while (0 == key_status);
+"339
+[; ;Application.c: 339:                 } while (0 == key_status);
 }
 [e $ == -> 0 `i -> _key_status `i 415  ]
 [e :U 414 ]
-"335
-[; ;Application.c: 335:                 _delay((unsigned long)((300)*(4000000UL/4000.0)));
+"340
+[; ;Application.c: 340:                 _delay((unsigned long)((300)*(4000000UL/4000.0)));
 [e ( __delay (1 -> * -> -> 300 `i `d / -> -> 4000000 `ul `d .4000.0 `ul ]
-"336
-[; ;Application.c: 336:                 switch(key_status)
+"341
+[; ;Application.c: 341:                 switch(key_status)
 [e $U 417  ]
-"337
-[; ;Application.c: 337:                 {
+"342
+[; ;Application.c: 342:                 {
 {
-"338
-[; ;Application.c: 338:                     case '1': ret = SPI_Send_Byte((uint8)3); spi_slave_reader = 1; break;
+"343
+[; ;Application.c: 343:                     case '1': ret = SPI_Send_Byte((uint8)3); spi_slave_reader = 1; break;
 [e :U 418 ]
 [e = _ret ( _SPI_Send_Byte (1 -> -> 3 `i `uc ]
 [e = _spi_slave_reader -> -> 1 `i `uc ]
 [e $U 416  ]
-"339
-[; ;Application.c: 339:                     case '2': ret = SPI_Send_Byte((uint8)7); spi_slave_reader = 0; break;
+"344
+[; ;Application.c: 344:                     case '2': ret = SPI_Send_Byte((uint8)7); spi_slave_reader = 0; break;
 [e :U 419 ]
 [e = _ret ( _SPI_Send_Byte (1 -> -> 7 `i `uc ]
 [e = _spi_slave_reader -> -> 0 `i `uc ]
 [e $U 416  ]
-"340
-[; ;Application.c: 340:                 }
+"345
+[; ;Application.c: 345:                 }
 }
 [e $U 416  ]
 [e :U 417 ]
@@ -1768,90 +1815,90 @@ Version 4.0 HI-TECH Software Intermediate Code
  , $ -> -> 50 `ui `i 419
  416 ]
 [e :U 416 ]
-"341
-[; ;Application.c: 341:                 if('0' == key_status){
+"346
+[; ;Application.c: 346:                 if('0' == key_status){
 [e $ ! == -> 48 `ui -> _key_status `ui 420  ]
 {
-"342
-[; ;Application.c: 342:                     ret = lcd_send_command(&lcd1 , 0x01);
+"347
+[; ;Application.c: 347:                     ret = lcd_send_command(&lcd1 , 0x01);
 [e = _ret ( _lcd_send_command (2 , -> &U _lcd1 `*CS280 -> -> 1 `i `uc ]
-"343
-[; ;Application.c: 343:                     break;
+"348
+[; ;Application.c: 348:                     break;
 [e $U 408  ]
-"344
-[; ;Application.c: 344:                 }else if('1' != key_status && '2' != key_status){
+"349
+[; ;Application.c: 349:                 }else if('1' != key_status && '2' != key_status){
 }
 [e $U 421  ]
 [e :U 420 ]
 [e $ ! && != -> 49 `ui -> _key_status `ui != -> 50 `ui -> _key_status `ui 422  ]
 {
-"345
-[; ;Application.c: 345:                     ret = lcd_send_command(&lcd1 , 0x01);
+"350
+[; ;Application.c: 350:                     ret = lcd_send_command(&lcd1 , 0x01);
 [e = _ret ( _lcd_send_command (2 , -> &U _lcd1 `*CS280 -> -> 1 `i `uc ]
-"346
-[; ;Application.c: 346:                     ret = lcd_send_ATpos_string_data(&lcd1 , 1 , 1 , "Wrong choice");
+"351
+[; ;Application.c: 351:                     ret = lcd_send_ATpos_string_data(&lcd1 , 1 , 1 , "Wrong choice");
 [e = _ret ( _lcd_send_ATpos_string_data (4 , , , -> &U _lcd1 `*CS280 -> -> 1 `i `uc -> -> 1 `i `uc :s 54C ]
-"347
-[; ;Application.c: 347:                     _delay((unsigned long)((500)*(4000000UL/4000.0)));
+"352
+[; ;Application.c: 352:                     _delay((unsigned long)((500)*(4000000UL/4000.0)));
 [e ( __delay (1 -> * -> -> 500 `i `d / -> -> 4000000 `ul `d .4000.0 `ul ]
-"348
-[; ;Application.c: 348:                 }else{
+"353
+[; ;Application.c: 353:                 }else{
 }
 [e $U 423  ]
 [e :U 422 ]
 {
-"350
-[; ;Application.c: 350:                 }
+"355
+[; ;Application.c: 355:                 }
 }
 [e :U 423 ]
 [e :U 421 ]
-"351
-[; ;Application.c: 351:                 key_status = '3';
+"356
+[; ;Application.c: 356:                 key_status = '3';
 [e = _key_status -> -> 51 `ui `uc ]
-"352
-[; ;Application.c: 352:                 _delay((unsigned long)((500)*(4000000UL/4000.0)));
+"357
+[; ;Application.c: 357:                 _delay((unsigned long)((500)*(4000000UL/4000.0)));
 [e ( __delay (1 -> * -> -> 500 `i `d / -> -> 4000000 `ul `d .4000.0 `ul ]
-"353
-[; ;Application.c: 353:             }
+"358
+[; ;Application.c: 358:             }
 }
 [e :U 406 ]
-"320
-[; ;Application.c: 320:             }while('3' == key_status){
+"325
+[; ;Application.c: 325:             while('3' == key_status){
 [e $ == -> 51 `ui -> _key_status `ui 407  ]
 [e :U 408 ]
-"354
-[; ;Application.c: 354:             if((uint8)4 == Guest_pass_flag){
+"359
+[; ;Application.c: 359:             if((uint8)4 == Guest_pass_flag){
 [e $ ! == -> -> -> 4 `i `uc `i -> _Guest_pass_flag `i 424  ]
 {
-"355
-[; ;Application.c: 355:                     while('4' == key_status){
+"360
+[; ;Application.c: 360:                     while('4' == key_status){
 [e $U 425  ]
 [e :U 426 ]
 {
-"356
-[; ;Application.c: 356:                     ret = lcd_send_command(&lcd1 , 0x01);
+"361
+[; ;Application.c: 361:                     ret = lcd_send_command(&lcd1 , 0x01);
 [e = _ret ( _lcd_send_command (2 , -> &U _lcd1 `*CS280 -> -> 1 `i `uc ]
-"357
-[; ;Application.c: 357:                     ret = lcd_send_ATpos_string_data(&lcd1 , 1 , 1 , "Room4 S:");
+"362
+[; ;Application.c: 362:                     ret = lcd_send_ATpos_string_data(&lcd1 , 1 , 1 , "Room4 S:");
 [e = _ret ( _lcd_send_ATpos_string_data (4 , , , -> &U _lcd1 `*CS280 -> -> 1 `i `uc -> -> 1 `i `uc :s 55C ]
-"358
-[; ;Application.c: 358:                     switch(spi_slave_reader)
+"363
+[; ;Application.c: 363:                     switch(spi_slave_reader)
 [e $U 429  ]
-"359
-[; ;Application.c: 359:                 {
+"364
+[; ;Application.c: 364:                 {
 {
-"360
-[; ;Application.c: 360:                     case 1: ret = lcd_send_ATpos_string_data(&lcd1 , 1 , 9 , "ON "); break;
+"365
+[; ;Application.c: 365:                     case 1: ret = lcd_send_ATpos_string_data(&lcd1 , 1 , 9 , "ON "); break;
 [e :U 430 ]
 [e = _ret ( _lcd_send_ATpos_string_data (4 , , , -> &U _lcd1 `*CS280 -> -> 1 `i `uc -> -> 9 `i `uc :s 56C ]
 [e $U 428  ]
-"361
-[; ;Application.c: 361:                     case 0: ret = lcd_send_ATpos_string_data(&lcd1 , 1 , 9 , "OFF"); break;
+"366
+[; ;Application.c: 366:                     case 0: ret = lcd_send_ATpos_string_data(&lcd1 , 1 , 9 , "OFF"); break;
 [e :U 431 ]
 [e = _ret ( _lcd_send_ATpos_string_data (4 , , , -> &U _lcd1 `*CS280 -> -> 1 `i `uc -> -> 9 `i `uc :s 57C ]
 [e $U 428  ]
-"362
-[; ;Application.c: 362:                 }
+"367
+[; ;Application.c: 367:                 }
 }
 [e $U 428  ]
 [e :U 429 ]
@@ -1859,59 +1906,59 @@ Version 4.0 HI-TECH Software Intermediate Code
  , $ -> 0 `i 431
  428 ]
 [e :U 428 ]
-"363
-[; ;Application.c: 363:                     ret = lcd_send_ATpos_string_data(&lcd1 , 2 , 1 , "1:led on");
+"368
+[; ;Application.c: 368:                     ret = lcd_send_ATpos_string_data(&lcd1 , 2 , 1 , "1:led on");
 [e = _ret ( _lcd_send_ATpos_string_data (4 , , , -> &U _lcd1 `*CS280 -> -> 2 `i `uc -> -> 1 `i `uc :s 58C ]
-"364
-[; ;Application.c: 364:                     ret = lcd_send_ATpos_string_data(&lcd1 , 3 , 1 , "2:led off");
+"369
+[; ;Application.c: 369:                     ret = lcd_send_ATpos_string_data(&lcd1 , 3 , 1 , "2:led off");
 [e = _ret ( _lcd_send_ATpos_string_data (4 , , , -> &U _lcd1 `*CS280 -> -> 3 `i `uc -> -> 1 `i `uc :s 59C ]
-"365
-[; ;Application.c: 365:                     ret = lcd_send_ATpos_string_data(&lcd1 , 4 , 1 , "0:Ret");
+"370
+[; ;Application.c: 370:                     ret = lcd_send_ATpos_string_data(&lcd1 , 4 , 1 , "0:Ret");
 [e = _ret ( _lcd_send_ATpos_string_data (4 , , , -> &U _lcd1 `*CS280 -> -> 4 `i `uc -> -> 1 `i `uc :s 60C ]
-"366
-[; ;Application.c: 366:                     key_status = 0;
+"371
+[; ;Application.c: 371:                     key_status = 0;
 [e = _key_status -> -> 0 `i `uc ]
-"367
-[; ;Application.c: 367:                     do {
+"372
+[; ;Application.c: 372:                     do {
 [e :U 434 ]
 {
-"368
-[; ;Application.c: 368:                         ret = Key_Pad_Get_Value(&key_pad1, &key_status);
+"373
+[; ;Application.c: 373:                         ret = Key_Pad_Get_Value(&key_pad1, &key_status);
 [e = _ret ( _Key_Pad_Get_Value (2 , -> &U _key_pad1 `*CS278 &U _key_status ]
-"369
-[; ;Application.c: 369:                     } while (0 == key_status);
+"374
+[; ;Application.c: 374:                     } while (0 == key_status);
 }
 [e $ == -> 0 `i -> _key_status `i 434  ]
 [e :U 433 ]
-"370
-[; ;Application.c: 370:                     _delay((unsigned long)((300)*(4000000UL/4000.0)));
+"375
+[; ;Application.c: 375:                     _delay((unsigned long)((300)*(4000000UL/4000.0)));
 [e ( __delay (1 -> * -> -> 300 `i `d / -> -> 4000000 `ul `d .4000.0 `ul ]
-"371
-[; ;Application.c: 371:                     switch (key_status) {
+"376
+[; ;Application.c: 376:                     switch (key_status) {
 [e $U 436  ]
 {
-"372
-[; ;Application.c: 372:                             case '1': ret = SPI_Send_Byte((uint8)4);
+"377
+[; ;Application.c: 377:                             case '1': ret = SPI_Send_Byte((uint8)4);
 [e :U 437 ]
 [e = _ret ( _SPI_Send_Byte (1 -> -> 4 `i `uc ]
-"373
-[; ;Application.c: 373:                             spi_slave_reader = 1;
+"378
+[; ;Application.c: 378:                             spi_slave_reader = 1;
 [e = _spi_slave_reader -> -> 1 `i `uc ]
-"374
-[; ;Application.c: 374:                                 break;
+"379
+[; ;Application.c: 379:                                 break;
 [e $U 435  ]
-"375
-[; ;Application.c: 375:                             case '2': ret = SPI_Send_Byte((uint8)8);
+"380
+[; ;Application.c: 380:                             case '2': ret = SPI_Send_Byte((uint8)8);
 [e :U 438 ]
 [e = _ret ( _SPI_Send_Byte (1 -> -> 8 `i `uc ]
-"376
-[; ;Application.c: 376:                             spi_slave_reader = 0;
+"381
+[; ;Application.c: 381:                             spi_slave_reader = 0;
 [e = _spi_slave_reader -> -> 0 `i `uc ]
-"377
-[; ;Application.c: 377:                                 break;
+"382
+[; ;Application.c: 382:                                 break;
 [e $U 435  ]
-"378
-[; ;Application.c: 378:                         }
+"383
+[; ;Application.c: 383:                         }
 }
 [e $U 435  ]
 [e :U 436 ]
@@ -1919,130 +1966,130 @@ Version 4.0 HI-TECH Software Intermediate Code
  , $ -> -> 50 `ui `i 438
  435 ]
 [e :U 435 ]
-"379
-[; ;Application.c: 379:                     if('0' == key_status){
+"384
+[; ;Application.c: 384:                     if('0' == key_status){
 [e $ ! == -> 48 `ui -> _key_status `ui 439  ]
 {
-"380
-[; ;Application.c: 380:                         ret = lcd_send_command(&lcd1 , 0x01);
+"385
+[; ;Application.c: 385:                         ret = lcd_send_command(&lcd1 , 0x01);
 [e = _ret ( _lcd_send_command (2 , -> &U _lcd1 `*CS280 -> -> 1 `i `uc ]
-"381
-[; ;Application.c: 381:                         break;
+"386
+[; ;Application.c: 386:                         break;
 [e $U 427  ]
-"382
-[; ;Application.c: 382:                     }else if('1' != key_status && '2' != key_status){
+"387
+[; ;Application.c: 387:                     }else if('1' != key_status && '2' != key_status){
 }
 [e $U 440  ]
 [e :U 439 ]
 [e $ ! && != -> 49 `ui -> _key_status `ui != -> 50 `ui -> _key_status `ui 441  ]
 {
-"383
-[; ;Application.c: 383:                         ret = lcd_send_command(&lcd1 , 0x01);
+"388
+[; ;Application.c: 388:                         ret = lcd_send_command(&lcd1 , 0x01);
 [e = _ret ( _lcd_send_command (2 , -> &U _lcd1 `*CS280 -> -> 1 `i `uc ]
-"384
-[; ;Application.c: 384:                         ret = lcd_send_ATpos_string_data(&lcd1 , 1 , 1 , "Wrong choice");
+"389
+[; ;Application.c: 389:                         ret = lcd_send_ATpos_string_data(&lcd1 , 1 , 1 , "Wrong choice");
 [e = _ret ( _lcd_send_ATpos_string_data (4 , , , -> &U _lcd1 `*CS280 -> -> 1 `i `uc -> -> 1 `i `uc :s 61C ]
-"385
-[; ;Application.c: 385:                         _delay((unsigned long)((500)*(4000000UL/4000.0)));
+"390
+[; ;Application.c: 390:                         _delay((unsigned long)((500)*(4000000UL/4000.0)));
 [e ( __delay (1 -> * -> -> 500 `i `d / -> -> 4000000 `ul `d .4000.0 `ul ]
-"386
-[; ;Application.c: 386:                     }
+"391
+[; ;Application.c: 391:                     }
 }
 [e :U 441 ]
 [e :U 440 ]
-"387
-[; ;Application.c: 387:                     key_status = '4';
+"392
+[; ;Application.c: 392:                     key_status = '4';
 [e = _key_status -> -> 52 `ui `uc ]
-"388
-[; ;Application.c: 388:                     _delay((unsigned long)((500)*(4000000UL/4000.0)));
+"393
+[; ;Application.c: 393:                     _delay((unsigned long)((500)*(4000000UL/4000.0)));
 [e ( __delay (1 -> * -> -> 500 `i `d / -> -> 4000000 `ul `d .4000.0 `ul ]
-"389
-[; ;Application.c: 389:                 }
+"394
+[; ;Application.c: 394:                 }
 }
 [e :U 425 ]
-"355
-[; ;Application.c: 355:                     while('4' == key_status){
+"360
+[; ;Application.c: 360:                     while('4' == key_status){
 [e $ == -> 52 `ui -> _key_status `ui 426  ]
 [e :U 427 ]
-"390
-[; ;Application.c: 390:             }else if((uint8)4 == Admin_pass_flag){
+"395
+[; ;Application.c: 395:             }else if((uint8)4 == Admin_pass_flag){
 }
 [e $U 442  ]
 [e :U 424 ]
 [e $ ! == -> -> -> 4 `i `uc `i -> _Admin_pass_flag `i 443  ]
 {
-"391
-[; ;Application.c: 391:                     while('4' == key_status){
+"396
+[; ;Application.c: 396:                     while('4' == key_status){
 [e $U 444  ]
 [e :U 445 ]
 {
-"392
-[; ;Application.c: 392:                     ret = lcd_send_command(&lcd1 , 0x01);
-[e = _ret ( _lcd_send_command (2 , -> &U _lcd1 `*CS280 -> -> 1 `i `uc ]
-"393
-[; ;Application.c: 393:                     ret = lcd_send_ATpos_string_data(&lcd1 , 1 , 1 , "Admin Mode:-");
-[e = _ret ( _lcd_send_ATpos_string_data (4 , , , -> &U _lcd1 `*CS280 -> -> 1 `i `uc -> -> 1 `i `uc :s 62C ]
-"394
-[; ;Application.c: 394:                     ret = lcd_send_ATpos_string_data(&lcd1 , 2 , 1 , "1:Room4");
-[e = _ret ( _lcd_send_ATpos_string_data (4 , , , -> &U _lcd1 `*CS280 -> -> 2 `i `uc -> -> 1 `i `uc :s 63C ]
-"395
-[; ;Application.c: 395:                     ret = lcd_send_ATpos_string_data(&lcd1 , 2 , 11 , "2:TV");
-[e = _ret ( _lcd_send_ATpos_string_data (4 , , , -> &U _lcd1 `*CS280 -> -> 2 `i `uc -> -> 11 `i `uc :s 64C ]
-"396
-[; ;Application.c: 396:                     ret = lcd_send_ATpos_string_data(&lcd1 , 3 , 1 , "3:Air con.");
-[e = _ret ( _lcd_send_ATpos_string_data (4 , , , -> &U _lcd1 `*CS280 -> -> 3 `i `uc -> -> 1 `i `uc :s 65C ]
 "397
-[; ;Application.c: 397:                     ret = lcd_send_ATpos_string_data(&lcd1 , 3 , 11 , "0:Ret");
-[e = _ret ( _lcd_send_ATpos_string_data (4 , , , -> &U _lcd1 `*CS280 -> -> 3 `i `uc -> -> 11 `i `uc :s 66C ]
+[; ;Application.c: 397:                     ret = lcd_send_command(&lcd1 , 0x01);
+[e = _ret ( _lcd_send_command (2 , -> &U _lcd1 `*CS280 -> -> 1 `i `uc ]
 "398
-[; ;Application.c: 398:                     key_status = 0;
-[e = _key_status -> -> 0 `i `uc ]
+[; ;Application.c: 398:                     ret = lcd_send_ATpos_string_data(&lcd1 , 1 , 1 , "Admin Mode:-");
+[e = _ret ( _lcd_send_ATpos_string_data (4 , , , -> &U _lcd1 `*CS280 -> -> 1 `i `uc -> -> 1 `i `uc :s 62C ]
 "399
-[; ;Application.c: 399:                     do {
+[; ;Application.c: 399:                     ret = lcd_send_ATpos_string_data(&lcd1 , 2 , 1 , "1:Room4");
+[e = _ret ( _lcd_send_ATpos_string_data (4 , , , -> &U _lcd1 `*CS280 -> -> 2 `i `uc -> -> 1 `i `uc :s 63C ]
+"400
+[; ;Application.c: 400:                     ret = lcd_send_ATpos_string_data(&lcd1 , 2 , 11 , "2:TV");
+[e = _ret ( _lcd_send_ATpos_string_data (4 , , , -> &U _lcd1 `*CS280 -> -> 2 `i `uc -> -> 11 `i `uc :s 64C ]
+"401
+[; ;Application.c: 401:                     ret = lcd_send_ATpos_string_data(&lcd1 , 3 , 1 , "3:Air con.");
+[e = _ret ( _lcd_send_ATpos_string_data (4 , , , -> &U _lcd1 `*CS280 -> -> 3 `i `uc -> -> 1 `i `uc :s 65C ]
+"402
+[; ;Application.c: 402:                     ret = lcd_send_ATpos_string_data(&lcd1 , 3 , 11 , "0:Ret");
+[e = _ret ( _lcd_send_ATpos_string_data (4 , , , -> &U _lcd1 `*CS280 -> -> 3 `i `uc -> -> 11 `i `uc :s 66C ]
+"403
+[; ;Application.c: 403:                     key_status = 0;
+[e = _key_status -> -> 0 `i `uc ]
+"404
+[; ;Application.c: 404:                     do {
 [e :U 449 ]
 {
-"400
-[; ;Application.c: 400:                         ret = Key_Pad_Get_Value(&key_pad1, &key_status);
+"405
+[; ;Application.c: 405:                         ret = Key_Pad_Get_Value(&key_pad1, &key_status);
 [e = _ret ( _Key_Pad_Get_Value (2 , -> &U _key_pad1 `*CS278 &U _key_status ]
-"401
-[; ;Application.c: 401:                     } while (0 == key_status);
+"406
+[; ;Application.c: 406:                     } while (0 == key_status);
 }
 [e $ == -> 0 `i -> _key_status `i 449  ]
 [e :U 448 ]
-"402
-[; ;Application.c: 402:                     _delay((unsigned long)((300)*(4000000UL/4000.0)));
+"407
+[; ;Application.c: 407:                     _delay((unsigned long)((300)*(4000000UL/4000.0)));
 [e ( __delay (1 -> * -> -> 300 `i `d / -> -> 4000000 `ul `d .4000.0 `ul ]
-"404
-[; ;Application.c: 404:                     while ('1' == key_status) {
+"409
+[; ;Application.c: 409:                     while ('1' == key_status) {
 [e $U 450  ]
 [e :U 451 ]
 {
-"405
-[; ;Application.c: 405:                             ret = lcd_send_command(&lcd1, 0x01);
+"410
+[; ;Application.c: 410:                             ret = lcd_send_command(&lcd1, 0x01);
 [e = _ret ( _lcd_send_command (2 , -> &U _lcd1 `*CS280 -> -> 1 `i `uc ]
-"406
-[; ;Application.c: 406:                             ret = lcd_send_ATpos_string_data(&lcd1, 1, 1, "Room4 S:");
+"411
+[; ;Application.c: 411:                             ret = lcd_send_ATpos_string_data(&lcd1, 1, 1, "Room4 S:");
 [e = _ret ( _lcd_send_ATpos_string_data (4 , , , -> &U _lcd1 `*CS280 -> -> 1 `i `uc -> -> 1 `i `uc :s 67C ]
-"407
-[; ;Application.c: 407:                             switch (spi_slave_reader) {
+"412
+[; ;Application.c: 412:                             switch (spi_slave_reader) {
 [e $U 454  ]
 {
-"408
-[; ;Application.c: 408:                                 case 1: ret = lcd_send_ATpos_string_data(&lcd1, 1, 9, "ON ");
+"413
+[; ;Application.c: 413:                                 case 1: ret = lcd_send_ATpos_string_data(&lcd1, 1, 9, "ON ");
 [e :U 455 ]
 [e = _ret ( _lcd_send_ATpos_string_data (4 , , , -> &U _lcd1 `*CS280 -> -> 1 `i `uc -> -> 9 `i `uc :s 68C ]
-"409
-[; ;Application.c: 409:                                     break;
+"414
+[; ;Application.c: 414:                                     break;
 [e $U 453  ]
-"410
-[; ;Application.c: 410:                                 case 0: ret = lcd_send_ATpos_string_data(&lcd1, 1, 9, "OFF");
+"415
+[; ;Application.c: 415:                                 case 0: ret = lcd_send_ATpos_string_data(&lcd1, 1, 9, "OFF");
 [e :U 456 ]
 [e = _ret ( _lcd_send_ATpos_string_data (4 , , , -> &U _lcd1 `*CS280 -> -> 1 `i `uc -> -> 9 `i `uc :s 69C ]
-"411
-[; ;Application.c: 411:                                     break;
+"416
+[; ;Application.c: 416:                                     break;
 [e $U 453  ]
-"412
-[; ;Application.c: 412:                             }
+"417
+[; ;Application.c: 417:                             }
 }
 [e $U 453  ]
 [e :U 454 ]
@@ -2050,59 +2097,59 @@ Version 4.0 HI-TECH Software Intermediate Code
  , $ -> 0 `i 456
  453 ]
 [e :U 453 ]
-"413
-[; ;Application.c: 413:                             ret = lcd_send_ATpos_string_data(&lcd1, 2, 1, "1:led on");
+"418
+[; ;Application.c: 418:                             ret = lcd_send_ATpos_string_data(&lcd1, 2, 1, "1:led on");
 [e = _ret ( _lcd_send_ATpos_string_data (4 , , , -> &U _lcd1 `*CS280 -> -> 2 `i `uc -> -> 1 `i `uc :s 70C ]
-"414
-[; ;Application.c: 414:                             ret = lcd_send_ATpos_string_data(&lcd1, 3, 1, "2:led off");
+"419
+[; ;Application.c: 419:                             ret = lcd_send_ATpos_string_data(&lcd1, 3, 1, "2:led off");
 [e = _ret ( _lcd_send_ATpos_string_data (4 , , , -> &U _lcd1 `*CS280 -> -> 3 `i `uc -> -> 1 `i `uc :s 71C ]
-"415
-[; ;Application.c: 415:                             ret = lcd_send_ATpos_string_data(&lcd1, 4, 1, "0:Ret");
+"420
+[; ;Application.c: 420:                             ret = lcd_send_ATpos_string_data(&lcd1, 4, 1, "0:Ret");
 [e = _ret ( _lcd_send_ATpos_string_data (4 , , , -> &U _lcd1 `*CS280 -> -> 4 `i `uc -> -> 1 `i `uc :s 72C ]
-"416
-[; ;Application.c: 416:                             key_status = 0;
+"421
+[; ;Application.c: 421:                             key_status = 0;
 [e = _key_status -> -> 0 `i `uc ]
-"417
-[; ;Application.c: 417:                             do {
+"422
+[; ;Application.c: 422:                             do {
 [e :U 459 ]
 {
-"418
-[; ;Application.c: 418:                                 ret = Key_Pad_Get_Value(&key_pad1, &key_status);
+"423
+[; ;Application.c: 423:                                 ret = Key_Pad_Get_Value(&key_pad1, &key_status);
 [e = _ret ( _Key_Pad_Get_Value (2 , -> &U _key_pad1 `*CS278 &U _key_status ]
-"419
-[; ;Application.c: 419:                             } while (0 == key_status);
+"424
+[; ;Application.c: 424:                             } while (0 == key_status);
 }
 [e $ == -> 0 `i -> _key_status `i 459  ]
 [e :U 458 ]
-"420
-[; ;Application.c: 420:                             _delay((unsigned long)((300)*(4000000UL/4000.0)));
+"425
+[; ;Application.c: 425:                             _delay((unsigned long)((300)*(4000000UL/4000.0)));
 [e ( __delay (1 -> * -> -> 300 `i `d / -> -> 4000000 `ul `d .4000.0 `ul ]
-"421
-[; ;Application.c: 421:                         switch (key_status) {
+"426
+[; ;Application.c: 426:                         switch (key_status) {
 [e $U 461  ]
 {
-"422
-[; ;Application.c: 422:                                 case '1': ret = SPI_Send_Byte((uint8)4);
+"427
+[; ;Application.c: 427:                                 case '1': ret = SPI_Send_Byte((uint8)4);
 [e :U 462 ]
 [e = _ret ( _SPI_Send_Byte (1 -> -> 4 `i `uc ]
-"423
-[; ;Application.c: 423:                                 spi_slave_reader = 1;
+"428
+[; ;Application.c: 428:                                 spi_slave_reader = 1;
 [e = _spi_slave_reader -> -> 1 `i `uc ]
-"424
-[; ;Application.c: 424:                                     break;
+"429
+[; ;Application.c: 429:                                     break;
 [e $U 460  ]
-"425
-[; ;Application.c: 425:                                 case '2': ret = SPI_Send_Byte((uint8)8);
+"430
+[; ;Application.c: 430:                                 case '2': ret = SPI_Send_Byte((uint8)8);
 [e :U 463 ]
 [e = _ret ( _SPI_Send_Byte (1 -> -> 8 `i `uc ]
-"426
-[; ;Application.c: 426:                                 spi_slave_reader = 0;
+"431
+[; ;Application.c: 431:                                 spi_slave_reader = 0;
 [e = _spi_slave_reader -> -> 0 `i `uc ]
-"427
-[; ;Application.c: 427:                                     break;
+"432
+[; ;Application.c: 432:                                     break;
 [e $U 460  ]
-"428
-[; ;Application.c: 428:                             }
+"433
+[; ;Application.c: 433:                             }
 }
 [e $U 460  ]
 [e :U 461 ]
@@ -2110,82 +2157,82 @@ Version 4.0 HI-TECH Software Intermediate Code
  , $ -> -> 50 `ui `i 463
  460 ]
 [e :U 460 ]
-"429
-[; ;Application.c: 429:                             if ('0' == key_status) {
+"434
+[; ;Application.c: 434:                             if ('0' == key_status) {
 [e $ ! == -> 48 `ui -> _key_status `ui 464  ]
 {
-"430
-[; ;Application.c: 430:                                 ret = lcd_send_command(&lcd1, 0x01);
+"435
+[; ;Application.c: 435:                                 ret = lcd_send_command(&lcd1, 0x01);
 [e = _ret ( _lcd_send_command (2 , -> &U _lcd1 `*CS280 -> -> 1 `i `uc ]
-"431
-[; ;Application.c: 431:                                 break;
+"436
+[; ;Application.c: 436:                                 break;
 [e $U 452  ]
-"432
-[; ;Application.c: 432:                             } else if('1' != key_status && '2' != key_status){
+"437
+[; ;Application.c: 437:                             } else if('1' != key_status && '2' != key_status){
 }
 [e $U 465  ]
 [e :U 464 ]
 [e $ ! && != -> 49 `ui -> _key_status `ui != -> 50 `ui -> _key_status `ui 466  ]
 {
-"433
-[; ;Application.c: 433:                                 ret = lcd_send_command(&lcd1, 0x01);
+"438
+[; ;Application.c: 438:                                 ret = lcd_send_command(&lcd1, 0x01);
 [e = _ret ( _lcd_send_command (2 , -> &U _lcd1 `*CS280 -> -> 1 `i `uc ]
-"434
-[; ;Application.c: 434:                                 ret = lcd_send_ATpos_string_data(&lcd1, 1, 1, "Wrong choice");
+"439
+[; ;Application.c: 439:                                 ret = lcd_send_ATpos_string_data(&lcd1, 1, 1, "Wrong choice");
 [e = _ret ( _lcd_send_ATpos_string_data (4 , , , -> &U _lcd1 `*CS280 -> -> 1 `i `uc -> -> 1 `i `uc :s 73C ]
-"435
-[; ;Application.c: 435:                                 _delay((unsigned long)((500)*(4000000UL/4000.0)));
+"440
+[; ;Application.c: 440:                                 _delay((unsigned long)((500)*(4000000UL/4000.0)));
 [e ( __delay (1 -> * -> -> 500 `i `d / -> -> 4000000 `ul `d .4000.0 `ul ]
-"436
-[; ;Application.c: 436:                             }
+"441
+[; ;Application.c: 441:                             }
 }
 [e :U 466 ]
 [e :U 465 ]
-"437
-[; ;Application.c: 437:                             key_status = '1';
+"442
+[; ;Application.c: 442:                             key_status = '1';
 [e = _key_status -> -> 49 `ui `uc ]
-"438
-[; ;Application.c: 438:                             _delay((unsigned long)((500)*(4000000UL/4000.0)));
+"443
+[; ;Application.c: 443:                             _delay((unsigned long)((500)*(4000000UL/4000.0)));
 [e ( __delay (1 -> * -> -> 500 `i `d / -> -> 4000000 `ul `d .4000.0 `ul ]
-"439
-[; ;Application.c: 439:                         }
+"444
+[; ;Application.c: 444:                         }
 }
 [e :U 450 ]
-"404
-[; ;Application.c: 404:                     while ('1' == key_status) {
+"409
+[; ;Application.c: 409:                     while ('1' == key_status) {
 [e $ == -> 49 `ui -> _key_status `ui 451  ]
 [e :U 452 ]
-"440
-[; ;Application.c: 440:                     while ('2' == key_status){
+"446
+[; ;Application.c: 446:                     while ('2' == key_status){
 [e $U 467  ]
 [e :U 468 ]
 {
-"441
-[; ;Application.c: 441:                         ret = lcd_send_command(&lcd1, 0x01);
+"447
+[; ;Application.c: 447:                         ret = lcd_send_command(&lcd1, 0x01);
 [e = _ret ( _lcd_send_command (2 , -> &U _lcd1 `*CS280 -> -> 1 `i `uc ]
-"442
-[; ;Application.c: 442:                             ret = lcd_send_ATpos_string_data(&lcd1, 1, 1, "TV S:");
+"448
+[; ;Application.c: 448:                             ret = lcd_send_ATpos_string_data(&lcd1, 1, 1, "TV S:");
 [e = _ret ( _lcd_send_ATpos_string_data (4 , , , -> &U _lcd1 `*CS280 -> -> 1 `i `uc -> -> 1 `i `uc :s 74C ]
-"443
-[; ;Application.c: 443:                             switch (spi_slave_reader) {
+"449
+[; ;Application.c: 449:                             switch (spi_slave_reader) {
 [e $U 471  ]
 {
-"444
-[; ;Application.c: 444:                                 case 1: ret = lcd_send_ATpos_string_data(&lcd1, 1, 9, "ON ");
+"450
+[; ;Application.c: 450:                                 case 1: ret = lcd_send_ATpos_string_data(&lcd1, 1, 9, "ON ");
 [e :U 472 ]
 [e = _ret ( _lcd_send_ATpos_string_data (4 , , , -> &U _lcd1 `*CS280 -> -> 1 `i `uc -> -> 9 `i `uc :s 75C ]
-"445
-[; ;Application.c: 445:                                     break;
+"451
+[; ;Application.c: 451:                                     break;
 [e $U 470  ]
-"446
-[; ;Application.c: 446:                                 case 0: ret = lcd_send_ATpos_string_data(&lcd1, 1, 9, "OFF");
+"452
+[; ;Application.c: 452:                                 case 0: ret = lcd_send_ATpos_string_data(&lcd1, 1, 9, "OFF");
 [e :U 473 ]
 [e = _ret ( _lcd_send_ATpos_string_data (4 , , , -> &U _lcd1 `*CS280 -> -> 1 `i `uc -> -> 9 `i `uc :s 76C ]
-"447
-[; ;Application.c: 447:                                     break;
+"453
+[; ;Application.c: 453:                                     break;
 [e $U 470  ]
-"448
-[; ;Application.c: 448:                             }
+"454
+[; ;Application.c: 454:                             }
 }
 [e $U 470  ]
 [e :U 471 ]
@@ -2193,51 +2240,51 @@ Version 4.0 HI-TECH Software Intermediate Code
  , $ -> 0 `i 473
  470 ]
 [e :U 470 ]
-"449
-[; ;Application.c: 449:                             ret = lcd_send_ATpos_string_data(&lcd1, 2, 1, "1:TV on");
+"455
+[; ;Application.c: 455:                             ret = lcd_send_ATpos_string_data(&lcd1, 2, 1, "1:TV on");
 [e = _ret ( _lcd_send_ATpos_string_data (4 , , , -> &U _lcd1 `*CS280 -> -> 2 `i `uc -> -> 1 `i `uc :s 77C ]
-"450
-[; ;Application.c: 450:                             ret = lcd_send_ATpos_string_data(&lcd1, 3, 1, "2:TV off");
+"456
+[; ;Application.c: 456:                             ret = lcd_send_ATpos_string_data(&lcd1, 3, 1, "2:TV off");
 [e = _ret ( _lcd_send_ATpos_string_data (4 , , , -> &U _lcd1 `*CS280 -> -> 3 `i `uc -> -> 1 `i `uc :s 78C ]
-"451
-[; ;Application.c: 451:                             ret = lcd_send_ATpos_string_data(&lcd1, 4, 1, "0:Ret");
+"457
+[; ;Application.c: 457:                             ret = lcd_send_ATpos_string_data(&lcd1, 4, 1, "0:Ret");
 [e = _ret ( _lcd_send_ATpos_string_data (4 , , , -> &U _lcd1 `*CS280 -> -> 4 `i `uc -> -> 1 `i `uc :s 79C ]
-"452
-[; ;Application.c: 452:                             key_status = 0;
+"458
+[; ;Application.c: 458:                             key_status = 0;
 [e = _key_status -> -> 0 `i `uc ]
-"453
-[; ;Application.c: 453:                             do {
+"459
+[; ;Application.c: 459:                             do {
 [e :U 476 ]
 {
-"454
-[; ;Application.c: 454:                                 ret = Key_Pad_Get_Value(&key_pad1, &key_status);
+"460
+[; ;Application.c: 460:                                 ret = Key_Pad_Get_Value(&key_pad1, &key_status);
 [e = _ret ( _Key_Pad_Get_Value (2 , -> &U _key_pad1 `*CS278 &U _key_status ]
-"455
-[; ;Application.c: 455:                             } while (0 == key_status);
+"461
+[; ;Application.c: 461:                             } while (0 == key_status);
 }
 [e $ == -> 0 `i -> _key_status `i 476  ]
 [e :U 475 ]
-"456
-[; ;Application.c: 456:                             _delay((unsigned long)((300)*(4000000UL/4000.0)));
+"462
+[; ;Application.c: 462:                             _delay((unsigned long)((300)*(4000000UL/4000.0)));
 [e ( __delay (1 -> * -> -> 300 `i `d / -> -> 4000000 `ul `d .4000.0 `ul ]
-"457
-[; ;Application.c: 457:                             switch (key_status) {
+"463
+[; ;Application.c: 463:                             switch (key_status) {
 [e $U 478  ]
 {
-"458
-[; ;Application.c: 458:                                 case '1': ret = SPI_Send_Byte((uint8)9); spi_slave_reader = 1; break;
+"464
+[; ;Application.c: 464:                                 case '1': ret = SPI_Send_Byte((uint8)9); spi_slave_reader = 1; break;
 [e :U 479 ]
 [e = _ret ( _SPI_Send_Byte (1 -> -> 9 `i `uc ]
 [e = _spi_slave_reader -> -> 1 `i `uc ]
 [e $U 477  ]
-"459
-[; ;Application.c: 459:                                 case '2': ret = SPI_Send_Byte((uint8)0); spi_slave_reader = 0; break;
+"465
+[; ;Application.c: 465:                                 case '2': ret = SPI_Send_Byte((uint8)0); spi_slave_reader = 0; break;
 [e :U 480 ]
 [e = _ret ( _SPI_Send_Byte (1 -> -> 0 `i `uc ]
 [e = _spi_slave_reader -> -> 0 `i `uc ]
 [e $U 477  ]
-"460
-[; ;Application.c: 460:                             }
+"466
+[; ;Application.c: 466:                             }
 }
 [e $U 477  ]
 [e :U 478 ]
@@ -2245,227 +2292,477 @@ Version 4.0 HI-TECH Software Intermediate Code
  , $ -> -> 50 `ui `i 480
  477 ]
 [e :U 477 ]
-"461
-[; ;Application.c: 461:                             if ('0' == key_status) {
+"467
+[; ;Application.c: 467:                             if ('0' == key_status) {
 [e $ ! == -> 48 `ui -> _key_status `ui 481  ]
 {
-"462
-[; ;Application.c: 462:                                 ret = lcd_send_command(&lcd1, 0x01);
+"468
+[; ;Application.c: 468:                                 ret = lcd_send_command(&lcd1, 0x01);
 [e = _ret ( _lcd_send_command (2 , -> &U _lcd1 `*CS280 -> -> 1 `i `uc ]
-"463
-[; ;Application.c: 463:                                 break;
+"469
+[; ;Application.c: 469:                                 break;
 [e $U 469  ]
-"464
-[; ;Application.c: 464:                             } else if('1' != key_status && '2' != key_status){
+"470
+[; ;Application.c: 470:                             } else if('1' != key_status && '2' != key_status){
 }
 [e $U 482  ]
 [e :U 481 ]
 [e $ ! && != -> 49 `ui -> _key_status `ui != -> 50 `ui -> _key_status `ui 483  ]
 {
-"465
-[; ;Application.c: 465:                                 ret = lcd_send_command(&lcd1, 0x01);
+"471
+[; ;Application.c: 471:                                 ret = lcd_send_command(&lcd1, 0x01);
 [e = _ret ( _lcd_send_command (2 , -> &U _lcd1 `*CS280 -> -> 1 `i `uc ]
-"466
-[; ;Application.c: 466:                                 ret = lcd_send_ATpos_string_data(&lcd1, 1, 1, "Wrong choice");
+"472
+[; ;Application.c: 472:                                 ret = lcd_send_ATpos_string_data(&lcd1, 1, 1, "Wrong choice");
 [e = _ret ( _lcd_send_ATpos_string_data (4 , , , -> &U _lcd1 `*CS280 -> -> 1 `i `uc -> -> 1 `i `uc :s 80C ]
-"467
-[; ;Application.c: 467:                                 _delay((unsigned long)((500)*(4000000UL/4000.0)));
+"473
+[; ;Application.c: 473:                                 _delay((unsigned long)((500)*(4000000UL/4000.0)));
 [e ( __delay (1 -> * -> -> 500 `i `d / -> -> 4000000 `ul `d .4000.0 `ul ]
-"468
-[; ;Application.c: 468:                             }
+"474
+[; ;Application.c: 474:                             }
 }
 [e :U 483 ]
 [e :U 482 ]
-"469
-[; ;Application.c: 469:                             key_status = '2';
+"475
+[; ;Application.c: 475:                             key_status = '2';
 [e = _key_status -> -> 50 `ui `uc ]
-"470
-[; ;Application.c: 470:                             _delay((unsigned long)((500)*(4000000UL/4000.0)));
+"476
+[; ;Application.c: 476:                             _delay((unsigned long)((500)*(4000000UL/4000.0)));
 [e ( __delay (1 -> * -> -> 500 `i `d / -> -> 4000000 `ul `d .4000.0 `ul ]
-"471
-[; ;Application.c: 471:                     }
+"477
+[; ;Application.c: 477:                     }
 }
 [e :U 467 ]
-"440
-[; ;Application.c: 440:                     while ('2' == key_status){
+"446
+[; ;Application.c: 446:                     while ('2' == key_status){
 [e $ == -> 50 `ui -> _key_status `ui 468  ]
 [e :U 469 ]
-"472
-[; ;Application.c: 472:                     while('3' == key_status){
+"479
+[; ;Application.c: 479:                     while('3' == key_status){
 [e $U 484  ]
 [e :U 485 ]
 {
-"474
-[; ;Application.c: 474:                     }
-}
-[e :U 484 ]
-"472
-[; ;Application.c: 472:                     while('3' == key_status){
-[e $ == -> 51 `ui -> _key_status `ui 485  ]
-[e :U 486 ]
-"475
-[; ;Application.c: 475:                     if('0' == key_status){
-[e $ ! == -> 48 `ui -> _key_status `ui 487  ]
-{
-"476
-[; ;Application.c: 476:                         ret = lcd_send_command(&lcd1 , 0x01);
-[e = _ret ( _lcd_send_command (2 , -> &U _lcd1 `*CS280 -> -> 1 `i `uc ]
-"477
-[; ;Application.c: 477:                         break;
-[e $U 446  ]
-"478
-[; ;Application.c: 478:                     }else if('1' != key_status && '2' != key_status && '3' != key_status ){
-}
-[e $U 488  ]
-[e :U 487 ]
-[e $ ! && && != -> 49 `ui -> _key_status `ui != -> 50 `ui -> _key_status `ui != -> 51 `ui -> _key_status `ui 489  ]
-{
-"479
-[; ;Application.c: 479:                         ret = lcd_send_command(&lcd1 , 0x01);
-[e = _ret ( _lcd_send_command (2 , -> &U _lcd1 `*CS280 -> -> 1 `i `uc ]
 "480
-[; ;Application.c: 480:                         ret = lcd_send_ATpos_string_data(&lcd1 , 1 , 1 , "Wrong choice");
-[e = _ret ( _lcd_send_ATpos_string_data (4 , , , -> &U _lcd1 `*CS280 -> -> 1 `i `uc -> -> 1 `i `uc :s 81C ]
+[; ;Application.c: 480:                         ret = lcd_send_command(&lcd1, 0x01);
+[e = _ret ( _lcd_send_command (2 , -> &U _lcd1 `*CS280 -> -> 1 `i `uc ]
 "481
-[; ;Application.c: 481:                         _delay((unsigned long)((500)*(4000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 4000000 `ul `d .4000.0 `ul ]
+[; ;Application.c: 481:                       ret = lcd_send_ATpos_string_data(&lcd1 , 1 , 1 , "air conditioner:-");
+[e = _ret ( _lcd_send_ATpos_string_data (4 , , , -> &U _lcd1 `*CS280 -> -> 1 `i `uc -> -> 1 `i `uc :s 81C ]
 "482
-[; ;Application.c: 482:                     }else{ }
-}
-[e $U 490  ]
+[; ;Application.c: 482:                       ret = lcd_send_ATpos_string_data(&lcd1 , 2 , 1 , "1:Control");
+[e = _ret ( _lcd_send_ATpos_string_data (4 , , , -> &U _lcd1 `*CS280 -> -> 2 `i `uc -> -> 1 `i `uc :s 82C ]
+"483
+[; ;Application.c: 483:                       ret = lcd_send_ATpos_string_data(&lcd1 , 3 , 1 , "2:Set Temperature");
+[e = _ret ( _lcd_send_ATpos_string_data (4 , , , -> &U _lcd1 `*CS280 -> -> 3 `i `uc -> -> 1 `i `uc :s 83C ]
+"484
+[; ;Application.c: 484:                       ret = lcd_send_ATpos_string_data(&lcd1, 4, 1, "0:Ret");
+[e = _ret ( _lcd_send_ATpos_string_data (4 , , , -> &U _lcd1 `*CS280 -> -> 4 `i `uc -> -> 1 `i `uc :s 84C ]
+"485
+[; ;Application.c: 485:                       key_status = 0;
+[e = _key_status -> -> 0 `i `uc ]
+"486
+[; ;Application.c: 486:                       do {
 [e :U 489 ]
 {
+"487
+[; ;Application.c: 487:                             ret = Key_Pad_Get_Value(&key_pad1, &key_status);
+[e = _ret ( _Key_Pad_Get_Value (2 , -> &U _key_pad1 `*CS278 &U _key_status ]
+"488
+[; ;Application.c: 488:                          } while (0 == key_status);
+}
+[e $ == -> 0 `i -> _key_status `i 489  ]
+[e :U 488 ]
+"489
+[; ;Application.c: 489:                       _delay((unsigned long)((300)*(4000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 300 `i `d / -> -> 4000000 `ul `d .4000.0 `ul ]
+"490
+[; ;Application.c: 490:                       ret = lcd_send_command(&lcd1, 0x01);
+[e = _ret ( _lcd_send_command (2 , -> &U _lcd1 `*CS280 -> -> 1 `i `uc ]
+"492
+[; ;Application.c: 492:                       while('1' == key_status){
+[e $U 490  ]
+[e :U 491 ]
+{
+"493
+[; ;Application.c: 493:                           ret = lcd_send_ATpos_string_data(&lcd1 , 1 , 1 , "air conditioner:-");
+[e = _ret ( _lcd_send_ATpos_string_data (4 , , , -> &U _lcd1 `*CS280 -> -> 1 `i `uc -> -> 1 `i `uc :s 85C ]
+"494
+[; ;Application.c: 494:                           ret = lcd_send_ATpos_string_data(&lcd1, 2, 1, "1:air conditioner on");
+[e = _ret ( _lcd_send_ATpos_string_data (4 , , , -> &U _lcd1 `*CS280 -> -> 2 `i `uc -> -> 1 `i `uc :s 86C ]
+"495
+[; ;Application.c: 495:                           ret = lcd_send_ATpos_string_data(&lcd1, 3, 1, "2:air conditioner off");
+[e = _ret ( _lcd_send_ATpos_string_data (4 , , , -> &U _lcd1 `*CS280 -> -> 3 `i `uc -> -> 1 `i `uc :s 87C ]
+"496
+[; ;Application.c: 496:                           ret = lcd_send_ATpos_string_data(&lcd1, 4, 1, "0:Ret");
+[e = _ret ( _lcd_send_ATpos_string_data (4 , , , -> &U _lcd1 `*CS280 -> -> 4 `i `uc -> -> 1 `i `uc :s 88C ]
+"497
+[; ;Application.c: 497:                           key_status = 0;
+[e = _key_status -> -> 0 `i `uc ]
+"498
+[; ;Application.c: 498:                           do {
+[e :U 495 ]
+{
+"499
+[; ;Application.c: 499:                                 ret = Key_Pad_Get_Value(&key_pad1, &key_status);
+[e = _ret ( _Key_Pad_Get_Value (2 , -> &U _key_pad1 `*CS278 &U _key_status ]
+"500
+[; ;Application.c: 500:                              } while (0 == key_status);
+}
+[e $ == -> 0 `i -> _key_status `i 495  ]
+[e :U 494 ]
+"501
+[; ;Application.c: 501:                           _delay((unsigned long)((300)*(4000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 300 `i `d / -> -> 4000000 `ul `d .4000.0 `ul ]
+"502
+[; ;Application.c: 502:                           switch (key_status) {
+[e $U 497  ]
+{
+"503
+[; ;Application.c: 503:                                 case '1': ret = SPI_Send_Byte((uint8)10); spi_slave_reader = 1; break;
+[e :U 498 ]
+[e = _ret ( _SPI_Send_Byte (1 -> -> 10 `i `uc ]
+[e = _spi_slave_reader -> -> 1 `i `uc ]
+[e $U 496  ]
+"504
+[; ;Application.c: 504:                                 case '2': ret = SPI_Send_Byte((uint8)11); spi_slave_reader = 0; break;
+[e :U 499 ]
+[e = _ret ( _SPI_Send_Byte (1 -> -> 11 `i `uc ]
+[e = _spi_slave_reader -> -> 0 `i `uc ]
+[e $U 496  ]
+"505
+[; ;Application.c: 505:                             }
+}
+[e $U 496  ]
+[e :U 497 ]
+[e [\ -> _key_status `i , $ -> -> 49 `ui `i 498
+ , $ -> -> 50 `ui `i 499
+ 496 ]
+[e :U 496 ]
+"507
+[; ;Application.c: 507:                           if ('0' == key_status) {
+[e $ ! == -> 48 `ui -> _key_status `ui 500  ]
+{
+"508
+[; ;Application.c: 508:                                 ret = lcd_send_command(&lcd1, 0x01);
+[e = _ret ( _lcd_send_command (2 , -> &U _lcd1 `*CS280 -> -> 1 `i `uc ]
+"509
+[; ;Application.c: 509:                                 break;
+[e $U 492  ]
+"510
+[; ;Application.c: 510:                             } else if('1' != key_status && '2' != key_status){
+}
+[e $U 501  ]
+[e :U 500 ]
+[e $ ! && != -> 49 `ui -> _key_status `ui != -> 50 `ui -> _key_status `ui 502  ]
+{
+"511
+[; ;Application.c: 511:                                 ret = lcd_send_command(&lcd1, 0x01);
+[e = _ret ( _lcd_send_command (2 , -> &U _lcd1 `*CS280 -> -> 1 `i `uc ]
+"512
+[; ;Application.c: 512:                                 ret = lcd_send_ATpos_string_data(&lcd1, 1, 1, "Wrong choice");
+[e = _ret ( _lcd_send_ATpos_string_data (4 , , , -> &U _lcd1 `*CS280 -> -> 1 `i `uc -> -> 1 `i `uc :s 89C ]
+"513
+[; ;Application.c: 513:                                 _delay((unsigned long)((500)*(4000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 4000000 `ul `d .4000.0 `ul ]
+"514
+[; ;Application.c: 514:                             }
+}
+[e :U 502 ]
+[e :U 501 ]
+"515
+[; ;Application.c: 515:                             key_status = '1';
+[e = _key_status -> -> 49 `ui `uc ]
+"516
+[; ;Application.c: 516:                             _delay((unsigned long)((500)*(4000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 4000000 `ul `d .4000.0 `ul ]
+"517
+[; ;Application.c: 517:                       }
 }
 [e :U 490 ]
-[e :U 488 ]
-"483
-[; ;Application.c: 483:                     key_status = '4';
-[e = _key_status -> -> 52 `ui `uc ]
-"484
-[; ;Application.c: 484:                     _delay((unsigned long)((500)*(4000000UL/4000.0)));
+"492
+[; ;Application.c: 492:                       while('1' == key_status){
+[e $ == -> 49 `ui -> _key_status `ui 491  ]
+[e :U 492 ]
+"519
+[; ;Application.c: 519:                       if('2' == key_status){
+[e $ ! == -> 50 `ui -> _key_status `ui 503  ]
+{
+"520
+[; ;Application.c: 520:                           ret = lcd_send_command(&lcd1, 0x01);
+[e = _ret ( _lcd_send_command (2 , -> &U _lcd1 `*CS280 -> -> 1 `i `uc ]
+"521
+[; ;Application.c: 521:                           ret = lcd_send_ATpos_string_data(&lcd1, 2, 1, "Set Temperature:--");
+[e = _ret ( _lcd_send_ATpos_string_data (4 , , , -> &U _lcd1 `*CS280 -> -> 2 `i `uc -> -> 1 `i `uc :s 90C ]
+"523
+[; ;Application.c: 523:                           key_status = 0;
+[e = _key_status -> -> 0 `i `uc ]
+"524
+[; ;Application.c: 524:                           do {
+[e :U 506 ]
+{
+"525
+[; ;Application.c: 525:                                 ret = Key_Pad_Get_Value(&key_pad1, &key_status);
+[e = _ret ( _Key_Pad_Get_Value (2 , -> &U _key_pad1 `*CS278 &U _key_status ]
+"526
+[; ;Application.c: 526:                              } while (0 == key_status);
+}
+[e $ == -> 0 `i -> _key_status `i 506  ]
+[e :U 505 ]
+"527
+[; ;Application.c: 527:                           _delay((unsigned long)((300)*(4000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 300 `i `d / -> -> 4000000 `ul `d .4000.0 `ul ]
+"528
+[; ;Application.c: 528:                           ret = lcd_send_command(&lcd1, 0X10);
+[e = _ret ( _lcd_send_command (2 , -> &U _lcd1 `*CS280 -> -> 16 `i `uc ]
+"529
+[; ;Application.c: 529:                           ret = lcd_send_command(&lcd1, 0X10);
+[e = _ret ( _lcd_send_command (2 , -> &U _lcd1 `*CS280 -> -> 16 `i `uc ]
+"530
+[; ;Application.c: 530:                           ret = lcd_send_char_data(&lcd1, key_status);
+[e = _ret ( _lcd_send_char_data (2 , -> &U _lcd1 `*CS280 _key_status ]
+"531
+[; ;Application.c: 531:                           Degree_sent = (key_status - (uint8)'0') * 10;
+[e = _Degree_sent -> * - -> _key_status `i -> -> -> 48 `ui `uc `i -> 10 `i `uc ]
+"534
+[; ;Application.c: 534:                           key_status = 0;
+[e = _key_status -> -> 0 `i `uc ]
+"535
+[; ;Application.c: 535:                           do {
+[e :U 509 ]
+{
+"536
+[; ;Application.c: 536:                                 ret = Key_Pad_Get_Value(&key_pad1, &key_status);
+[e = _ret ( _Key_Pad_Get_Value (2 , -> &U _key_pad1 `*CS278 &U _key_status ]
+"537
+[; ;Application.c: 537:                              } while (0 == key_status);
+}
+[e $ == -> 0 `i -> _key_status `i 509  ]
+[e :U 508 ]
+"538
+[; ;Application.c: 538:                           _delay((unsigned long)((300)*(4000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 300 `i `d / -> -> 4000000 `ul `d .4000.0 `ul ]
+"539
+[; ;Application.c: 539:                           ret = lcd_send_char_data(&lcd1, key_status);
+[e = _ret ( _lcd_send_char_data (2 , -> &U _lcd1 `*CS280 _key_status ]
+"540
+[; ;Application.c: 540:                           Degree_sent += (key_status - (uint8)'0');
+[e =+ _Degree_sent -> - -> _key_status `i -> -> -> 48 `ui `uc `i `uc ]
+"541
+[; ;Application.c: 541:                           _delay((unsigned long)((500)*(4000000UL/4000.0)));
 [e ( __delay (1 -> * -> -> 500 `i `d / -> -> 4000000 `ul `d .4000.0 `ul ]
-"485
-[; ;Application.c: 485:                 }
+"542
+[; ;Application.c: 542:                       }
+}
+[e :U 503 ]
+"543
+[; ;Application.c: 543:                       key_status = '3';
+[e = _key_status -> -> 51 `ui `uc ]
+"544
+[; ;Application.c: 544:                       if ('0' == key_status) {
+[e $ ! == -> 48 `ui -> _key_status `ui 510  ]
+{
+"545
+[; ;Application.c: 545:                                 ret = lcd_send_command(&lcd1, 0x01);
+[e = _ret ( _lcd_send_command (2 , -> &U _lcd1 `*CS280 -> -> 1 `i `uc ]
+"546
+[; ;Application.c: 546:                                 break;
+[e $U 486  ]
+"547
+[; ;Application.c: 547:                             } else if('1' != key_status && '2' != key_status && '3' != key_status){
+}
+[e $U 511  ]
+[e :U 510 ]
+[e $ ! && && != -> 49 `ui -> _key_status `ui != -> 50 `ui -> _key_status `ui != -> 51 `ui -> _key_status `ui 512  ]
+{
+"548
+[; ;Application.c: 548:                                 ret = lcd_send_command(&lcd1, 0x01);
+[e = _ret ( _lcd_send_command (2 , -> &U _lcd1 `*CS280 -> -> 1 `i `uc ]
+"549
+[; ;Application.c: 549:                                 ret = lcd_send_ATpos_string_data(&lcd1, 1, 1, "Wrong choice");
+[e = _ret ( _lcd_send_ATpos_string_data (4 , , , -> &U _lcd1 `*CS280 -> -> 1 `i `uc -> -> 1 `i `uc :s 91C ]
+"550
+[; ;Application.c: 550:                                 _delay((unsigned long)((500)*(4000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 4000000 `ul `d .4000.0 `ul ]
+"551
+[; ;Application.c: 551:                             }
+}
+[e :U 512 ]
+[e :U 511 ]
+"552
+[; ;Application.c: 552:                             _delay((unsigned long)((500)*(4000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 4000000 `ul `d .4000.0 `ul ]
+"553
+[; ;Application.c: 553:                     }
+}
+[e :U 484 ]
+"479
+[; ;Application.c: 479:                     while('3' == key_status){
+[e $ == -> 51 `ui -> _key_status `ui 485  ]
+[e :U 486 ]
+"554
+[; ;Application.c: 554:                     if('0' == key_status){
+[e $ ! == -> 48 `ui -> _key_status `ui 513  ]
+{
+"555
+[; ;Application.c: 555:                         ret = lcd_send_command(&lcd1 , 0x01);
+[e = _ret ( _lcd_send_command (2 , -> &U _lcd1 `*CS280 -> -> 1 `i `uc ]
+"556
+[; ;Application.c: 556:                         break;
+[e $U 446  ]
+"557
+[; ;Application.c: 557:                     }else if('1' != key_status && '2' != key_status && '3' != key_status ){
+}
+[e $U 514  ]
+[e :U 513 ]
+[e $ ! && && != -> 49 `ui -> _key_status `ui != -> 50 `ui -> _key_status `ui != -> 51 `ui -> _key_status `ui 515  ]
+{
+"558
+[; ;Application.c: 558:                         ret = lcd_send_command(&lcd1 , 0x01);
+[e = _ret ( _lcd_send_command (2 , -> &U _lcd1 `*CS280 -> -> 1 `i `uc ]
+"559
+[; ;Application.c: 559:                         ret = lcd_send_ATpos_string_data(&lcd1 , 1 , 1 , "Wrong choice");
+[e = _ret ( _lcd_send_ATpos_string_data (4 , , , -> &U _lcd1 `*CS280 -> -> 1 `i `uc -> -> 1 `i `uc :s 92C ]
+"560
+[; ;Application.c: 560:                         _delay((unsigned long)((500)*(4000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 4000000 `ul `d .4000.0 `ul ]
+"561
+[; ;Application.c: 561:                     }else{ }
+}
+[e $U 516  ]
+[e :U 515 ]
+{
+}
+[e :U 516 ]
+[e :U 514 ]
+"562
+[; ;Application.c: 562:                     key_status = '4';
+[e = _key_status -> -> 52 `ui `uc ]
+"563
+[; ;Application.c: 563:                     _delay((unsigned long)((500)*(4000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 4000000 `ul `d .4000.0 `ul ]
+"564
+[; ;Application.c: 564:                 }
 }
 [e :U 444 ]
-"391
-[; ;Application.c: 391:                     while('4' == key_status){
+"396
+[; ;Application.c: 396:                     while('4' == key_status){
 [e $ == -> 52 `ui -> _key_status `ui 445  ]
 [e :U 446 ]
-"486
-[; ;Application.c: 486:             }else{ }
+"565
+[; ;Application.c: 565:             }else{ }
 }
-[e $U 491  ]
+[e $U 517  ]
 [e :U 443 ]
 {
 }
-[e :U 491 ]
+[e :U 517 ]
 [e :U 442 ]
-"487
-[; ;Application.c: 487:         }
+"566
+[; ;Application.c: 566:         }
 }
 [e :U 354 ]
-"214
-[; ;Application.c: 214:         while((uint8)4 == Guest_pass_flag || (uint8)4 == Admin_pass_flag){
+"217
+[; ;Application.c: 217:         while((uint8)4 == Guest_pass_flag || (uint8)4 == Admin_pass_flag){
 [e $ || == -> -> -> 4 `i `uc `i -> _Guest_pass_flag `i == -> -> -> 4 `i `uc `i -> _Admin_pass_flag `i 355  ]
 [e :U 356 ]
-"488
-[; ;Application.c: 488:       }
+"567
+[; ;Application.c: 567:       }
 }
 [e :U 347 ]
 [e $U 348  ]
 [e :U 349 ]
-"489
-[; ;Application.c: 489:     return (0);
+"568
+[; ;Application.c: 568:     return (0);
 [e ) -> 0 `i ]
 [e $UE 302  ]
-"490
-[; ;Application.c: 490:     }
+"569
+[; ;Application.c: 569:     }
 }
 [e :U 317 ]
 [e :U 316 ]
-"491
-[; ;Application.c: 491: }
+"570
+[; ;Application.c: 570: }
 [e :UE 302 ]
 }
-"493
-[; ;Application.c: 493: void intialization (void)
+"572
+[; ;Application.c: 572: void intialization (void)
 [v _intialization `(v ~T0 @X0 1 ef ]
-"494
-[; ;Application.c: 494: {
+"573
+[; ;Application.c: 573: {
 {
 [e :U _intialization ]
 [f ]
-"495
-[; ;Application.c: 495:     ecu_intialize( );
+"574
+[; ;Application.c: 574:     ecu_intialize( );
 [e ( _ecu_intialize ..  ]
-"496
-[; ;Application.c: 496:     ret = SPI_Init(&spi_master);
+"575
+[; ;Application.c: 575:     ret = SPI_Init(&spi_master);
 [e = _ret ( _SPI_Init (1 -> &U _spi_master `*CS299 ]
-"498
-[; ;Application.c: 498: }
-[e :UE 492 ]
+"577
+[; ;Application.c: 577: }
+[e :UE 518 ]
 }
-"499
-[; ;Application.c: 499: void timer0_isr(void){
+"578
+[; ;Application.c: 578: void timer0_isr(void){
 [v _timer0_isr `(v ~T0 @X0 1 ef ]
 {
 [e :U _timer0_isr ]
 [f ]
-"500
-[; ;Application.c: 500:     count_sec_timer_flag++;
+"579
+[; ;Application.c: 579:     count_sec_timer_flag++;
 [e ++ _count_sec_timer_flag -> -> 1 `i `Vuc ]
-"501
-[; ;Application.c: 501:     if(2 == count_sec_timer_flag && (uint8)4 == Guest_pass_flag)
-[e $ ! && == -> 2 `i -> _count_sec_timer_flag `i == -> -> -> 4 `i `uc `i -> _Guest_pass_flag `i 494  ]
-"502
-[; ;Application.c: 502:     {
+"580
+[; ;Application.c: 580:     if(2 == count_sec_timer_flag && (uint8)4 == Guest_pass_flag)
+[e $ ! && == -> 2 `i -> _count_sec_timer_flag `i == -> -> -> 4 `i `uc `i -> _Guest_pass_flag `i 520  ]
+"581
+[; ;Application.c: 581:     {
 {
-"503
-[; ;Application.c: 503:         ret = lcd_send_command(&lcd1 , 0x01);
+"582
+[; ;Application.c: 582:         ret = lcd_send_command(&lcd1 , 0x01);
 [e = _ret ( _lcd_send_command (2 , -> &U _lcd1 `*CS280 -> -> 1 `i `uc ]
-"504
-[; ;Application.c: 504:         ret = lcd_send_ATpos_string_data(&lcd1 , 1 , 1 , "session timeout");
-[e = _ret ( _lcd_send_ATpos_string_data (4 , , , -> &U _lcd1 `*CS280 -> -> 1 `i `uc -> -> 1 `i `uc :s 82C ]
-"505
-[; ;Application.c: 505:         ret = lcd_send_ATpos_string_data(&lcd1 , 2 , 1 , "restart the system ");
-[e = _ret ( _lcd_send_ATpos_string_data (4 , , , -> &U _lcd1 `*CS280 -> -> 2 `i `uc -> -> 1 `i `uc :s 83C ]
-"506
-[; ;Application.c: 506:         ret = lcd_send_ATpos_string_data(&lcd1 , 3 , 1 , "to enter again");
-[e = _ret ( _lcd_send_ATpos_string_data (4 , , , -> &U _lcd1 `*CS280 -> -> 3 `i `uc -> -> 1 `i `uc :s 84C ]
-"507
-[; ;Application.c: 507:         _delay((unsigned long)((1000)*(4000000UL/4000.0)));
+"583
+[; ;Application.c: 583:         ret = lcd_send_ATpos_string_data(&lcd1 , 2 , 1 , "session timeout");
+[e = _ret ( _lcd_send_ATpos_string_data (4 , , , -> &U _lcd1 `*CS280 -> -> 2 `i `uc -> -> 1 `i `uc :s 93C ]
+"584
+[; ;Application.c: 584:         _delay((unsigned long)((1000)*(4000000UL/4000.0)));
 [e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 4000000 `ul `d .4000.0 `ul ]
-"509
-[; ;Application.c: 509:     }
+"585
+[; ;Application.c: 585:         softwareReset();
+[e ( _softwareReset ..  ]
+"586
+[; ;Application.c: 586:     }
 }
-[e :U 494 ]
-"510
-[; ;Application.c: 510: }
-[e :UE 493 ]
+[e :U 520 ]
+"587
+[; ;Application.c: 587: }
+[e :UE 519 ]
 }
-"511
-[; ;Application.c: 511: void softwareReset()
+"588
+[; ;Application.c: 588: void softwareReset()
 [v _softwareReset `(v ~T0 @X0 1 ef ]
-"512
-[; ;Application.c: 512: {
+"589
+[; ;Application.c: 589: {
 {
 [e :U _softwareReset ]
 [f ]
-"514
-[; ;Application.c: 514:     WDTCONbits.SWDTEN = 1;
+"591
+[; ;Application.c: 591:     WDTCONbits.SWDTEN = 1;
 [e = . . _WDTCONbits 0 0 -> -> 1 `i `uc ]
-"516
-[; ;Application.c: 516:     while (1);
-[e :U 497 ]
-[e :U 496 ]
-[e $U 497  ]
-[e :U 498 ]
-"517
-[; ;Application.c: 517: }
-[e :UE 495 ]
+"592
+[; ;Application.c: 592:     if(!RCONbits.TO);
+[e $ ! ! != -> . . _RCONbits 6 3 `i -> 0 `i 522  ]
+[e :U 522 ]
+"594
+[; ;Application.c: 594:     while (1);
+[e :U 524 ]
+[e :U 523 ]
+[e $U 524  ]
+[e :U 525 ]
+"595
+[; ;Application.c: 595: }
+[e :UE 521 ]
 }
-[a 82C 115 101 115 115 105 111 110 32 116 105 109 101 111 117 116 0 ]
+[a 93C 115 101 115 115 105 111 110 32 116 105 109 101 111 117 116 0 ]
 [a 11C 50 58 32 71 117 101 115 116 0 ]
 [a 39C 48 58 82 101 116 0 ]
 [a 46C 48 58 82 101 116 0 ]
@@ -2474,6 +2771,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 [a 66C 48 58 82 101 116 0 ]
 [a 72C 48 58 82 101 116 0 ]
 [a 79C 48 58 82 101 116 0 ]
+[a 84C 48 58 82 101 116 0 ]
+[a 88C 48 58 82 101 116 0 ]
+[a 86C 49 58 97 105 114 32 99 111 110 100 105 116 105 111 110 101 114 32 111 110 0 ]
 [a 37C 49 58 108 101 100 32 111 110 0 ]
 [a 44C 49 58 108 101 100 32 111 110 0 ]
 [a 51C 49 58 108 101 100 32 111 110 0 ]
@@ -2481,14 +2781,16 @@ Version 4.0 HI-TECH Software Intermediate Code
 [a 70C 49 58 108 101 100 32 111 110 0 ]
 [a 77C 49 58 84 86 32 111 110 0 ]
 [a 10C 49 58 32 65 100 109 105 110 0 ]
-[a 84C 116 111 32 101 110 116 101 114 32 97 103 97 105 110 0 ]
 [a 2C 84 111 32 83 109 97 114 116 32 72 111 109 101 32 83 121 115 116 101 109 0 ]
+[a 82C 49 58 67 111 110 116 114 111 108 0 ]
+[a 87C 50 58 97 105 114 32 99 111 110 100 105 116 105 111 110 101 114 32 111 102 102 0 ]
 [a 38C 50 58 108 101 100 32 111 102 102 0 ]
 [a 45C 50 58 108 101 100 32 111 102 102 0 ]
 [a 52C 50 58 108 101 100 32 111 102 102 0 ]
 [a 59C 50 58 108 101 100 32 111 102 102 0 ]
 [a 71C 50 58 108 101 100 32 111 102 102 0 ]
 [a 78C 50 58 84 86 32 111 102 102 0 ]
+[a 83C 50 58 83 101 116 32 84 101 109 112 101 114 97 116 117 114 101 0 ]
 [a 32C 52 58 77 111 114 101 0 ]
 [a 1C 87 101 108 99 111 109 101 0 ]
 [a 33C 87 114 111 110 103 32 99 104 111 105 99 101 0 ]
@@ -2498,7 +2800,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 [a 61C 87 114 111 110 103 32 99 104 111 105 99 101 0 ]
 [a 73C 87 114 111 110 103 32 99 104 111 105 99 101 0 ]
 [a 80C 87 114 111 110 103 32 99 104 111 105 99 101 0 ]
-[a 81C 87 114 111 110 103 32 99 104 111 105 99 101 0 ]
+[a 89C 87 114 111 110 103 32 99 104 111 105 99 101 0 ]
+[a 91C 87 114 111 110 103 32 99 104 111 105 99 101 0 ]
+[a 92C 87 114 111 110 103 32 99 104 111 105 99 101 0 ]
 [a 6C 83 101 116 32 71 117 101 115 116 32 80 97 115 115 119 111 114 100 0 ]
 [a 3C 83 101 116 32 65 100 109 105 110 32 80 97 115 115 119 111 114 100 0 ]
 [a 5C 115 117 99 99 101 115 115 102 117 108 108 121 32 97 100 100 101 100 0 ]
@@ -2537,12 +2841,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 [a 19C 83 117 99 99 101 115 115 32 76 111 103 105 110 46 46 0 ]
 [a 22C 108 111 97 100 105 110 103 32 98 108 111 99 107 101 100 46 46 0 ]
 [a 24C 108 111 97 100 105 110 103 32 98 108 111 99 107 101 100 46 46 0 ]
+[a 81C 97 105 114 32 99 111 110 100 105 116 105 111 110 101 114 58 45 0 ]
+[a 85C 97 105 114 32 99 111 110 100 105 116 105 111 110 101 114 58 45 0 ]
 [a 17C 71 117 101 115 116 32 77 111 100 101 58 45 0 ]
 [a 26C 71 117 101 115 116 32 77 111 100 101 58 45 0 ]
 [a 12C 65 100 109 105 110 32 77 111 100 101 58 45 0 ]
 [a 27C 65 100 109 105 110 32 77 111 100 101 58 45 0 ]
 [a 62C 65 100 109 105 110 32 77 111 100 101 58 45 0 ]
-[a 83C 114 101 115 116 97 114 116 32 116 104 101 32 115 121 115 116 101 109 32 0 ]
+[a 90C 83 101 116 32 84 101 109 112 101 114 97 116 117 114 101 58 45 45 0 ]
 [a 35C 79 78 32 0 ]
 [a 42C 79 78 32 0 ]
 [a 49C 79 78 32 0 ]

@@ -191,6 +191,9 @@ int main(void) {
     
     ret = Timer0_Intialization(&timer0);
     
+    
+/********************************************************************************************************/ 
+    
     while(1)
     {
         /*check if the user finished his tries to enter the pass ,enter the block mode and reset the system again*/
@@ -238,19 +241,18 @@ int main(void) {
             } while (NOT_PRESSED == key_status);
             __delay_ms(300);
             /*validation*/
-            while('1' != key_status &&'2' != key_status &&'3' != key_status &&'4' != key_status ){
+            while('1' != key_status &&'2' != key_status &&'3' != key_status &&'4' != key_status && '@' != key_status){
                 ret = lcd_send_command(&lcd1 , LCD_CLEAR);
                     ret = lcd_send_ATpos_string_data(&lcd1 , 1 , 1 , "Wrong choice");
                     __delay_ms(500);
                     break;
             }
-            
+/*==============================room1 functionality==============================*/
             while('1' == key_status){/*if room1 is choosen*/
                 ret = lcd_send_command(&lcd1 , LCD_CLEAR);
                 
                 
                 ret = lcd_send_ATpos_string_data(&lcd1 , 1 , 1 , "Room1 S:");
-                //ret = lcd_send_ATpos_string_data(&lcd1 , 1 , 9 , "OFF");
                 switch(spi_slave_reader)
                 {
                     case 1: ret = lcd_send_ATpos_string_data(&lcd1 , 1 , 9 , "ON "); break;
@@ -286,6 +288,7 @@ int main(void) {
                 key_status = '1';
                 __delay_ms(500);
             }
+/*==============================room2 functionality==============================*/
             while('2' == key_status){/*if room2 is choosen*/
                 ret = lcd_send_command(&lcd1 , LCD_CLEAR);
                 ret = lcd_send_ATpos_string_data(&lcd1 , 1 , 1 , "Room2 S:");
@@ -317,7 +320,9 @@ int main(void) {
                 }
                 key_status = '2';
                 __delay_ms(500);
-            }while('3' == key_status){/*if room3 is choosen*/
+            }
+/*==============================room3 functionality==============================*/
+            while('3' == key_status){/*if room3 is choosen*/
                 ret = lcd_send_command(&lcd1 , LCD_CLEAR);
                 ret = lcd_send_ATpos_string_data(&lcd1 , 1 , 1 , "Room3 S:");
                 switch(spi_slave_reader)
@@ -400,7 +405,7 @@ int main(void) {
                         ret = Key_Pad_Get_Value(&key_pad1, &key_status);
                     } while (NOT_PRESSED == key_status);    
                     __delay_ms(300);
-                    
+/*==============================ROOM4 functionality==============================*/
                     while ('1' == key_status) {/*if room4 is choosen*/
                             ret = lcd_send_command(&lcd1, LCD_CLEAR);
                             ret = lcd_send_ATpos_string_data(&lcd1, 1, 1, "Room4 S:");
@@ -437,6 +442,7 @@ int main(void) {
                             key_status = '1';
                             __delay_ms(500);
                         }
+/*==============================TV functionality==============================*/
                     while ('2' == key_status){
                         ret = lcd_send_command(&lcd1, LCD_CLEAR);
                             ret = lcd_send_ATpos_string_data(&lcd1, 1, 1, "TV S:");
@@ -469,8 +475,81 @@ int main(void) {
                             key_status = '2';
                             __delay_ms(500);
                     }
-                    while('3' == key_status){
-                      
+/*==============================air condition functionality==============================*/
+                    while('3' == key_status){ 
+                        ret = lcd_send_command(&lcd1, LCD_CLEAR);
+                      ret = lcd_send_ATpos_string_data(&lcd1 , 1 , 1 , "air conditioner:-");
+                      ret = lcd_send_ATpos_string_data(&lcd1 , 2 , 1 , "1:Control");
+                      ret = lcd_send_ATpos_string_data(&lcd1 , 3 , 1 , "2:Set Temperature");
+                      ret = lcd_send_ATpos_string_data(&lcd1, 4, 1, "0:Ret");
+                      key_status = NOT_PRESSED;
+                      do {
+                            ret = Key_Pad_Get_Value(&key_pad1, &key_status);
+                         } while (NOT_PRESSED == key_status);
+                      __delay_ms(300);
+                      ret = lcd_send_command(&lcd1, LCD_CLEAR);
+                      /*control is selected*/
+                      while('1' == key_status){ 
+                          ret = lcd_send_ATpos_string_data(&lcd1 , 1 , 1 , "air conditioner:-");
+                          ret = lcd_send_ATpos_string_data(&lcd1, 2, 1, "1:air conditioner on");
+                          ret = lcd_send_ATpos_string_data(&lcd1, 3, 1, "2:air conditioner off");
+                          ret = lcd_send_ATpos_string_data(&lcd1, 4, 1, "0:Ret");
+                          key_status = NOT_PRESSED;
+                          do {
+                                ret = Key_Pad_Get_Value(&key_pad1, &key_status);
+                             } while (NOT_PRESSED == key_status);
+                          __delay_ms(300);
+                          switch (key_status) {
+                                case '1': ret = SPI_Send_Byte(AirCon_ON);  spi_slave_reader = 1; break;
+                                case '2': ret = SPI_Send_Byte(AirCon_OFF); spi_slave_reader = 0; break;
+                            }
+                          
+                          if ('0' == key_status) {
+                                ret = lcd_send_command(&lcd1, LCD_CLEAR);
+                                break;
+                            } else if('1' != key_status && '2' != key_status){
+                                ret = lcd_send_command(&lcd1, LCD_CLEAR);
+                                ret = lcd_send_ATpos_string_data(&lcd1, 1, 1, "Wrong choice");
+                                __delay_ms(500);
+                            }
+                            key_status = '1';
+                            __delay_ms(500);
+                      }
+                      /*Set Temperature is selected*/
+                      if('2' == key_status){ 
+                          ret = lcd_send_command(&lcd1, LCD_CLEAR);
+                          ret = lcd_send_ATpos_string_data(&lcd1, 2, 1, "Set Temperature:--");
+                          /*set first digit in degree*/
+                          key_status = NOT_PRESSED;
+                          do {
+                                ret = Key_Pad_Get_Value(&key_pad1, &key_status);
+                             } while (NOT_PRESSED == key_status);
+                          __delay_ms(300);
+                          ret = lcd_send_command(&lcd1, LCD_MOVE_CURSOR_LEFT_SHIFT);
+                          ret = lcd_send_command(&lcd1, LCD_MOVE_CURSOR_LEFT_SHIFT);
+                          ret = lcd_send_char_data(&lcd1, key_status);
+                          Degree_sent = (key_status - ASCII_ZERO) * 10;
+                          
+                          /*set second digit in degree*/
+                          key_status = NOT_PRESSED;
+                          do {
+                                ret = Key_Pad_Get_Value(&key_pad1, &key_status);
+                             } while (NOT_PRESSED == key_status);
+                          __delay_ms(300);
+                          ret = lcd_send_char_data(&lcd1, key_status);
+                          Degree_sent += (key_status - ASCII_ZERO);
+                          __delay_ms(500);
+                      }
+                      key_status = '3';
+                      if ('0' == key_status) {
+                                ret = lcd_send_command(&lcd1, LCD_CLEAR);
+                                break;
+                            } else if('1' != key_status && '2' != key_status && '3' != key_status){
+                                ret = lcd_send_command(&lcd1, LCD_CLEAR);
+                                ret = lcd_send_ATpos_string_data(&lcd1, 1, 1, "Wrong choice");
+                                __delay_ms(500);
+                            }
+                            __delay_ms(500);
                     }
                     if('0' == key_status){
                         ret = lcd_send_command(&lcd1 , LCD_CLEAR);
@@ -501,17 +580,16 @@ void timer0_isr(void){
     if(2 == count_sec_timer_flag && Guest_PASS_TRUE == Guest_pass_flag)
     {
         ret = lcd_send_command(&lcd1 , LCD_CLEAR);
-        ret = lcd_send_ATpos_string_data(&lcd1 , 1 , 1 , "session timeout");
-        ret = lcd_send_ATpos_string_data(&lcd1 , 2 , 1 , "restart the system ");
-        ret = lcd_send_ATpos_string_data(&lcd1 , 3 , 1 , "to enter again");
+        ret = lcd_send_ATpos_string_data(&lcd1 , 2 , 1 , "session timeout");
         __delay_ms(1000);
-        void softwareReset();
+        softwareReset();
     }
 }
 void softwareReset()
 {
      // Configure the Watchdog Timer
     WDTCONbits.SWDTEN = 1;   // Enable the WDT
+    if(!RCONbits.TO);
     // Perform a software reset by letting the WDT time out
     while (1);
 }

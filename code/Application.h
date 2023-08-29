@@ -98,6 +98,9 @@
 
 #define TV_ON    (uint8)9
 #define TV_OFF   (uint8)0
+
+#define AirCon_ON    (uint8)10
+#define AirCon_OFF   (uint8)11
 /* ------------------------------------Macro Function Declarations------------------ */
 
 /* ------------------------------------Data Type Declarations----------------------- */
@@ -126,6 +129,9 @@ uint8 eeprom_digit_read = NOT_STORED;
 uint8 Admin_pass_flag = FALSE;
 
 uint8 Guest_pass_flag = FALSE;
+
+
+uint8 Degree_sent = 0;
 
 volatile uint8 spi_slave_reader = 0;
 volatile uint8 count_sec_timer_flag = 0;

@@ -14,8 +14,8 @@
 #pragma config BORV = 1         // Brown Out Reset Voltage bits ()
 
 // CONFIG2H
-#pragma config WDT = OFF         // Watchdog Timer Enable bit (WDT enabled)
-#pragma config WDTPS = 32768    // Watchdog Timer Postscale Select bits (1:32768)
+#pragma config WDT = OFF        // Watchdog Timer Enable bit (WDT disabled (control is placed on the SWDTEN bit))
+#pragma config WDTPS = 4096     // Watchdog Timer Postscale Select bits (1:4096)
 
 // CONFIG3H
 #pragma config CCP2MX = PORTC   // CCP2 MUX bit (CCP2 input/output is multiplexed with RC1)

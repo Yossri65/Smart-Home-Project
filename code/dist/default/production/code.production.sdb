@@ -280,14 +280,19 @@ BAUDRATE_ASYN_16BIT_HIGH_SPEED 3
 BAUDRATE_SYN_16BIT 4
 BAUDRATE_SYN_8BIT 5
 ]
-"13 C:\Users\Yossri\Downloads\projects\Smart Home Project\code\Application.c
+"14 C:\Users\Yossri\Downloads\projects\Smart Home Project\code\Application.c
 [v _main main `(i  1 e 2 0 ]
-"572
+"590
 [v _intialization intialization `(v  1 e 1 0 ]
-"578
+"596
 [v _timer0_isr timer0_isr `(v  1 e 1 0 ]
-"588
+"606
 [v _softwareReset softwareReset `(v  1 e 1 0 ]
+[v i2_softwareReset softwareReset `(v  1 e 1 0 ]
+"7 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+"7 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
 "4 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\fleq.c
 [v ___fleq __fleq `(b  1 e 0 0 ]
 "62 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\float.c
@@ -542,7 +547,7 @@ BAUDRATE_SYN_8BIT 5
 "151
 [s S3077 . 2 `uc 1 spi_serial_clk_mod_select 1 0 `S3072 1 spi_control 1 1 ]
 [v _spi_master spi_master `S3077  1 e 2 0 ]
-"10 C:\Users\Yossri\Downloads\projects\Smart Home Project\code\Application.c
+"11 C:\Users\Yossri\Downloads\projects\Smart Home Project\code\Application.c
 [v _ret ret `ui  1 e 2 0 ]
 "53 C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4620.h
 [v _PORTA PORTA `VEuc  1 e 1 @3968 ]
@@ -1107,38 +1112,6 @@ BAUDRATE_SYN_8BIT 5
 [v _TMR1L TMR1L `VEuc  1 e 1 @4046 ]
 "5342
 [v _TMR1H TMR1H `VEuc  1 e 1 @4047 ]
-[s S4497 . 1 `uc 1 NOT_BOR 1 0 :1:0 
-]
-"5392
-[s S4499 . 1 `uc 1 . 1 0 :1:0 
-`uc 1 NOT_POR 1 0 :1:1 
-]
-[s S4502 . 1 `uc 1 . 1 0 :2:0 
-`uc 1 NOT_PD 1 0 :1:2 
-]
-[s S4505 . 1 `uc 1 . 1 0 :3:0 
-`uc 1 NOT_TO 1 0 :1:3 
-]
-[s S4508 . 1 `uc 1 . 1 0 :4:0 
-`uc 1 NOT_RI 1 0 :1:4 
-]
-[s S4511 . 1 `uc 1 nBOR 1 0 :1:0 
-`uc 1 nPOR 1 0 :1:1 
-`uc 1 nPD 1 0 :1:2 
-`uc 1 nTO 1 0 :1:3 
-`uc 1 nRI 1 0 :1:4 
-`uc 1 . 1 0 :1:5 
-`uc 1 SBOREN 1 0 :1:6 
-`uc 1 IPEN 1 0 :1:7 
-]
-[s S4520 . 1 `uc 1 BOR 1 0 :1:0 
-`uc 1 POR 1 0 :1:1 
-`uc 1 PD 1 0 :1:2 
-`uc 1 TO 1 0 :1:3 
-`uc 1 RI 1 0 :1:4 
-]
-[u S4526 . 1 `S4497 1 . 1 0 `S4499 1 . 1 0 `S4502 1 . 1 0 `S4505 1 . 1 0 `S4508 1 . 1 0 `S4511 1 . 1 0 `S4520 1 . 1 0 ]
-[v _RCONbits RCONbits `VES4526  1 e 1 @4048 ]
 [s S4485 . 1 `uc 1 SWDTEN 1 0 :1:0 
 ]
 "5495
@@ -1323,10 +1296,15 @@ BAUDRATE_SYN_8BIT 5
 [v _EUSART_FRAMINGERRORDefaultHandler_ EUSART_FRAMINGERRORDefaultHandler_ `*.37(v  1 e 2 0 ]
 "15
 [v _EUSART_OVERRUNERRORDefaultHandler_ EUSART_OVERRUNERRORDefaultHandler_ `*.37(v  1 e 2 0 ]
-"13 C:\Users\Yossri\Downloads\projects\Smart Home Project\code\Application.c
+"14 C:\Users\Yossri\Downloads\projects\Smart Home Project\code\Application.c
 [v _main main `(i  1 e 2 0 ]
 {
-"570
+"588
+} 0
+"606
+[v _softwareReset softwareReset `(v  1 e 1 0 ]
+{
+"613
 } 0
 "168 C:\Users\Yossri\Downloads\projects\Smart Home Project\code\ECU_Layer/Ch_LCD/ecu_ch_lcd.c
 [v _lcd_send_ATpos_string_data lcd_send_ATpos_string_data `(ui  1 e 2 0 ]
@@ -1412,10 +1390,10 @@ BAUDRATE_SYN_8BIT 5
 [v lcd_send_char_data@data data `uc  1 p 1 3 ]
 "132
 } 0
-"572 C:\Users\Yossri\Downloads\projects\Smart Home Project\code\Application.c
+"590 C:\Users\Yossri\Downloads\projects\Smart Home Project\code\Application.c
 [v _intialization intialization `(v  1 e 1 0 ]
 {
-"577
+"595
 } 0
 "109 C:\Users\Yossri\Downloads\projects\Smart Home Project\code\ECU_Layer/ecu_intialize.c
 [v _ecu_intialize ecu_intialize `(ui  1 e 2 0 ]
@@ -1618,6 +1596,30 @@ BAUDRATE_SYN_8BIT 5
 [v GPIO_Pin_Direction_Intialize@_Pin_Config_ _Pin_Config_ `*.39CS24  1 p 2 0 ]
 "43
 } 0
+"7 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
+{
+"10
+[v ___awmod@sign sign `uc  1 a 1 5 ]
+[v ___awmod@counter counter `uc  1 a 1 4 ]
+"7
+[v ___awmod@dividend dividend `i  1 p 2 0 ]
+[v ___awmod@divisor divisor `i  1 p 2 2 ]
+"34
+} 0
+"7 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+{
+"10
+[v ___awdiv@quotient quotient `i  1 a 2 6 ]
+"11
+[v ___awdiv@sign sign `uc  1 a 1 5 ]
+[v ___awdiv@counter counter `uc  1 a 1 4 ]
+"7
+[v ___awdiv@dividend dividend `i  1 p 2 0 ]
+[v ___awdiv@divisor divisor `i  1 p 2 2 ]
+"41
+} 0
 "18 C:\Users\Yossri\Downloads\projects\Smart Home Project\code\MCAL_Layer/Timer0/mcal_timer0.c
 [v _Timer0_Intialization Timer0_Intialization `(ui  1 e 2 0 ]
 {
@@ -1807,10 +1809,15 @@ BAUDRATE_SYN_8BIT 5
 {
 "194
 } 0
-"578 C:\Users\Yossri\Downloads\projects\Smart Home Project\code\Application.c
+"596 C:\Users\Yossri\Downloads\projects\Smart Home Project\code\Application.c
 [v _timer0_isr timer0_isr `(v  1 e 1 0 ]
 {
-"587
+"605
+} 0
+"606
+[v i2_softwareReset softwareReset `(v  1 e 1 0 ]
+{
+"613
 } 0
 "168 C:\Users\Yossri\Downloads\projects\Smart Home Project\code\ECU_Layer/Ch_LCD/ecu_ch_lcd.c
 [v i2_lcd_send_ATpos_string_data lcd_send_ATpos_string_data `(ui  1 e 2 0 ]
@@ -1935,11 +1942,6 @@ BAUDRATE_SYN_8BIT 5
 [v i2GPIO_Pin_Write_Logic@_Pin_Config_ _Pin_Config_ `*.39CS24  1 p 2 0 ]
 [v i2GPIO_Pin_Write_Logic@Logic Logic `E2744  1 p 1 2 ]
 "96
-} 0
-"588 C:\Users\Yossri\Downloads\projects\Smart Home Project\code\Application.c
-[v _softwareReset softwareReset `(v  1 e 1 0 ]
-{
-"595
 } 0
 "178 C:\Users\Yossri\Downloads\projects\Smart Home Project\code\MCAL_Layer/SPI/hal_spi.c
 [v _SPI_ISR SPI_ISR `(v  1 e 1 0 ]

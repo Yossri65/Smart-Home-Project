@@ -15,7 +15,7 @@
 
 // CONFIG2H
 #pragma config WDT = OFF        // Watchdog Timer Enable bit (WDT disabled (control is placed on the SWDTEN bit))
-#pragma config WDTPS = 4096     // Watchdog Timer Postscale Select bits (1:4096)
+#pragma config WDTPS = 256      // Watchdog Timer Postscale Select bits (1:256)
 
 // CONFIG3H
 #pragma config CCP2MX = PORTC   // CCP2 MUX bit (CCP2 input/output is multiplexed with RC1)

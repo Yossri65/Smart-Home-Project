@@ -5,6 +5,7 @@
  * Created on July 7, 2023, 8:09 PM
  */ 
 #include <builtins.h>
+#include <pic18.h>
 
 #include "Application.h"
 Std_ReturnType ret = E_NOT_OK;
@@ -232,14 +233,18 @@ int main(void) {
                 ret = lcd_send_ATpos_string_data(&lcd1 , 3 , 11 , "4:More");
                 ret = Led_Turn_On(&led_Admin);
             }else{/*Nothing*/}
-            
-            
-            
+            ret = lcd_send_ATpos_string_data(&lcd1 , 4 , 1 , "Press'ON/C'to reset");
             key_status = NOT_PRESSED;
             do {
                 ret = Key_Pad_Get_Value(&key_pad1, &key_status);
             } while (NOT_PRESSED == key_status);
             __delay_ms(300);
+            
+            /*to reset the systm press @ that equal on/c on keypad*/
+            if('@' == key_status){
+                softwareReset();
+            }
+                
             /*validation*/
             while('1' != key_status &&'2' != key_status &&'3' != key_status &&'4' != key_status && '@' != key_status){
                 ret = lcd_send_command(&lcd1 , LCD_CLEAR);
@@ -500,7 +505,10 @@ int main(void) {
                              } while (NOT_PRESSED == key_status);
                           __delay_ms(300);
                           switch (key_status) {
-                                case '1': ret = SPI_Send_Byte(AirCon_ON);  spi_slave_reader = 1; break;
+                                case '1':
+                                    ret = SPI_Send_Byte(AirCon_ON); 
+                                    spi_slave_reader = 1; 
+                                    break;
                                 case '2': ret = SPI_Send_Byte(AirCon_OFF); spi_slave_reader = 0; break;
                             }
                           
@@ -519,6 +527,7 @@ int main(void) {
                       if('2' == key_status){ 
                           ret = lcd_send_command(&lcd1, LCD_CLEAR);
                           ret = lcd_send_ATpos_string_data(&lcd1, 2, 1, "Set Temperature:--");
+                          ret = lcd_send_ATpos_string_data(&lcd1, 3, 1, "set value less than 35");
                           /*set first digit in degree*/
                           key_status = NOT_PRESSED;
                           do {
@@ -538,7 +547,16 @@ int main(void) {
                           __delay_ms(300);
                           ret = lcd_send_char_data(&lcd1, key_status);
                           Degree_sent += (key_status - ASCII_ZERO);
-                          __delay_ms(500);
+                          
+                          if(Degree_sent >35)
+                          {
+                              Degree_sent = 35;
+                              ret = lcd_send_command(&lcd1, LCD_MOVE_CURSOR_LEFT_SHIFT);
+                              ret = lcd_send_command(&lcd1, LCD_MOVE_CURSOR_LEFT_SHIFT);
+                              ret = lcd_send_char_data(&lcd1,(Degree_sent /10)+ASCII_ZERO);
+                              ret = lcd_send_char_data(&lcd1,(Degree_sent %10)+ASCII_ZERO);
+                          }
+                          __delay_ms(1000);
                       }
                       key_status = '3';
                       if ('0' == key_status) {
@@ -589,7 +607,7 @@ void softwareReset()
 {
      // Configure the Watchdog Timer
     WDTCONbits.SWDTEN = 1;   // Enable the WDT
-    if(!RCONbits.TO);
+    CLRWDT();
     // Perform a software reset by letting the WDT time out
     while (1);
 }

@@ -14,7 +14,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 "17
 [p x WDT  =  OFF         ]
 "18
-[p x WDTPS  =  4096      ]
+[p x WDTPS  =  256       ]
 "21
 [p x CCP2MX  =  PORTC    ]
 "22

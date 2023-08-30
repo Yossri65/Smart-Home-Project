@@ -4613,7 +4613,7 @@ typedef enum
 typedef struct
 {
 
-
+    interruptHandler ADC_IntterruptHandeler ;
 
 
 
@@ -4645,7 +4645,7 @@ Std_ReturnType ADC_Start_Conversion_Interrupt_Mode(const ADC_Conf_t *adc_,ADC_Ch
 
 
 
-
+static interruptHandler ADC_interruptHandler = ((void*)0);
 
 
 static void ADC_Set_Channel_As_Inbut(ADC_Channel_Selection_t channel);
@@ -4670,7 +4670,19 @@ Std_ReturnType ADC_Intialization(const ADC_Conf_t *adc_)
 
         ADCON0bits.CHS = adc_->ADC_Channel;
         ADC_Set_Channel_As_Inbut(adc_->ADC_Channel);
-# 74 "MCAL_Layer/MCAL_ADC/mcal_adc.c"
+
+
+
+        (PIE1bits.ADIE = 1);
+
+        ( PIR1bits.ADIF = 0);
+# 68 "MCAL_Layer/MCAL_ADC/mcal_adc.c"
+        (INTCONbits.GIE = 1);
+        (INTCONbits.PEIE = 1);
+
+        ADC_interruptHandler = adc_->ADC_IntterruptHandeler;
+
+
         ADC_Select_format_status(adc_);
 
         ADC_Select_Voltage_Reference(adc_);
@@ -4694,7 +4706,7 @@ Std_ReturnType ADC_DeIntialization(const ADC_Conf_t *adc_)
 
 
 
-
+        (PIE1bits.ADIE = 0);
 
     }
     return ret;
@@ -4864,5 +4876,15 @@ static void ADC_Select_Voltage_Reference(const ADC_Conf_t *adc_ )
 
 void ADC_ISR(void)
 {
-# 339 "MCAL_Layer/MCAL_ADC/mcal_adc.c"
+
+
+    ( PIR1bits.ADIF = 0);
+
+
+
+    if(((void*)0) == ADC_interruptHandler){}
+    else{
+        ADC_interruptHandler ();
+    }
+
 }

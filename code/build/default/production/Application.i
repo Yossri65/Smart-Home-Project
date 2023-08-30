@@ -138,114 +138,15 @@ extern __attribute__((nonreentrant)) void _delaywdt(uint32_t);
 extern __attribute__((nonreentrant)) void _delay3(uint8_t);
 # 7 "Application.c" 2
 
-# 1 "C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\\pic\\include\\pic18.h" 1 3
 
-
-
-
-# 1 "C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\\pic\\include\\htc.h" 1 3
-
-
-
-# 1 "C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\\pic\\include\\xc.h" 1 3
-# 18 "C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\\pic\\include\\xc.h" 3
-extern const char __xc8_OPTIM_SPEED;
-
-extern double __fpnormalize(double);
-
-
-
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\xc8debug.h" 1 3
-
-
-
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdlib.h" 1 3
-# 10 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdlib.h" 3
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\features.h" 1 3
-# 11 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdlib.h" 2 3
-# 21 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdlib.h" 3
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 1 3
-# 18 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long int wchar_t;
-# 122 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef unsigned size_t;
-# 22 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdlib.h" 2 3
-
-int atoi (const char *);
-long atol (const char *);
-long long atoll (const char *);
-double atof (const char *);
-
-float strtof (const char *restrict, char **restrict);
-double strtod (const char *restrict, char **restrict);
-long double strtold (const char *restrict, char **restrict);
-
-
-
-long strtol (const char *restrict, char **restrict, int);
-unsigned long strtoul (const char *restrict, char **restrict, int);
-long long strtoll (const char *restrict, char **restrict, int);
-unsigned long long strtoull (const char *restrict, char **restrict, int);
-
-int rand (void);
-void srand (unsigned);
-
-void *malloc (size_t);
-void *calloc (size_t, size_t);
-void *realloc (void *, size_t);
-void free (void *);
-
-          void abort (void);
-int atexit (void (*) (void));
-          void exit (int);
-          void _Exit (int);
-
-void *bsearch (const void *, const void *, size_t, size_t, int (*)(const void *, const void *));
-
-
-
-
-
-
-
-__attribute__((nonreentrant)) void qsort (void *, size_t, size_t, int (*)(const void *, const void *));
-
-int abs (int);
-long labs (long);
-long long llabs (long long);
-
-typedef struct { int quot, rem; } div_t;
-typedef struct { long quot, rem; } ldiv_t;
-typedef struct { long long quot, rem; } lldiv_t;
-
-div_t div (int, int);
-ldiv_t ldiv (long, long);
-lldiv_t lldiv (long long, long long);
-
-typedef struct { unsigned int quot, rem; } udiv_t;
-typedef struct { unsigned long quot, rem; } uldiv_t;
-udiv_t udiv (unsigned int, unsigned int);
-uldiv_t uldiv (unsigned long, unsigned long);
-# 5 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\xc8debug.h" 2 3
-
-
-
-
-
-
-
-#pragma intrinsic(__builtin_software_breakpoint)
-extern void __builtin_software_breakpoint(void);
-# 24 "C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\\pic\\include\\xc.h" 2 3
-# 33 "C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\\pic\\include\\xc.h" 3
-# 1 "C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\\pic\\include\\pic18.h" 1 3
-# 34 "C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\\pic\\include\\xc.h" 2 3
-# 5 "C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\\pic\\include\\htc.h" 2 3
-# 6 "C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\\pic\\include\\pic18.h" 2 3
-
-
-# 1 "C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\\pic\\include\\pic18_chip_select.h" 1 3
-# 370 "C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\\pic\\include\\pic18_chip_select.h" 3
+# 1 "./Application.h" 1
+# 13 "./Application.h"
+# 1 "./ECU_Layer/ecu_intialize.h" 1
+# 13 "./ECU_Layer/ecu_intialize.h"
+# 1 "./ECU_Layer/LED/ecu_Led.h" 1
+# 12 "./ECU_Layer/LED/ecu_Led.h"
+# 1 "./ECU_Layer/LED/../../MCAL_Layer/GPIO/hal_GPIO.h" 1
+# 12 "./ECU_Layer/LED/../../MCAL_Layer/GPIO/hal_GPIO.h"
 # 1 "C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\\pic\\include\\proc\\pic18f4620.h" 1 3
 # 45 "C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\\pic\\include\\proc\\pic18f4620.h" 3
 # 1 "C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\\pic\\include\\__at.h" 1 3
@@ -4458,41 +4359,14 @@ extern volatile __bit nWR __attribute__((address(0x7C21)));
 
 
 extern volatile __bit nWRITE __attribute__((address(0x7E3A)));
-# 371 "C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\\pic\\include\\pic18_chip_select.h" 2 3
-# 9 "C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\\pic\\include\\pic18.h" 2 3
-# 19 "C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\\pic\\include\\pic18.h" 3
-__attribute__((__unsupported__("The " "flash_write" " routine is no longer supported. Please use the MPLAB X MCC."))) void flash_write(const unsigned char *, unsigned int, __far unsigned char *);
-__attribute__((__unsupported__("The " "EraseFlash" " routine is no longer supported. Please use the MPLAB X MCC."))) void EraseFlash(unsigned long startaddr, unsigned long endaddr);
+# 12 "./ECU_Layer/LED/../../MCAL_Layer/GPIO/hal_GPIO.h" 2
 
-
-
-
-
-
-
-# 1 "C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\\pic\\include\\errata.h" 1 3
-# 28 "C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\\pic\\include\\pic18.h" 2 3
-# 156 "C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\\pic\\include\\pic18.h" 3
-__attribute__((__unsupported__("The " "Read_b_eep" " routine is no longer supported. Please use the MPLAB X MCC."))) unsigned char Read_b_eep(unsigned int badd);
-__attribute__((__unsupported__("The " "Busy_eep" " routine is no longer supported. Please use the MPLAB X MCC."))) void Busy_eep(void);
-__attribute__((__unsupported__("The " "Write_b_eep" " routine is no longer supported. Please use the MPLAB X MCC."))) void Write_b_eep(unsigned int badd, unsigned char bdat);
-# 192 "C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\\pic\\include\\pic18.h" 3
-unsigned char __t1rd16on(void);
-unsigned char __t3rd16on(void);
-# 8 "Application.c" 2
-
-
-# 1 "./Application.h" 1
-# 13 "./Application.h"
-# 1 "./ECU_Layer/ecu_intialize.h" 1
-# 13 "./ECU_Layer/ecu_intialize.h"
-# 1 "./ECU_Layer/LED/ecu_Led.h" 1
-# 12 "./ECU_Layer/LED/ecu_Led.h"
-# 1 "./ECU_Layer/LED/../../MCAL_Layer/GPIO/hal_GPIO.h" 1
-# 13 "./ECU_Layer/LED/../../MCAL_Layer/GPIO/hal_GPIO.h"
 # 1 "./ECU_Layer/LED/../../MCAL_Layer/GPIO/../std_libraries.h" 1
 # 12 "./ECU_Layer/LED/../../MCAL_Layer/GPIO/../std_libraries.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdio.h" 1 3
+# 10 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdio.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\features.h" 1 3
+# 11 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdio.h" 2 3
 # 24 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdio.h" 3
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 1 3
 
@@ -4506,6 +4380,8 @@ typedef void * va_list[1];
 
 
 typedef void * __isoc_va_list[1];
+# 122 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef unsigned size_t;
 # 137 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 3
 typedef long ssize_t;
 # 246 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 3
@@ -4640,6 +4516,69 @@ char *ctermid(char *);
 char *tempnam(const char *, const char *);
 # 12 "./ECU_Layer/LED/../../MCAL_Layer/GPIO/../std_libraries.h" 2
 
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdlib.h" 1 3
+# 21 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdlib.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 1 3
+# 18 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long int wchar_t;
+# 22 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdlib.h" 2 3
+
+int atoi (const char *);
+long atol (const char *);
+long long atoll (const char *);
+double atof (const char *);
+
+float strtof (const char *restrict, char **restrict);
+double strtod (const char *restrict, char **restrict);
+long double strtold (const char *restrict, char **restrict);
+
+
+
+long strtol (const char *restrict, char **restrict, int);
+unsigned long strtoul (const char *restrict, char **restrict, int);
+long long strtoll (const char *restrict, char **restrict, int);
+unsigned long long strtoull (const char *restrict, char **restrict, int);
+
+int rand (void);
+void srand (unsigned);
+
+void *malloc (size_t);
+void *calloc (size_t, size_t);
+void *realloc (void *, size_t);
+void free (void *);
+
+          void abort (void);
+int atexit (void (*) (void));
+          void exit (int);
+          void _Exit (int);
+
+void *bsearch (const void *, const void *, size_t, size_t, int (*)(const void *, const void *));
+
+
+
+
+
+
+
+__attribute__((nonreentrant)) void qsort (void *, size_t, size_t, int (*)(const void *, const void *));
+
+int abs (int);
+long labs (long);
+long long llabs (long long);
+
+typedef struct { int quot, rem; } div_t;
+typedef struct { long quot, rem; } ldiv_t;
+typedef struct { long long quot, rem; } lldiv_t;
+
+div_t div (int, int);
+ldiv_t ldiv (long, long);
+lldiv_t lldiv (long long, long long);
+
+typedef struct { unsigned int quot, rem; } udiv_t;
+typedef struct { unsigned long quot, rem; } uldiv_t;
+udiv_t udiv (unsigned int, unsigned int);
+uldiv_t uldiv (unsigned long, unsigned long);
+# 13 "./ECU_Layer/LED/../../MCAL_Layer/GPIO/../std_libraries.h" 2
 
 
 
@@ -5077,7 +5016,7 @@ typedef enum
 typedef struct
 {
 
-
+    interruptHandler ADC_IntterruptHandeler ;
 
 
 
@@ -5558,664 +5497,166 @@ Std_ReturnType MSSP_I2C_Master_Read_Blocking(const mssp_i2c_t *i2c_obj, uint8 ac
 Std_ReturnType MSSP_I2C_Master_Write_NBlocking(const mssp_i2c_t *i2c_obj, uint8 i2c_data, uint8 *_ack);
 Std_ReturnType MSSP_I2C_Master_Read_NBlocking(const mssp_i2c_t *i2c_obj, uint8 ack, uint8 *i2c_data);
 # 27 "./Application.h" 2
-# 107 "./Application.h"
-extern Ch_LCD lcd1;
-extern Key_Pad_t key_pad1;
+# 59 "./Application.h"
+volatile uint8 spi_read_master = 0;
+uint16 temperature = 0;
+volatile uint16 conv_result_temp = 0;
 
-extern Led_t led_Block;
-extern Led_t led_Guest;
-extern Led_t led_Admin;
-
-
-uint8 Admin_pass_status = (uint8)0xFF;
-uint8 Guest_pass_status = (uint8)0xFF;
-
-uint8 Admin_Start_address = (uint16)0X102;
-uint8 Guest_Start_address = (uint16)0X106;
-
-uint8 key_status = 0;
-uint8 cursor = 12;
-
-uint8 pass_counter = 1;
-uint8 admin_pass_tries = (uint8)3;
-uint8 Guest_pass_tries = (uint8)3;
-
-uint8 eeprom_digit_read = 0xFF;
-uint8 Admin_pass_flag = (uint8)0;
-
-uint8 Guest_pass_flag = (uint8)0;
-
-
-uint8 Degree_sent = 0;
-
-volatile uint8 spi_slave_reader = 0;
-volatile uint8 count_sec_timer_flag = 0;
-
-void timer0_isr(void);
-Timer0_conf_t timer0 =
-{
-    .TIMER0_IntterruptHandeler = timer0_isr ,
-    .Timer0_SELECT_BIT_Mode = 1,
-    .Timer0_Mode = 0,
-    .Timer0_Source_Edge = 0,
-    .TIMER0_PRESCALER_STATUS = 0,
-    .TIMER0_PRE_LOAD_VALUE = 26474,
-    .Prescaler_Select = (uint8)6
-};
-
-SPI_Config spi_master =
+SPI_Config spi_slave =
 {
   .spi_control.ClockPolarity = 1 ,
   .spi_control.ClockSelect = 1 ,
   .spi_control.SampleSelect =0,
-  .spi_serial_clk_mod_select = 0 ,
-
+  .spi_serial_clk_mod_select = 5,
 };
 
+Led_t led_Room1 =
+{
+  .Port_Name = PortD_Index,
+  .Pin_Name = pin0 ,
+  .Led_Status = LED_OFF
+};
+Led_t led_Room2 =
+{
+  .Port_Name = PortD_Index,
+  .Pin_Name = pin1 ,
+  .Led_Status = LED_OFF
+};
+Led_t led_Room3 =
+{
+  .Port_Name = PortD_Index,
+  .Pin_Name = pin2 ,
+  .Led_Status = LED_OFF
+};
+Led_t led_Room4 =
+{
+  .Port_Name = PortD_Index,
+  .Pin_Name = pin3 ,
+  .Led_Status = LED_OFF
+};
+Led_t led_TV =
+{
+  .Port_Name = PortB_Index,
+  .Pin_Name = pin6 ,
+  .Led_Status = LED_OFF
+};
+Led_t led_Air_con =
+{
+  .Port_Name = PortB_Index,
+  .Pin_Name = pin7 ,
+  .Led_Status = LED_OFF
+};
 
-void softwareReset();
-# 10 "Application.c" 2
+void ADC1_ISR(void);
+ADC_Conf_t adc_1 =
+{
+  .ADC_IntterruptHandeler = ADC1_ISR ,
+  .ADC_Acquisition_Time = ADC_12_TAD ,
+  .ADC_Conversion_Clock = ADC_CONVERSION_CLOCK_FOSC_DIV_16 ,
+  .ADC_Channel = ADC_CHANNEL_AN0,
+  .format_status = 1 ,
+  .voltage_ref = 0x00U
+};
+# 9 "Application.c" 2
 
 Std_ReturnType ret = (Std_ReturnType)0x00;
 void intialization (void);
 
+
 int main(void) {
     intialization();
-    ret = lcd_send_command(&lcd1 , 0x01);
-    ret = lcd_send_ATpos_string_data(&lcd1 , 1 , 7 , "Welcome");
-    ret = lcd_send_ATpos_string_data(&lcd1 , 2 , 1 , "To Smart Home System");
-    _delay((unsigned long)((1000)*(4000000UL/4000.0)));
-    ret = lcd_send_command(&lcd1 , 0x01);
-
-    ret = EEPROM_Data_ReadByte(0X100 , &Admin_pass_status);
-    ret = EEPROM_Data_ReadByte(0X101 , &Guest_pass_status);
-    if((uint8)0xFF == Admin_pass_status || (uint8)0xFF == Guest_pass_status)
-    {
-        ret = lcd_send_ATpos_string_data(&lcd1 , 1 , 1 , "Set Admin Password");
-        ret = lcd_send_ATpos_string_data(&lcd1 , 2 , 1 , "Admin Pass:");
+    while(1){
 
 
-        while(pass_counter <= (uint8)4)
-        {
-            do{
-                ret = Key_Pad_Get_Value(&key_pad1 ,&key_status);
-            }while(0 == key_status);
-            ret = EEPROM_Data_WriteByte(Admin_Start_address ,key_status);
-            ret = lcd_send_ATpos_char_data(&lcd1 , 2 , cursor, key_status);
-            _delay((unsigned long)((500)*(4000000UL/4000.0)));
-            ret = lcd_send_command(&lcd1 , 0X10);
-            ret = lcd_send_ATpos_char_data(&lcd1 , 2 , cursor, '*');
-            ret = lcd_send_command(&lcd1 , 0X0E);
-            key_status = 0;
-            cursor++;
-            Admin_Start_address++;
-            pass_counter++;
-        }
-        ret = lcd_send_command(&lcd1 , 0X0C);
-        ret = lcd_send_ATpos_string_data(&lcd1 , 3 , 1 , "successfully added");
-        _delay((unsigned long)((500)*(4000000UL/4000.0)));
-        ret = lcd_send_command(&lcd1 , 0x01);
-        ret = lcd_send_ATpos_string_data(&lcd1 , 1 , 1 , "Set Guest Password");
-        ret = lcd_send_ATpos_string_data(&lcd1 , 2 , 1 , "Guest Pass:");
+       ret = SPI_Read_Byte(&spi_read_master);
+       switch(spi_read_master)
+       {
+           case (uint8)1:
+               ret = Led_Turn_On(&led_Room1);
+               ret = SPI_Send_Byte(1);
+           break;
+           case (uint8)2:
+               ret = Led_Turn_On(&led_Room2);
+               ret = SPI_Send_Byte(1);
+               break;
+           case (uint8)3:
+               ret = Led_Turn_On(&led_Room3);
+               ret = SPI_Send_Byte(1);
+               break;
+           case (uint8)4:
+               ret = Led_Turn_On(&led_Room4);
+               ret = SPI_Send_Byte(1);
+               break;
 
+           case (uint8)5:
+               ret = Led_Turn_Off(&led_Room1);
+               ret = SPI_Send_Byte(0);
+               break;
+           case (uint8)6:
+               ret = Led_Turn_Off(&led_Room2);
+               ret = SPI_Send_Byte(0);
+               break;
+           case (uint8)7:
+               ret = Led_Turn_Off(&led_Room3);
+               ret = SPI_Send_Byte(0);
+               break;
+           case (uint8)8:
+               ret = Led_Turn_Off(&led_Room4);
+               ret = SPI_Send_Byte(0);
+               break;
 
+           case (uint8)9:
+               ret = Led_Turn_On(&led_TV); break;
+               ret = SPI_Send_Byte(1);
+           case (uint8)0:
+               ret = Led_Turn_Off(&led_TV); break;
+               ret = SPI_Send_Byte(0);
 
-        pass_counter = 1;
-        cursor =12;
-        while(pass_counter <= (uint8)4)
-        {
-            do{
-                ret = Key_Pad_Get_Value(&key_pad1 ,&key_status);
-            }while(0 == key_status);
-            ret = EEPROM_Data_WriteByte(Guest_Start_address ,key_status);
-            ret = lcd_send_ATpos_char_data(&lcd1 , 2 , cursor, key_status);
-            _delay((unsigned long)((500)*(4000000UL/4000.0)));
-            ret = lcd_send_command(&lcd1 , 0X10);
-            ret = lcd_send_ATpos_char_data(&lcd1 , 2 , cursor, (uint8)'*');
-            ret = lcd_send_command(&lcd1 , 0X0E);
-            key_status = 0;
-            cursor++;
-            Guest_Start_address++;
-            pass_counter++;
-        }
-        _delay((unsigned long)((200)*(4000000UL/4000.0)));
-        ret = lcd_send_command(&lcd1 , 0X0C);
-        ret = lcd_send_ATpos_string_data(&lcd1 , 3 , 1 , "successfully added");
-        _delay((unsigned long)((500)*(4000000UL/4000.0)));
-        ret = lcd_send_command(&lcd1 , 0x01);
-        Admin_pass_status = (uint8)0x01;
-        Guest_pass_status = (uint8)0x01;
-        ret = EEPROM_Data_WriteByte((uint16)0X100 ,Admin_pass_status);
-        ret = EEPROM_Data_WriteByte((uint16)0X101 ,Guest_pass_status);
+            case (uint8)10:
+                ret = SPI_Read_Byte(&spi_read_master);
+                while(1)
+                {
+                    ret = ADC_Start_Conversion_Interrupt_Mode(&adc_1 ,ADC_CHANNEL_AN0);
+                    temperature = 4.88f * conv_result_temp;
+                    temperature /= 10;
+                    if(temperature > spi_read_master){
+                        ret = Led_Turn_On(&led_Air_con);
+
+                    }else{
+                        ret = Led_Turn_Off(&led_Air_con);
+
+                    }
+
+                    if(temperature == 30)
+                    {
+                        break;
+                    }
+                }
+
+                break;
+           case (uint8)11:
+               ret = Led_Turn_Off(&led_Air_con);
+               ret = SPI_Send_Byte(0);
+               break;
+
+           default: ;
+       }
     }
-
-    else if((uint8)0x01 == Admin_pass_status || (uint8)0x01 == Guest_pass_status)
-    {
-        ret = lcd_send_ATpos_string_data(&lcd1 , 1 , 1 , "Select Mode :");
-        ret = lcd_send_ATpos_string_data(&lcd1 , 2 , 1 , "1: Admin");
-        ret = lcd_send_ATpos_string_data(&lcd1 , 3 , 1 , "2: Guest");
-
-        do {
-            ret = Key_Pad_Get_Value(&key_pad1, &key_status);
-        } while (0 == key_status);
-
-        while('1' == key_status && admin_pass_tries > 0){
-            ret = lcd_send_command(&lcd1 , 0x01);
-            ret = lcd_send_ATpos_string_data(&lcd1 , 1 , 1 , "Admin Mode:-");
-            ret = lcd_send_ATpos_string_data(&lcd1 , 2 , 1 , "Write pass:");
-            key_status = 0;
-            _delay((unsigned long)((300)*(4000000UL/4000.0)));
-            while(pass_counter <= 4)
-            {
-                do{
-                    ret = Key_Pad_Get_Value(&key_pad1 ,&key_status);
-                }while(0 == key_status);
-                ret = EEPROM_Data_ReadByte(Admin_Start_address ,&eeprom_digit_read);
-                if(eeprom_digit_read == key_status){
-                    Admin_pass_flag++;
-                }else { }
-                ret = lcd_send_ATpos_char_data(&lcd1 , 2 , cursor, key_status);
-                _delay((unsigned long)((500)*(4000000UL/4000.0)));
-                ret = lcd_send_command(&lcd1 , 0X10);
-                ret = lcd_send_ATpos_char_data(&lcd1 , 2 , cursor, (uint8)'*');
-                ret = lcd_send_command(&lcd1 , 0X0E);
-                key_status = 0;
-                cursor++;
-                Admin_Start_address++;
-                pass_counter++;
-            }
-            if((uint8)4 == Admin_pass_flag){
-                ret = lcd_send_command(&lcd1 , 0x01);
-                ret = lcd_send_command(&lcd1 , 0X0C);
-                ret = lcd_send_ATpos_string_data(&lcd1 , 2 , 1 , "Success Login..");
-                key_status = 0;
-                _delay((unsigned long)((300)*(4000000UL/4000.0)));
-            }else{
-                key_status = '1';
-                ret = lcd_send_command(&lcd1 , 0x01);
-                ret = lcd_send_command(&lcd1 , 0X0C);
-                ret = lcd_send_ATpos_string_data(&lcd1 , 1 , 1 , "Wrong input.");
-                ret = lcd_send_ATpos_string_data(&lcd1 , 2 , 1 , "Tries left:");
-                ret = lcd_send_ATpos_char_data(&lcd1 , 2 , 12 , (admin_pass_tries -1) +(uint8)'0');
-                _delay((unsigned long)((500)*(4000000UL/4000.0)));
-
-                Admin_pass_flag = 1;
-                pass_counter = 1;
-                Admin_Start_address = (uint16)0X102;
-                cursor =12;
-                admin_pass_tries--;
-            }
-        }
-
-        while('2' == key_status && Guest_pass_tries > 0){
-            ret = lcd_send_command(&lcd1 , 0x01);
-            ret = lcd_send_ATpos_string_data(&lcd1 , 1 , 1 , "Guest Mode:-");
-            ret = lcd_send_ATpos_string_data(&lcd1 , 2 , 1 , "Write pass:");
-            key_status = 0;
-            _delay((unsigned long)((300)*(4000000UL/4000.0)));
-            while(pass_counter <= 4)
-            {
-                do{
-                    ret = Key_Pad_Get_Value(&key_pad1 ,&key_status);
-                }while(0 == key_status);
-                ret = EEPROM_Data_ReadByte(Guest_Start_address ,&eeprom_digit_read);
-                if(eeprom_digit_read == key_status){
-                    Guest_pass_flag++;
-                }else { }
-                ret = lcd_send_ATpos_char_data(&lcd1 , 2 , cursor, key_status);
-                _delay((unsigned long)((500)*(4000000UL/4000.0)));
-                ret = lcd_send_command(&lcd1 , 0X10);
-                ret = lcd_send_ATpos_char_data(&lcd1 , 2 , cursor, (uint8)'*');
-                ret = lcd_send_command(&lcd1 , 0X0E);
-                key_status = 0;
-                cursor++;
-                Guest_Start_address++;
-                pass_counter++;
-            }
-            if((uint8)4 == Guest_pass_flag){
-                ret = lcd_send_command(&lcd1 , 0x01);
-                ret = lcd_send_command(&lcd1 , 0X0C);
-                ret = lcd_send_ATpos_string_data(&lcd1 , 2 , 1 , "Success Login..");
-                key_status = 0;
-                _delay((unsigned long)((1000)*(4000000UL/4000.0)));
-                ret = lcd_send_command(&lcd1 , 0x01);
-            }else{
-                key_status = '2';
-                ret = lcd_send_command(&lcd1 , 0x01);
-                ret = lcd_send_command(&lcd1 , 0X0C);
-                ret = lcd_send_ATpos_string_data(&lcd1 , 1 , 1 , "Wrong input.");
-                ret = lcd_send_ATpos_string_data(&lcd1 , 2 , 1 , "Tries left:");
-                ret = lcd_send_ATpos_char_data(&lcd1 , 2 , 12 , (Guest_pass_tries -1) +(uint8)'0');
-                _delay((unsigned long)((500)*(4000000UL/4000.0)));
-
-                Guest_pass_flag = 0;
-                Guest_Start_address = (uint16)0X106;
-                pass_counter = 1;
-                cursor =12;
-                Guest_pass_tries--;
-            }
-
-
-    }
-
-    ret = Timer0_Intialization(&timer0);
-
-
-
-
-    while(1)
-    {
-
-        if (0 == admin_pass_tries) {
-            ret = lcd_send_ATpos_string_data(&lcd1 , 1 , 1 , "loading blocked..");
-            ret = lcd_send_ATpos_string_data(&lcd1 , 2 , 1 , "wait  10 sec");
-            ret = Led_Turn_On(&led_Block);
-            _delay((unsigned long)(((uint32)10000)*(4000000UL/4000.0)));
-            break;
-        }else{ }
-
-        if (0 == Guest_pass_tries) {
-            count_sec_timer_flag = 0;
-            ret = lcd_send_ATpos_string_data(&lcd1 , 1 , 1 , "loading blocked..");
-            ret = lcd_send_ATpos_string_data(&lcd1 , 2 , 1 , "wait  10 sec");
-            ret = Led_Turn_On(&led_Block);
-            _delay((unsigned long)(((uint32)10000)*(4000000UL/4000.0)));
-            break;
-        }else{ }
-
-        while((uint8)4 == Guest_pass_flag || (uint8)4 == Admin_pass_flag){
-            if((uint8)4 == Guest_pass_flag){
-                ret = lcd_send_ATpos_string_data(&lcd1 , 1 , 1 , "Guest Mode:-");
-            }else if((uint8)4 == Admin_pass_flag){
-                ret = lcd_send_command(&lcd1 , 0x01);
-                ret = lcd_send_ATpos_string_data(&lcd1 , 1 , 1 , "Admin Mode:-");
-            }else{ }
-
-            ret = lcd_send_ATpos_string_data(&lcd1 , 2 , 1 , "1:Room1");
-            ret = lcd_send_ATpos_string_data(&lcd1 , 2 , 11 , "2:Room2");
-            ret = lcd_send_ATpos_string_data(&lcd1 , 3 , 1 , "3:Room3");
-            if((uint8)4 == Guest_pass_flag){
-                ret = lcd_send_ATpos_string_data(&lcd1 , 3 , 11 , "4:Room4");
-                ret = Led_Turn_On(&led_Guest);
-            }else if((uint8)4 == Admin_pass_flag){
-                ret = lcd_send_ATpos_string_data(&lcd1 , 3 , 11 , "4:More");
-                ret = Led_Turn_On(&led_Admin);
-            }else{ }
-            ret = lcd_send_ATpos_string_data(&lcd1 , 4 , 1 , "Press'ON/C'to reset");
-            key_status = 0;
-            do {
-                ret = Key_Pad_Get_Value(&key_pad1, &key_status);
-            } while (0 == key_status);
-            _delay((unsigned long)((300)*(4000000UL/4000.0)));
-
-
-            if('@' == key_status){
-                softwareReset();
-            }
-
-
-            while('1' != key_status &&'2' != key_status &&'3' != key_status &&'4' != key_status && '@' != key_status){
-                ret = lcd_send_command(&lcd1 , 0x01);
-                    ret = lcd_send_ATpos_string_data(&lcd1 , 1 , 1 , "Wrong choice");
-                    _delay((unsigned long)((500)*(4000000UL/4000.0)));
-                    break;
-            }
-
-            while('1' == key_status){
-                ret = lcd_send_command(&lcd1 , 0x01);
-
-
-                ret = lcd_send_ATpos_string_data(&lcd1 , 1 , 1 , "Room1 S:");
-                switch(spi_slave_reader)
-                {
-                    case 1: ret = lcd_send_ATpos_string_data(&lcd1 , 1 , 9 , "ON "); break;
-                    case 0: ret = lcd_send_ATpos_string_data(&lcd1 , 1 , 9 , "OFF"); break;
-                }
-                ret = lcd_send_ATpos_string_data(&lcd1 , 2 , 1 , "1:led on");
-                ret = lcd_send_ATpos_string_data(&lcd1 , 3 , 1 , "2:led off");
-                ret = lcd_send_ATpos_string_data(&lcd1 , 4 , 1 , "0:Ret");
-                key_status = 0;
-                do {
-                    ret = Key_Pad_Get_Value(&key_pad1, &key_status);
-                } while (0 == key_status);
-                _delay((unsigned long)((300)*(4000000UL/4000.0)));
-                switch(key_status)
-                {
-                    case '1':
-                        ret = SPI_Send_Byte((uint8)1);
-                        spi_slave_reader = 1;
-                        break;
-                    case '2':
-                        ret = SPI_Send_Byte((uint8)5);
-                        spi_slave_reader = 0;
-                        break;
-                }
-                if('0' == key_status){
-                    ret = lcd_send_command(&lcd1 , 0x01);
-                    break;
-                }else if('1' != key_status && '2' != key_status){
-                    ret = lcd_send_command(&lcd1 , 0x01);
-                    ret = lcd_send_ATpos_string_data(&lcd1 , 1 , 1 , "Wrong choice");
-                    _delay((unsigned long)((500)*(4000000UL/4000.0)));
-                }else{}
-                key_status = '1';
-                _delay((unsigned long)((500)*(4000000UL/4000.0)));
-            }
-
-            while('2' == key_status){
-                ret = lcd_send_command(&lcd1 , 0x01);
-                ret = lcd_send_ATpos_string_data(&lcd1 , 1 , 1 , "Room2 S:");
-                switch(spi_slave_reader)
-                {
-                    case 1: ret = lcd_send_ATpos_string_data(&lcd1 , 1 , 9 , "ON "); break;
-                    case 0: ret = lcd_send_ATpos_string_data(&lcd1 , 1 , 9 , "OFF"); break;
-                }
-                ret = lcd_send_ATpos_string_data(&lcd1 , 2 , 1 , "1:led on");
-                ret = lcd_send_ATpos_string_data(&lcd1 , 3 , 1 , "2:led off");
-                ret = lcd_send_ATpos_string_data(&lcd1 , 4 , 1 , "0:Ret");
-                key_status = 0;
-                do {
-                    ret = Key_Pad_Get_Value(&key_pad1, &key_status);
-                } while (0 == key_status);
-                _delay((unsigned long)((300)*(4000000UL/4000.0)));
-                switch(key_status)
-                {
-                    case '1': ret = SPI_Send_Byte((uint8)2) ; spi_slave_reader = 1; break;
-                    case '2': ret = SPI_Send_Byte((uint8)6); spi_slave_reader = 0; break;
-                }
-                if('0' == key_status){
-                    ret = lcd_send_command(&lcd1 , 0x01);
-                    break;
-                }else if('1' != key_status && '2' != key_status){
-                    ret = lcd_send_command(&lcd1 , 0x01);
-                    ret = lcd_send_ATpos_string_data(&lcd1 , 1 , 1 , "Wrong choice");
-                    _delay((unsigned long)((1000)*(4000000UL/4000.0)));
-                }
-                key_status = '2';
-                _delay((unsigned long)((500)*(4000000UL/4000.0)));
-            }
-
-            while('3' == key_status){
-                ret = lcd_send_command(&lcd1 , 0x01);
-                ret = lcd_send_ATpos_string_data(&lcd1 , 1 , 1 , "Room3 S:");
-                switch(spi_slave_reader)
-                {
-                    case 1: ret = lcd_send_ATpos_string_data(&lcd1 , 1 , 9 , "ON "); break;
-                    case 0: ret = lcd_send_ATpos_string_data(&lcd1 , 1 , 9 , "OFF"); break;
-                }
-                ret = lcd_send_ATpos_string_data(&lcd1 , 2 , 1 , "1:led on");
-                ret = lcd_send_ATpos_string_data(&lcd1 , 3 , 1 , "2:led off");
-                ret = lcd_send_ATpos_string_data(&lcd1 , 4 , 1 , "0:Ret");
-                key_status = 0;
-                do {
-                    ret = Key_Pad_Get_Value(&key_pad1, &key_status);
-                } while (0 == key_status);
-                _delay((unsigned long)((300)*(4000000UL/4000.0)));
-                switch(key_status)
-                {
-                    case '1': ret = SPI_Send_Byte((uint8)3); spi_slave_reader = 1; break;
-                    case '2': ret = SPI_Send_Byte((uint8)7); spi_slave_reader = 0; break;
-                }
-                if('0' == key_status){
-                    ret = lcd_send_command(&lcd1 , 0x01);
-                    break;
-                }else if('1' != key_status && '2' != key_status){
-                    ret = lcd_send_command(&lcd1 , 0x01);
-                    ret = lcd_send_ATpos_string_data(&lcd1 , 1 , 1 , "Wrong choice");
-                    _delay((unsigned long)((500)*(4000000UL/4000.0)));
-                }else{
-
-                }
-                key_status = '3';
-                _delay((unsigned long)((500)*(4000000UL/4000.0)));
-            }
-            if((uint8)4 == Guest_pass_flag){
-                    while('4' == key_status){
-                    ret = lcd_send_command(&lcd1 , 0x01);
-                    ret = lcd_send_ATpos_string_data(&lcd1 , 1 , 1 , "Room4 S:");
-                    switch(spi_slave_reader)
-                {
-                    case 1: ret = lcd_send_ATpos_string_data(&lcd1 , 1 , 9 , "ON "); break;
-                    case 0: ret = lcd_send_ATpos_string_data(&lcd1 , 1 , 9 , "OFF"); break;
-                }
-                    ret = lcd_send_ATpos_string_data(&lcd1 , 2 , 1 , "1:led on");
-                    ret = lcd_send_ATpos_string_data(&lcd1 , 3 , 1 , "2:led off");
-                    ret = lcd_send_ATpos_string_data(&lcd1 , 4 , 1 , "0:Ret");
-                    key_status = 0;
-                    do {
-                        ret = Key_Pad_Get_Value(&key_pad1, &key_status);
-                    } while (0 == key_status);
-                    _delay((unsigned long)((300)*(4000000UL/4000.0)));
-                    switch (key_status) {
-                            case '1': ret = SPI_Send_Byte((uint8)4);
-                            spi_slave_reader = 1;
-                                break;
-                            case '2': ret = SPI_Send_Byte((uint8)8);
-                            spi_slave_reader = 0;
-                                break;
-                        }
-                    if('0' == key_status){
-                        ret = lcd_send_command(&lcd1 , 0x01);
-                        break;
-                    }else if('1' != key_status && '2' != key_status){
-                        ret = lcd_send_command(&lcd1 , 0x01);
-                        ret = lcd_send_ATpos_string_data(&lcd1 , 1 , 1 , "Wrong choice");
-                        _delay((unsigned long)((500)*(4000000UL/4000.0)));
-                    }
-                    key_status = '4';
-                    _delay((unsigned long)((500)*(4000000UL/4000.0)));
-                }
-            }else if((uint8)4 == Admin_pass_flag){
-                    while('4' == key_status){
-                    ret = lcd_send_command(&lcd1 , 0x01);
-                    ret = lcd_send_ATpos_string_data(&lcd1 , 1 , 1 , "Admin Mode:-");
-                    ret = lcd_send_ATpos_string_data(&lcd1 , 2 , 1 , "1:Room4");
-                    ret = lcd_send_ATpos_string_data(&lcd1 , 2 , 11 , "2:TV");
-                    ret = lcd_send_ATpos_string_data(&lcd1 , 3 , 1 , "3:Air con.");
-                    ret = lcd_send_ATpos_string_data(&lcd1 , 3 , 11 , "0:Ret");
-                    key_status = 0;
-                    do {
-                        ret = Key_Pad_Get_Value(&key_pad1, &key_status);
-                    } while (0 == key_status);
-                    _delay((unsigned long)((300)*(4000000UL/4000.0)));
-
-                    while ('1' == key_status) {
-                            ret = lcd_send_command(&lcd1, 0x01);
-                            ret = lcd_send_ATpos_string_data(&lcd1, 1, 1, "Room4 S:");
-                            switch (spi_slave_reader) {
-                                case 1: ret = lcd_send_ATpos_string_data(&lcd1, 1, 9, "ON ");
-                                    break;
-                                case 0: ret = lcd_send_ATpos_string_data(&lcd1, 1, 9, "OFF");
-                                    break;
-                            }
-                            ret = lcd_send_ATpos_string_data(&lcd1, 2, 1, "1:led on");
-                            ret = lcd_send_ATpos_string_data(&lcd1, 3, 1, "2:led off");
-                            ret = lcd_send_ATpos_string_data(&lcd1, 4, 1, "0:Ret");
-                            key_status = 0;
-                            do {
-                                ret = Key_Pad_Get_Value(&key_pad1, &key_status);
-                            } while (0 == key_status);
-                            _delay((unsigned long)((300)*(4000000UL/4000.0)));
-                        switch (key_status) {
-                                case '1': ret = SPI_Send_Byte((uint8)4);
-                                spi_slave_reader = 1;
-                                    break;
-                                case '2': ret = SPI_Send_Byte((uint8)8);
-                                spi_slave_reader = 0;
-                                    break;
-                            }
-                            if ('0' == key_status) {
-                                ret = lcd_send_command(&lcd1, 0x01);
-                                break;
-                            } else if('1' != key_status && '2' != key_status){
-                                ret = lcd_send_command(&lcd1, 0x01);
-                                ret = lcd_send_ATpos_string_data(&lcd1, 1, 1, "Wrong choice");
-                                _delay((unsigned long)((500)*(4000000UL/4000.0)));
-                            }
-                            key_status = '1';
-                            _delay((unsigned long)((500)*(4000000UL/4000.0)));
-                        }
-
-                    while ('2' == key_status){
-                        ret = lcd_send_command(&lcd1, 0x01);
-                            ret = lcd_send_ATpos_string_data(&lcd1, 1, 1, "TV S:");
-                            switch (spi_slave_reader) {
-                                case 1: ret = lcd_send_ATpos_string_data(&lcd1, 1, 9, "ON ");
-                                    break;
-                                case 0: ret = lcd_send_ATpos_string_data(&lcd1, 1, 9, "OFF");
-                                    break;
-                            }
-                            ret = lcd_send_ATpos_string_data(&lcd1, 2, 1, "1:TV on");
-                            ret = lcd_send_ATpos_string_data(&lcd1, 3, 1, "2:TV off");
-                            ret = lcd_send_ATpos_string_data(&lcd1, 4, 1, "0:Ret");
-                            key_status = 0;
-                            do {
-                                ret = Key_Pad_Get_Value(&key_pad1, &key_status);
-                            } while (0 == key_status);
-                            _delay((unsigned long)((300)*(4000000UL/4000.0)));
-                            switch (key_status) {
-                                case '1': ret = SPI_Send_Byte((uint8)9); spi_slave_reader = 1; break;
-                                case '2': ret = SPI_Send_Byte((uint8)0); spi_slave_reader = 0; break;
-                            }
-                            if ('0' == key_status) {
-                                ret = lcd_send_command(&lcd1, 0x01);
-                                break;
-                            } else if('1' != key_status && '2' != key_status){
-                                ret = lcd_send_command(&lcd1, 0x01);
-                                ret = lcd_send_ATpos_string_data(&lcd1, 1, 1, "Wrong choice");
-                                _delay((unsigned long)((500)*(4000000UL/4000.0)));
-                            }
-                            key_status = '2';
-                            _delay((unsigned long)((500)*(4000000UL/4000.0)));
-                    }
-
-                    while('3' == key_status){
-                        ret = lcd_send_command(&lcd1, 0x01);
-                      ret = lcd_send_ATpos_string_data(&lcd1 , 1 , 1 , "air conditioner:-");
-                      ret = lcd_send_ATpos_string_data(&lcd1 , 2 , 1 , "1:Control");
-                      ret = lcd_send_ATpos_string_data(&lcd1 , 3 , 1 , "2:Set Temperature");
-                      ret = lcd_send_ATpos_string_data(&lcd1, 4, 1, "0:Ret");
-                      key_status = 0;
-                      do {
-                            ret = Key_Pad_Get_Value(&key_pad1, &key_status);
-                         } while (0 == key_status);
-                      _delay((unsigned long)((300)*(4000000UL/4000.0)));
-                      ret = lcd_send_command(&lcd1, 0x01);
-
-                      while('1' == key_status){
-                          ret = lcd_send_ATpos_string_data(&lcd1 , 1 , 1 , "air conditioner:-");
-                          ret = lcd_send_ATpos_string_data(&lcd1, 2, 1, "1:air conditioner on");
-                          ret = lcd_send_ATpos_string_data(&lcd1, 3, 1, "2:air conditioner off");
-                          ret = lcd_send_ATpos_string_data(&lcd1, 4, 1, "0:Ret");
-                          key_status = 0;
-                          do {
-                                ret = Key_Pad_Get_Value(&key_pad1, &key_status);
-                             } while (0 == key_status);
-                          _delay((unsigned long)((300)*(4000000UL/4000.0)));
-                          switch (key_status) {
-                                case '1':
-                                    ret = SPI_Send_Byte((uint8)10);
-                                    spi_slave_reader = 1;
-                                    break;
-                                case '2': ret = SPI_Send_Byte((uint8)11); spi_slave_reader = 0; break;
-                            }
-
-                          if ('0' == key_status) {
-                                ret = lcd_send_command(&lcd1, 0x01);
-                                break;
-                            } else if('1' != key_status && '2' != key_status){
-                                ret = lcd_send_command(&lcd1, 0x01);
-                                ret = lcd_send_ATpos_string_data(&lcd1, 1, 1, "Wrong choice");
-                                _delay((unsigned long)((500)*(4000000UL/4000.0)));
-                            }
-                            key_status = '1';
-                            _delay((unsigned long)((500)*(4000000UL/4000.0)));
-                      }
-
-                      if('2' == key_status){
-                          ret = lcd_send_command(&lcd1, 0x01);
-                          ret = lcd_send_ATpos_string_data(&lcd1, 2, 1, "Set Temperature:--");
-                          ret = lcd_send_ATpos_string_data(&lcd1, 3, 1, "set value less than 35");
-
-                          key_status = 0;
-                          do {
-                                ret = Key_Pad_Get_Value(&key_pad1, &key_status);
-                             } while (0 == key_status);
-                          _delay((unsigned long)((300)*(4000000UL/4000.0)));
-                          ret = lcd_send_command(&lcd1, 0X10);
-                          ret = lcd_send_command(&lcd1, 0X10);
-                          ret = lcd_send_char_data(&lcd1, key_status);
-                          Degree_sent = (key_status - (uint8)'0') * 10;
-
-
-                          key_status = 0;
-                          do {
-                                ret = Key_Pad_Get_Value(&key_pad1, &key_status);
-                             } while (0 == key_status);
-                          _delay((unsigned long)((300)*(4000000UL/4000.0)));
-                          ret = lcd_send_char_data(&lcd1, key_status);
-                          Degree_sent += (key_status - (uint8)'0');
-
-                          if(Degree_sent >35)
-                          {
-                              Degree_sent = 35;
-                              ret = lcd_send_command(&lcd1, 0X10);
-                              ret = lcd_send_command(&lcd1, 0X10);
-                              ret = lcd_send_char_data(&lcd1,(Degree_sent /10)+(uint8)'0');
-                              ret = lcd_send_char_data(&lcd1,(Degree_sent %10)+(uint8)'0');
-                          }
-                          _delay((unsigned long)((1000)*(4000000UL/4000.0)));
-                      }
-                      key_status = '3';
-                      if ('0' == key_status) {
-                                ret = lcd_send_command(&lcd1, 0x01);
-                                break;
-                            } else if('1' != key_status && '2' != key_status && '3' != key_status){
-                                ret = lcd_send_command(&lcd1, 0x01);
-                                ret = lcd_send_ATpos_string_data(&lcd1, 1, 1, "Wrong choice");
-                                _delay((unsigned long)((500)*(4000000UL/4000.0)));
-                            }
-                            _delay((unsigned long)((500)*(4000000UL/4000.0)));
-                    }
-                    if('0' == key_status){
-                        ret = lcd_send_command(&lcd1 , 0x01);
-                        break;
-                    }else if('1' != key_status && '2' != key_status && '3' != key_status ){
-                        ret = lcd_send_command(&lcd1 , 0x01);
-                        ret = lcd_send_ATpos_string_data(&lcd1 , 1 , 1 , "Wrong choice");
-                        _delay((unsigned long)((500)*(4000000UL/4000.0)));
-                    }else{ }
-                    key_status = '4';
-                    _delay((unsigned long)((500)*(4000000UL/4000.0)));
-                }
-            }else{ }
-        }
-      }
     return (0);
-    }
+}
+void intialization (void){
+ ret = SPI_Init(&spi_slave);
+ ret = Led_Intialize(&led_Room1);
+ ret = Led_Intialize(&led_Room2);
+ ret = Led_Intialize(&led_Room3);
+ ret = Led_Intialize(&led_Room4);
+ ret = Led_Intialize(&led_TV);
+ ret = Led_Intialize(&led_Air_con);
+
+ ret = ADC_Intialization(&adc_1);
 }
 
-void intialization (void)
+void ADC1_ISR(void)
 {
-    ecu_intialize( );
-    ret = SPI_Init(&spi_master);
-
-}
-void timer0_isr(void){
-    count_sec_timer_flag++;
-    if(2 == count_sec_timer_flag && (uint8)4 == Guest_pass_flag)
-    {
-        ret = lcd_send_command(&lcd1 , 0x01);
-        ret = lcd_send_ATpos_string_data(&lcd1 , 2 , 1 , "session timeout");
-        _delay((unsigned long)((1000)*(4000000UL/4000.0)));
-        softwareReset();
-    }
-}
-void softwareReset()
-{
-
-    WDTCONbits.SWDTEN = 1;
-    __asm(" clrwdt");
-
-    while (1);
+    ret = ADC_Get_Conversion_Result(&adc_1 ,&conv_result_temp);
 }

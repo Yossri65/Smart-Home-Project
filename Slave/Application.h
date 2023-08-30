@@ -52,7 +52,13 @@
 
 #define TV_ON    (uint8)9
 #define TV_OFF   (uint8)0
+
+#define AirCon_ON    (uint8)10
+#define AirCon_OFF   (uint8)11
 /* ------------------------------------Data Type Declarations----------------------- */
+volatile uint8 spi_read_master = 0;
+uint16 temperature = 0;
+volatile uint16 conv_result_temp  = 0;
 
 SPI_Config spi_slave =
 { 
@@ -64,25 +70,25 @@ SPI_Config spi_slave =
 
 Led_t led_Room1 =
 {
-  .Port_Name = PortA_Index,
+  .Port_Name = PortD_Index,
   .Pin_Name = pin0 ,
   .Led_Status = LED_OFF
 };
 Led_t led_Room2 =
 {
-  .Port_Name = PortA_Index,
+  .Port_Name = PortD_Index,
   .Pin_Name = pin1 ,
   .Led_Status = LED_OFF
 };
 Led_t led_Room3 =
 {
-  .Port_Name = PortA_Index,
+  .Port_Name = PortD_Index,
   .Pin_Name = pin2 ,
   .Led_Status = LED_OFF
 };
 Led_t led_Room4 =
 {
-  .Port_Name = PortA_Index,
+  .Port_Name = PortD_Index,
   .Pin_Name = pin3 ,
   .Led_Status = LED_OFF
 };
@@ -97,6 +103,17 @@ Led_t led_Air_con =
   .Port_Name = PortB_Index,
   .Pin_Name = pin7 ,
   .Led_Status = LED_OFF
+};
+
+void ADC1_ISR(void);
+ADC_Conf_t adc_1 =
+{
+  .ADC_IntterruptHandeler = ADC1_ISR ,
+  .ADC_Acquisition_Time =  ADC_12_TAD ,
+  .ADC_Conversion_Clock = ADC_CONVERSION_CLOCK_FOSC_DIV_16 ,
+  .ADC_Channel = ADC_CHANNEL_AN0,
+  .format_status = ADC_RIGHT_JUSTIFIED ,
+  .voltage_ref = ADC_VOLTAGE_REF_DISABLE
 };
 /* ------------------------------------Software Interface Declarations-------------- */
 

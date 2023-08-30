@@ -134,6 +134,7 @@ uint8 Guest_pass_flag = FALSE;
 uint8 Degree_sent = 0;
 
 volatile uint8 spi_slave_reader = 0;
+volatile uint8 spi_slave_reader__ = 0;
 volatile uint8 count_sec_timer_flag = 0;
 
 void timer0_isr(void);

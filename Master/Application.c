@@ -495,7 +495,14 @@ int main(void) {
                       ret = lcd_send_command(&lcd1, LCD_CLEAR);
                       /*control is selected*/
                       while('1' == key_status){ 
-                          ret = lcd_send_ATpos_string_data(&lcd1 , 1 , 1 , "air conditioner:-");
+                          ret = lcd_send_command(&lcd1, LCD_CLEAR);
+                          ret = lcd_send_ATpos_string_data(&lcd1 , 1 , 1 , "air cond:- S:");
+                          switch (spi_slave_reader) {
+                                case 1: ret = lcd_send_ATpos_string_data(&lcd1, 1, 14, "ON ");
+                                    break;
+                                case 0: ret = lcd_send_ATpos_string_data(&lcd1, 1, 14, "OFF");
+                                    break;
+                            }
                           ret = lcd_send_ATpos_string_data(&lcd1, 2, 1, "1:air conditioner on");
                           ret = lcd_send_ATpos_string_data(&lcd1, 3, 1, "2:air conditioner off");
                           ret = lcd_send_ATpos_string_data(&lcd1, 4, 1, "0:Ret");
@@ -506,8 +513,12 @@ int main(void) {
                           __delay_ms(300);
                           switch (key_status) {
                                 case '1':
-                                    ret = SPI_Send_Byte(AirCon_ON); 
-                                    spi_slave_reader = 1; 
+                                    ret = SPI_Send_Byte(AirCon_ON);
+                                    __delay_ms(500);
+                                    ret = SPI_Send_Byte(Degree_sent);
+                                    __delay_ms(500);
+                                    ret = SPI_Read_Byte(&spi_slave_reader);
+                                    //spi_slave_reader = 1; 
                                     break;
                                 case '2': ret = SPI_Send_Byte(AirCon_OFF); spi_slave_reader = 0; break;
                             }
@@ -527,7 +538,6 @@ int main(void) {
                       if('2' == key_status){ 
                           ret = lcd_send_command(&lcd1, LCD_CLEAR);
                           ret = lcd_send_ATpos_string_data(&lcd1, 2, 1, "Set Temperature:--");
-                          ret = lcd_send_ATpos_string_data(&lcd1, 3, 1, "set value less than 35");
                           /*set first digit in degree*/
                           key_status = NOT_PRESSED;
                           do {
@@ -555,7 +565,8 @@ int main(void) {
                               ret = lcd_send_command(&lcd1, LCD_MOVE_CURSOR_LEFT_SHIFT);
                               ret = lcd_send_char_data(&lcd1,(Degree_sent /10)+ASCII_ZERO);
                               ret = lcd_send_char_data(&lcd1,(Degree_sent %10)+ASCII_ZERO);
-                          }
+                          }else{/*Nothing*/}
+                          
                           __delay_ms(1000);
                       }
                       key_status = '3';

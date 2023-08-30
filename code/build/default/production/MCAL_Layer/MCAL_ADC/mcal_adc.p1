@@ -1,4 +1,7 @@
 Version 4.0 HI-TECH Software Intermediate Code
+[v F2873 `(v ~T0 @X0 0 tf ]
+[v F2874 `(v ~T0 @X0 0 tf ]
+[v F2842 `(v ~T0 @X0 0 tf ]
 "30 MCAL_Layer/MCAL_ADC/mcal_adc.c
 [; ;MCAL_Layer/MCAL_ADC/mcal_adc.c: 30: Std_ReturnType ADC_Intialization(const ADC_Conf_t *adc_)
 [c E2806 0 1 2 3 4 5 6 7 8 9 10 11 12 .. ]
@@ -9,8 +12,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [n E2821 . ADC_0_TAD ADC_2_TAD ADC_4_TAD ADC_6_TAD ADC_8_TAD ADC_12_TAD ADC_16_TAD ADC_20_TAD  ]
 "111 MCAL_Layer/MCAL_ADC/mcal_adc.h
 [; ;MCAL_Layer/MCAL_ADC/mcal_adc.h: 111: {
-[s S273 `E2806 1 `E2831 1 `E2821 1 :1 `uc 1 :1 `uc 1 :6 `uc 1 ]
-[n S273 . ADC_Channel ADC_Conversion_Clock ADC_Acquisition_Time voltage_ref format_status ADC_Resreved ]
+[s S273 `*F2842 1 `E2806 1 `E2831 1 `E2821 1 :1 `uc 1 :1 `uc 1 :6 `uc 1 ]
+[n S273 . ADC_IntterruptHandeler ADC_Channel ADC_Conversion_Clock ADC_Acquisition_Time voltage_ref format_status ADC_Resreved ]
 "4536 C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4620.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4620.h: 4536:     struct {
 [s S174 :1 `uc 1 :1 `uc 1 ]
@@ -68,7 +71,56 @@ Version 4.0 HI-TECH Software Intermediate Code
 "13 MCAL_Layer/MCAL_ADC/mcal_adc.c
 [; ;MCAL_Layer/MCAL_ADC/mcal_adc.c: 13: static void ADC_Set_Channel_As_Inbut(ADC_Channel_Selection_t channel);
 [v _ADC_Set_Channel_As_Inbut `(v ~T0 @X0 0 sf1`E2806 ]
-"14
+"2504 C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4620.h
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4620.h: 2504:     struct {
+[s S86 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S86 . TMR1IE TMR2IE CCP1IE SSPIE TXIE RCIE ADIE PSPIE ]
+"2514
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4620.h: 2514:     struct {
+[s S87 :4 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S87 . . TX1IE RC1IE ]
+"2503
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4620.h: 2503: typedef union {
+[u S85 `S86 1 `S87 1 ]
+[n S85 . . . ]
+"2520
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4620.h: 2520: extern volatile PIE1bits_t PIE1bits __attribute__((address(0xF9D)));
+[v _PIE1bits `VS85 ~T0 @X0 0 e@3997 ]
+"2581
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4620.h: 2581:     struct {
+[s S89 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S89 . TMR1IF TMR2IF CCP1IF SSPIF TXIF RCIF ADIF PSPIF ]
+"2591
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4620.h: 2591:     struct {
+[s S90 :4 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S90 . . TX1IF RC1IF ]
+"2580
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4620.h: 2580: typedef union {
+[u S88 `S89 1 `S90 1 ]
+[n S88 . . . ]
+"2597
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4620.h: 2597: extern volatile PIR1bits_t PIR1bits __attribute__((address(0xF9E)));
+[v _PIR1bits `VS88 ~T0 @X0 0 e@3998 ]
+"6381
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4620.h: 6381:     struct {
+[s S258 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S258 . RBIF INT0IF TMR0IF RBIE INT0IE TMR0IE PEIE_GIEL GIE_GIEH ]
+"6391
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4620.h: 6391:     struct {
+[s S259 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S259 . . INT0F T0IF . INT0E T0IE PEIE GIE ]
+"6401
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4620.h: 6401:     struct {
+[s S260 :6 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S260 . . GIEL GIEH ]
+"6380
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4620.h: 6380: typedef union {
+[u S257 `S258 1 `S259 1 `S260 1 ]
+[n S257 . . . . ]
+"6407
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4620.h: 6407: extern volatile INTCONbits_t INTCONbits __attribute__((address(0xFF2)));
+[v _INTCONbits `VS257 ~T0 @X0 0 e@4082 ]
+"14 MCAL_Layer/MCAL_ADC/mcal_adc.c
 [; ;MCAL_Layer/MCAL_ADC/mcal_adc.c: 14: static void ADC_Select_format_status(const ADC_Conf_t *adc_ );
 [v _ADC_Select_format_status `(v ~T0 @X0 0 sf1`*CS273 ]
 "15
@@ -108,6 +160,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 "4470
 [; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4620.h: 4470: extern volatile ADCON1bits_t ADCON1bits __attribute__((address(0xFC1)));
 [v _ADCON1bits `VS169 ~T0 @X0 0 e@4033 ]
+[v F2921 `(v ~T0 @X0 0 tf ]
 "55 C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4620.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4620.h: 55: __asm("PORTA equ 0F80h");
 [; <" PORTA equ 0F80h ;# ">
@@ -519,7 +572,13 @@ Version 4.0 HI-TECH Software Intermediate Code
 "6716
 [; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4620.h: 6716: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"30 MCAL_Layer/MCAL_ADC/mcal_adc.c
+"10 MCAL_Layer/MCAL_ADC/mcal_adc.c
+[; ;MCAL_Layer/MCAL_ADC/mcal_adc.c: 10: static interruptHandler ADC_interruptHandler = ((void*)0);
+[v _ADC_interruptHandler `*F2873 ~T0 @X0 1 s ]
+[i _ADC_interruptHandler
+-> -> -> 0 `i `*v `*F2874
+]
+"30
 [; ;MCAL_Layer/MCAL_ADC/mcal_adc.c: 30: Std_ReturnType ADC_Intialization(const ADC_Conf_t *adc_)
 [v _ADC_Intialization `(ui ~T0 @X0 1 ef1`*CS273 ]
 "31
@@ -560,16 +619,31 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = . . _ADCON0bits 1 0 -> -> 0 `i `uc ]
 "42
 [; ;MCAL_Layer/MCAL_ADC/mcal_adc.c: 42:         ADCON2bits.ACQT = adc_->ADC_Acquisition_Time;
-[e = . . _ADCON2bits 0 1 -> . *U _adc_ 2 `uc ]
+[e = . . _ADCON2bits 0 1 -> . *U _adc_ 3 `uc ]
 "44
 [; ;MCAL_Layer/MCAL_ADC/mcal_adc.c: 44:          ADCON2bits.ADCS = adc_->ADC_Conversion_Clock;
-[e = . . _ADCON2bits 0 0 -> . *U _adc_ 1 `uc ]
+[e = . . _ADCON2bits 0 0 -> . *U _adc_ 2 `uc ]
 "46
 [; ;MCAL_Layer/MCAL_ADC/mcal_adc.c: 46:         ADCON0bits.CHS = adc_->ADC_Channel;
-[e = . . _ADCON0bits 1 2 -> . *U _adc_ 0 `uc ]
+[e = . . _ADCON0bits 1 2 -> . *U _adc_ 1 `uc ]
 "47
 [; ;MCAL_Layer/MCAL_ADC/mcal_adc.c: 47:         ADC_Set_Channel_As_Inbut(adc_->ADC_Channel);
-[e ( _ADC_Set_Channel_As_Inbut (1 . *U _adc_ 0 ]
+[e ( _ADC_Set_Channel_As_Inbut (1 . *U _adc_ 1 ]
+"51
+[; ;MCAL_Layer/MCAL_ADC/mcal_adc.c: 51:         (PIE1bits.ADIE = 1);
+[e = . . _PIE1bits 0 6 -> -> 1 `i `uc ]
+"53
+[; ;MCAL_Layer/MCAL_ADC/mcal_adc.c: 53:         ( PIR1bits.ADIF = 0);
+[e = . . _PIR1bits 0 6 -> -> 0 `i `uc ]
+"68
+[; ;MCAL_Layer/MCAL_ADC/mcal_adc.c: 68:         (INTCONbits.GIE = 1);
+[e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
+"69
+[; ;MCAL_Layer/MCAL_ADC/mcal_adc.c: 69:         (INTCONbits.PEIE = 1);
+[e = . . _INTCONbits 1 6 -> -> 1 `i `uc ]
+"71
+[; ;MCAL_Layer/MCAL_ADC/mcal_adc.c: 71:         ADC_interruptHandler = adc_->ADC_IntterruptHandeler;
+[e = _ADC_interruptHandler . *U _adc_ 0 ]
 "74
 [; ;MCAL_Layer/MCAL_ADC/mcal_adc.c: 74:         ADC_Select_format_status(adc_);
 [e ( _ADC_Select_format_status (1 _adc_ ]
@@ -630,6 +704,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "101
 [; ;MCAL_Layer/MCAL_ADC/mcal_adc.c: 101:         (ADCON0bits.ADON = 0);
 [e = . . _ADCON0bits 1 0 -> -> 0 `i `uc ]
+"105
+[; ;MCAL_Layer/MCAL_ADC/mcal_adc.c: 105:         (PIE1bits.ADIE = 0);
+[e = . . _PIE1bits 0 6 -> -> 0 `i `uc ]
 "107
 [; ;MCAL_Layer/MCAL_ADC/mcal_adc.c: 107:     }
 }
@@ -684,7 +761,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = . . _ADCON0bits 1 2 -> _channel `uc ]
 "134
 [; ;MCAL_Layer/MCAL_ADC/mcal_adc.c: 134:         ADC_Set_Channel_As_Inbut(adc_->ADC_Channel);
-[e ( _ADC_Set_Channel_As_Inbut (1 . *U _adc_ 0 ]
+[e ( _ADC_Set_Channel_As_Inbut (1 . *U _adc_ 1 ]
 "135
 [; ;MCAL_Layer/MCAL_ADC/mcal_adc.c: 135:     }
 }
@@ -862,7 +939,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "210
 [; ;MCAL_Layer/MCAL_ADC/mcal_adc.c: 210:         if (1 == adc_->format_status)
-[e $ ! == -> 1 `i -> . *U _adc_ 4 `i 294  ]
+[e $ ! == -> 1 `i -> . *U _adc_ 5 `i 294  ]
 "211
 [; ;MCAL_Layer/MCAL_ADC/mcal_adc.c: 211:         {
 {
@@ -876,7 +953,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 "214
 [; ;MCAL_Layer/MCAL_ADC/mcal_adc.c: 214:         else if (0 == adc_->format_status) {
 [e :U 294 ]
-[e $ ! == -> 0 `i -> . *U _adc_ 4 `i 296  ]
+[e $ ! == -> 0 `i -> . *U _adc_ 5 `i 296  ]
 {
 "215
 [; ;MCAL_Layer/MCAL_ADC/mcal_adc.c: 215:             *conversion_Result = (uint16)(((ADRESH << 8) + ADRESL)>> 6);
@@ -1155,7 +1232,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [f ]
 "296
 [; ;MCAL_Layer/MCAL_ADC/mcal_adc.c: 296:     if(1 == adc_->format_status)
-[e $ ! == -> 1 `i -> . *U _adc_ 4 `i 324  ]
+[e $ ! == -> 1 `i -> . *U _adc_ 5 `i 324  ]
 "297
 [; ;MCAL_Layer/MCAL_ADC/mcal_adc.c: 297:     {
 {
@@ -1169,7 +1246,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 "300
 [; ;MCAL_Layer/MCAL_ADC/mcal_adc.c: 300:     else if(0 == adc_->format_status)
 [e :U 324 ]
-[e $ ! == -> 0 `i -> . *U _adc_ 4 `i 326  ]
+[e $ ! == -> 0 `i -> . *U _adc_ 5 `i 326  ]
 "301
 [; ;MCAL_Layer/MCAL_ADC/mcal_adc.c: 301:     {
 {
@@ -1213,7 +1290,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [f ]
 "311
 [; ;MCAL_Layer/MCAL_ADC/mcal_adc.c: 311:     if(0x01U == adc_->voltage_ref)
-[e $ ! == -> 1 `ui -> . *U _adc_ 3 `ui 329  ]
+[e $ ! == -> 1 `ui -> . *U _adc_ 4 `ui 329  ]
 "312
 [; ;MCAL_Layer/MCAL_ADC/mcal_adc.c: 312:     {
 {
@@ -1232,7 +1309,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 "315
 [; ;MCAL_Layer/MCAL_ADC/mcal_adc.c: 315:     else if(0x00U == adc_->voltage_ref)
 [e :U 329 ]
-[e $ ! == -> 0 `ui -> . *U _adc_ 3 `ui 334  ]
+[e $ ! == -> 0 `ui -> . *U _adc_ 4 `ui 334  ]
 "316
 [; ;MCAL_Layer/MCAL_ADC/mcal_adc.c: 316:     {
 {
@@ -1279,6 +1356,26 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 [e :U _ADC_ISR ]
 [f ]
+"330
+[; ;MCAL_Layer/MCAL_ADC/mcal_adc.c: 330:     ( PIR1bits.ADIF = 0);
+[e = . . _PIR1bits 0 6 -> -> 0 `i `uc ]
+"334
+[; ;MCAL_Layer/MCAL_ADC/mcal_adc.c: 334:     if(((void*)0) == ADC_interruptHandler){}
+[e $ ! == -> -> -> 0 `i `*v `*F2921 _ADC_interruptHandler 343  ]
+{
+}
+[e $U 344  ]
+"335
+[; ;MCAL_Layer/MCAL_ADC/mcal_adc.c: 335:     else{
+[e :U 343 ]
+{
+"336
+[; ;MCAL_Layer/MCAL_ADC/mcal_adc.c: 336:         ADC_interruptHandler ();
+[e ( *U _ADC_interruptHandler ..  ]
+"337
+[; ;MCAL_Layer/MCAL_ADC/mcal_adc.c: 337:     }
+}
+[e :U 344 ]
 "339
 [; ;MCAL_Layer/MCAL_ADC/mcal_adc.c: 339: }
 [e :UE 342 ]

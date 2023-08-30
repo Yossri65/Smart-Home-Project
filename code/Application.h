@@ -26,66 +26,20 @@
 #include "MCAL_Layer/SPI/hal_spi.h"
 #include "MCAL_Layer/I2C/hal_i2c.h"
 /* ------------------------------------Macro Declarations--------------------------- */
-#define NOT_PRESSED 0
-#define PRESSED     1
 
-#define Start_Pass_Cursor 12
+#define ROOM1_ON    (uint8)1
+#define ROOM2_ON    (uint8)1
+#define ROOM3_ON    (uint8)1
+#define ROOM4_ON    (uint8)1
 
-#define NOT_STORED   0xFF
-#define NOT_SELECTED 0xFF
+#define ROOM1_OFF   (uint8)0
+#define ROOM2_OFF   (uint8)0
+#define ROOM3_OFF   (uint8)0
+#define ROOM4_OFF   (uint8)0
 
-#define BLOCK_MODE_TIME		   (uint32)10000
-#define CHARACTER_PREVIEW_TIME (uint16)300
-#define DEGREES_SYMBOL		   (uint8)0xDF
-
-/*********************************** PIN Configuration ***********************************/
-#define PASS_SIZE       (uint8)4
-#define TRIES_ALLOWED   (uint8)3
-#define PASSWORD_SYMBOL (uint8)'*'
-#define ASCII_ZERO      (uint8)'0'
-
-#define PASS_NOT_SET (uint8)0xFF
-#define PASS_SET     (uint8)0x01
-
-#define ADMIN_PASS_STATUS_ADDRESS (uint16)0X100
-#define GUEST_PASS_STATUS_ADDRESS (uint16)0X101
-#define EEPROM_ADMIN_ADDRESS      (uint16)0X102
-#define EEPROM_GUEST_ADDRESS      (uint16)0X106
-#define LOGIN_BLOCKED_ADDRESS     (uint16)0X10A
-/*****************************************************************************************/
-/************************************   Login configurations *****************************/
-#define NO_MODE (uint8)0
-#define ADMIN   (uint8)1
-#define GUEST   (uint8)2
-/*****************************************************************************************/
-
-/************************************   Logic values *************************************/
-#define FALSE   (uint8)0
-#define TRUE    (uint8)1
-
-#define Guest_PASS_TRUE (uint8)4
-#define Admin_PASS_TRUE (uint8)4
-/*****************************************************************************************/
-
-#define CHECK_ADMIN_MODE        (uint8)'0'
-#define CHECK_GUEST_MODE        (uint8)'1'
-
-#define SELECT_ROOM1            (uint8)'1'
-#define SELECT_ROOM2            (uint8)'2'
-#define SELECT_ROOM3            (uint8)'3'
-#define SELECT_ROOM4            (uint8)'4'
-#define ADMIN_MORE_OPTION       (uint8)'4'
-
-#define SELECT_ROOM4_ADMIN      (uint8)'1'
-#define SELECT_TV               (uint8)'2'
-#define SELECT_AIR_CONDITIONING (uint8)'3'
-#define ADMIN_RET_OPTION        (uint8)'4'
-
-#define SELECT_SET_TEMPERATURE  (uint8)'1'
-#define SELECT_AIR_COND_CTRL    (uint8)'2'
-#define SELECT_AIR_COND_RET     (uint8)'0'
-
-
+#define TV_ON    (uint8)1
+#define TV_OFF   (uint8)0
+/* ------------------------------------Macro Function Declarations------------------ */
 #define ROOM1_ON    (uint8)1
 #define ROOM2_ON    (uint8)2
 #define ROOM3_ON    (uint8)3
@@ -101,64 +55,67 @@
 
 #define AirCon_ON    (uint8)10
 #define AirCon_OFF   (uint8)11
-/* ------------------------------------Macro Function Declarations------------------ */
-
 /* ------------------------------------Data Type Declarations----------------------- */
-extern Ch_LCD lcd1;
-extern Key_Pad_t key_pad1;
+volatile uint8 spi_read_master = 0;
+uint16 temperature = 0;
+volatile uint16 conv_result_temp  = 0;
 
-extern Led_t led_Block;
-extern Led_t led_Guest;
-extern Led_t led_Admin;
-
-/*----------------------pass varibles----------------------*/
-uint8 Admin_pass_status = PASS_NOT_SET;
-uint8 Guest_pass_status = PASS_NOT_SET;
-
-uint8 Admin_Start_address = EEPROM_ADMIN_ADDRESS;
-uint8 Guest_Start_address = EEPROM_GUEST_ADDRESS;
-
-uint8 key_status = NOT_PRESSED;
-uint8 cursor = Start_Pass_Cursor;
-
-uint8 pass_counter = 1;
-uint8 admin_pass_tries = TRIES_ALLOWED;
-uint8 Guest_pass_tries = TRIES_ALLOWED;
-
-uint8 eeprom_digit_read = NOT_STORED;
-uint8 Admin_pass_flag = FALSE;
-
-uint8 Guest_pass_flag = FALSE;
-
-
-uint8 Degree_sent = 0;
-
-volatile uint8 spi_slave_reader = 0;
-volatile uint8 count_sec_timer_flag = 0;
-
-void timer0_isr(void);
-Timer0_conf_t timer0 =
-{
-    .TIMER0_IntterruptHandeler = timer0_isr ,
-    .Timer0_SELECT_BIT_Mode = TIMER0_16_BIT_MODE_,
-    .Timer0_Mode = TIMER0_TIMER_MODE_,
-    .Timer0_Source_Edge = TIMER0_RAISING_EDGE_,
-    .TIMER0_PRESCALER_STATUS = TIMER0_PRESCALER_ENABLE_,
-    .TIMER0_PRE_LOAD_VALUE = 26474,
-    .Prescaler_Select = TIMER0_PRESCALER_DIV_BY_128
-};
-
-SPI_Config spi_master =
-{
+SPI_Config spi_slave =
+{ 
   .spi_control.ClockPolarity = SPI_IDLE_STATE_HIGH_LEVEL ,
   .spi_control.ClockSelect  = SPI_TRANSMIT_ACTIVE_TO_IDLE ,
   .spi_control.SampleSelect =SPI_DATA_SAMPLE_MIDDLE,
-  .spi_serial_clk_mod_select = SPI_MASTER_FOSC_DIV4 ,
-   
+  .spi_serial_clk_mod_select =  SPI_SLAVE_SS_DISABLE,
+};
+
+Led_t led_Room1 =
+{
+  .Port_Name = PortD_Index,
+  .Pin_Name = pin0 ,
+  .Led_Status = LED_OFF
+};
+Led_t led_Room2 =
+{
+  .Port_Name = PortD_Index,
+  .Pin_Name = pin1 ,
+  .Led_Status = LED_OFF
+};
+Led_t led_Room3 =
+{
+  .Port_Name = PortD_Index,
+  .Pin_Name = pin2 ,
+  .Led_Status = LED_OFF
+};
+Led_t led_Room4 =
+{
+  .Port_Name = PortD_Index,
+  .Pin_Name = pin3 ,
+  .Led_Status = LED_OFF
+};
+Led_t led_TV =
+{
+  .Port_Name = PortB_Index,
+  .Pin_Name = pin6 ,
+  .Led_Status = LED_OFF
+};
+Led_t led_Air_con =
+{
+  .Port_Name = PortB_Index,
+  .Pin_Name = pin7 ,
+  .Led_Status = LED_OFF
+};
+
+void ADC1_ISR(void);
+ADC_Conf_t adc_1 =
+{
+  .ADC_IntterruptHandeler = ADC1_ISR ,
+  .ADC_Acquisition_Time =  ADC_12_TAD ,
+  .ADC_Conversion_Clock = ADC_CONVERSION_CLOCK_FOSC_DIV_16 ,
+  .ADC_Channel = ADC_CHANNEL_AN0,
+  .format_status = ADC_RIGHT_JUSTIFIED ,
+  .voltage_ref = ADC_VOLTAGE_REF_DISABLE
 };
 /* ------------------------------------Software Interface Declarations-------------- */
-    
-void softwareReset();
 
 #endif	/* APPLICATION_H */
 

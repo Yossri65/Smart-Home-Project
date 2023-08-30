@@ -280,69 +280,19 @@ BAUDRATE_ASYN_16BIT_HIGH_SPEED 3
 BAUDRATE_SYN_16BIT 4
 BAUDRATE_SYN_8BIT 5
 ]
-"71 C:\Users\Yossri\Downloads\projects\Smart Home Project\code/Application.h
-[e E2800 . `uc
-PortA_Index 0
-PortB_Index 1
-PortC_Index 2
-PortD_Index 3
-PortE_Index 4
-]
-[e E2790 . `uc
-pin0 0
-pin1 1
-pin2 2
-pin3 3
-pin4 4
-pin5 5
-pin6 6
-pin7 7
-]
-[e E2842 . `uc
-LED_OFF 0
-LED_ON 1
-]
-"109
-[e E3183 . `uc
-ADC_CHANNEL_AN0 0
-ADC_CHANNEL_AN1 1
-ADC_CHANNEL_AN2 2
-ADC_CHANNEL_AN3 3
-ADC_CHANNEL_AN4 4
-ADC_CHANNEL_AN5 5
-ADC_CHANNEL_AN6 6
-ADC_CHANNEL_AN7 7
-ADC_CHANNEL_AN8 8
-ADC_CHANNEL_AN9 9
-ADC_CHANNEL_AN10 10
-ADC_CHANNEL_AN11 11
-ADC_CHANNEL_AN12 12
-]
-[e E3208 . `uc
-ADC_CONVERSION_CLOCK_FOSC_DIV_2 0
-ADC_CONVERSION_CLOCK_FOSC_DIV_8 1
-ADC_CONVERSION_CLOCK_FOSC_DIV_32 2
-ADC_CONVERSION_CLOCK_FOSC_DIV_FRC 3
-ADC_CONVERSION_CLOCK_FOSC_DIV_4 4
-ADC_CONVERSION_CLOCK_FOSC_DIV_16 5
-ADC_CONVERSION_CLOCK_FOSC_DIV_64 6
-]
-[e E3198 . `uc
-ADC_0_TAD 0
-ADC_2_TAD 1
-ADC_4_TAD 2
-ADC_6_TAD 3
-ADC_8_TAD 4
-ADC_12_TAD 5
-ADC_16_TAD 6
-ADC_20_TAD 7
-]
 "14 C:\Users\Yossri\Downloads\projects\Smart Home Project\code\Application.c
 [v _main main `(i  1 e 2 0 ]
-"95
+"601
 [v _intialization intialization `(v  1 e 1 0 ]
-"107
-[v _ADC1_ISR ADC1_ISR `(v  1 e 1 0 ]
+"607
+[v _timer0_isr timer0_isr `(v  1 e 1 0 ]
+"617
+[v _softwareReset softwareReset `(v  1 e 1 0 ]
+[v i2_softwareReset softwareReset `(v  1 e 1 0 ]
+"7 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+"7 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
 "4 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\fleq.c
 [v ___fleq __fleq `(b  1 e 0 0 ]
 "62 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\float.c
@@ -357,8 +307,6 @@ ADC_20_TAD 7
 [v ___ftmul __ftmul `(f  1 e 4 0 ]
 "19 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\ftsub.c
 [v ___ftsub __ftsub `(f  1 e 4 0 ]
-"7 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\lwdiv.c
-[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
 "4 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\memset.c
 [v _memset memset `(*.2v  1 e 2 0 ]
 "9 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\nf_sprintf.c
@@ -381,26 +329,37 @@ ADC_20_TAD 7
 [v _lcd_intialize lcd_intialize `(ui  1 e 2 0 ]
 "78
 [v _lcd_send_command lcd_send_command `(ui  1 e 2 0 ]
+[v i2_lcd_send_command lcd_send_command `(ui  1 e 2 0 ]
 "106
 [v _lcd_send_char_data lcd_send_char_data `(ui  1 e 2 0 ]
+[v i2_lcd_send_char_data lcd_send_char_data `(ui  1 e 2 0 ]
 "134
 [v _lcd_send_ATpos_char_data lcd_send_ATpos_char_data `(ui  1 e 2 0 ]
 "150
 [v _lcd_send_string_data lcd_send_string_data `(ui  1 e 2 0 ]
+[v i2_lcd_send_string_data lcd_send_string_data `(ui  1 e 2 0 ]
+"168
+[v _lcd_send_ATpos_string_data lcd_send_ATpos_string_data `(ui  1 e 2 0 ]
+[v i2_lcd_send_ATpos_string_data lcd_send_ATpos_string_data `(ui  1 e 2 0 ]
 "276
 [v _lcd_send_4_bit_data lcd_send_4_bit_data `(v  1 s 1 lcd_send_4_bit_data ]
+[v i2_lcd_send_4_bit_data lcd_send_4_bit_data `(v  1 s 1 i2_lcd_send_4_bit_data ]
 "285
 [v _lcd_send_enable lcd_send_enable `(v  1 s 1 lcd_send_enable ]
+[v i2_lcd_send_enable lcd_send_enable `(v  1 s 1 i2_lcd_send_enable ]
 "292
 [v _lcd_set_cursor lcd_set_cursor `(v  1 s 1 lcd_set_cursor ]
+[v i2_lcd_set_cursor lcd_set_cursor `(v  1 s 1 i2_lcd_set_cursor ]
+"109 C:\Users\Yossri\Downloads\projects\Smart Home Project\code\ECU_Layer/ecu_intialize.c
+[v _ecu_intialize ecu_intialize `(ui  1 e 2 0 ]
 "16 C:\Users\Yossri\Downloads\projects\Smart Home Project\code\ECU_Layer/Key_Pad/ecu_key_pad.c
 [v _Key_Pad_Intialize Key_Pad_Intialize `(ui  1 e 2 0 ]
+"36
+[v _Key_Pad_Get_Value Key_Pad_Get_Value `(ui  1 e 2 0 ]
 "17 C:\Users\Yossri\Downloads\projects\Smart Home Project\code\ECU_Layer/LED/ecu_Led.c
 [v _Led_Intialize Led_Intialize `(ui  1 e 2 0 ]
 "45
 [v _Led_Turn_On Led_Turn_On `(ui  1 e 2 0 ]
-"73
-[v _Led_Turn_Off Led_Turn_Off `(ui  1 e 2 0 ]
 "242 C:\Users\Yossri\Downloads\projects\Smart Home Project\code\MCAL_Layer/CCP1/hal_ccp.c
 [v _CCP_Interrupt_Config CCP_Interrupt_Config `(v  1 s 1 CCP_Interrupt_Config ]
 "291
@@ -419,10 +378,15 @@ ADC_20_TAD 7
 [v _ECCP_Interrupt_Config ECCP_Interrupt_Config `(v  1 s 1 ECCP_Interrupt_Config ]
 "121
 [v _ECCP_ISR ECCP_ISR `(v  1 e 1 0 ]
+"11 C:\Users\Yossri\Downloads\projects\Smart Home Project\code\MCAL_Layer/EEPROM/mcal_eeprom.c
+[v _EEPROM_Data_WriteByte EEPROM_Data_WriteByte `(ui  1 e 2 0 ]
+"51
+[v _EEPROM_Data_ReadByte EEPROM_Data_ReadByte `(ui  1 e 2 0 ]
 "22 C:\Users\Yossri\Downloads\projects\Smart Home Project\code\MCAL_Layer/GPIO/hal_GPIO.c
 [v _GPIO_Pin_Direction_Intialize GPIO_Pin_Direction_Intialize `(ui  1 e 2 0 ]
 "75
 [v _GPIO_Pin_Write_Logic GPIO_Pin_Write_Logic `(ui  1 e 2 0 ]
+[v i2_GPIO_Pin_Write_Logic GPIO_Pin_Write_Logic `(ui  1 e 2 0 ]
 "106
 [v _GPIO_Pin_Read_Logic GPIO_Pin_Read_Logic `(ui  1 e 2 0 ]
 "126
@@ -479,16 +443,12 @@ ADC_20_TAD 7
 [v _Set_RBX_Handler Set_RBX_Handler `(ui  1 s 2 Set_RBX_Handler ]
 "41 C:\Users\Yossri\Downloads\projects\Smart Home Project\code\MCAL_Layer/Interrupt/mcal_interrupt_manager.c
 [v _InterruptManagerHigh InterruptManagerHigh `IIH(v  1 e 1 0 ]
-"30 C:\Users\Yossri\Downloads\projects\Smart Home Project\code\MCAL_Layer/MCAL_ADC/mcal_adc.c
-[v _ADC_Intialization ADC_Intialization `(ui  1 e 2 0 ]
-"124
+"124 C:\Users\Yossri\Downloads\projects\Smart Home Project\code\MCAL_Layer/MCAL_ADC/mcal_adc.c
 [v _ADC_Channel_Selection ADC_Channel_Selection `(ui  1 e 2 0 ]
 "147
 [v _ADC_Start_Conversion ADC_Start_Conversion `(ui  1 e 2 0 ]
 "201
 [v _ADC_Get_Conversion_Result ADC_Get_Conversion_Result `(ui  1 e 2 0 ]
-"258
-[v _ADC_Start_Conversion_Interrupt_Mode ADC_Start_Conversion_Interrupt_Mode `(ui  1 e 2 0 ]
 "274
 [v _ADC_Set_Channel_As_Inbut ADC_Set_Channel_As_Inbut `(v  1 s 1 ADC_Set_Channel_As_Inbut ]
 "294
@@ -509,7 +469,9 @@ ADC_20_TAD 7
 [v _MSSP_SPI_Slave_Mode_GPIO_PIN_Configurations MSSP_SPI_Slave_Mode_GPIO_PIN_Configurations `(v  1 s 1 MSSP_SPI_Slave_Mode_GPIO_PIN_Configurations ]
 "178
 [v _SPI_ISR SPI_ISR `(v  1 e 1 0 ]
-"125 C:\Users\Yossri\Downloads\projects\Smart Home Project\code\MCAL_Layer/Timer0/mcal_timer0.c
+"18 C:\Users\Yossri\Downloads\projects\Smart Home Project\code\MCAL_Layer/Timer0/mcal_timer0.c
+[v _Timer0_Intialization Timer0_Intialization `(ui  1 e 2 0 ]
+"125
 [v _Timer0_Prescaler_Config Timer0_Prescaler_Config `(v  1 s 1 Timer0_Prescaler_Config ]
 "139
 [v _Timer0_Mode_Select Timer0_Mode_Select `(v  1 s 1 Timer0_Mode_Select ]
@@ -541,43 +503,55 @@ ADC_20_TAD 7
 [v _USART_TX_ISR USART_TX_ISR `(v  1 e 1 0 ]
 "293
 [v _USART_RX_ISR USART_RX_ISR `(v  1 e 1 0 ]
-"59 C:\Users\Yossri\Downloads\projects\Smart Home Project\code/Application.h
-[v _spi_read_master spi_read_master `VEuc  1 e 1 0 ]
-"60
-[v _temperature temperature `us  1 e 2 0 ]
-"61
-[v _conv_result_temp conv_result_temp `VEus  1 e 2 0 ]
+"115 C:\Users\Yossri\Downloads\projects\Smart Home Project\code/Application.h
+[v _Admin_pass_status Admin_pass_status `uc  1 e 1 0 ]
+"116
+[v _Guest_pass_status Guest_pass_status `uc  1 e 1 0 ]
+"118
+[v _Admin_Start_address Admin_Start_address `uc  1 e 1 0 ]
+"119
+[v _Guest_Start_address Guest_Start_address `uc  1 e 1 0 ]
+"121
+[v _key_status key_status `uc  1 e 1 0 ]
+"122
+[v _cursor cursor `uc  1 e 1 0 ]
+"124
+[v _pass_counter pass_counter `uc  1 e 1 0 ]
+"125
+[v _admin_pass_tries admin_pass_tries `uc  1 e 1 0 ]
+"126
+[v _Guest_pass_tries Guest_pass_tries `uc  1 e 1 0 ]
+"128
+[v _eeprom_digit_read eeprom_digit_read `uc  1 e 1 0 ]
+"129
+[v _Admin_pass_flag Admin_pass_flag `uc  1 e 1 0 ]
+"131
+[v _Guest_pass_flag Guest_pass_flag `uc  1 e 1 0 ]
+"134
+[v _Degree_sent Degree_sent `uc  1 e 1 0 ]
+"136
+[v _spi_slave_reader spi_slave_reader `VEuc  1 e 1 0 ]
+"137
+[v _spi_slave_reader__ spi_slave_reader__ `VEuc  1 e 1 0 ]
+"138
+[v _count_sec_timer_flag count_sec_timer_flag `VEuc  1 e 1 0 ]
+[s S3407 . 6 `*.37(v 1 TIMER0_IntterruptHandeler 2 0 `uc 1 Prescaler_Select 1 2 `us 1 TIMER0_PRE_LOAD_VALUE 2 3 `uc 1 TIMER0_PRESCALER_STATUS 1 5 :1:0 
+`uc 1 Timer0_Source_Edge 1 5 :1:1 
+`uc 1 Timer0_Mode 1 5 :1:2 
+`uc 1 Timer0_SELECT_BIT_Mode 1 5 :1:3 
+`uc 1 Timer0_Resreved 1 5 :4:4 
+]
+"141
+[v _timer0 timer0 `S3407  1 e 6 0 ]
 [s S3145 . 1 `uc 1 ClockPolarity 1 0 :2:0 
 `uc 1 SampleSelect 1 0 :2:2 
 `uc 1 ClockSelect 1 0 :2:4 
 `uc 1 Reserved 1 0 :2:6 
 ]
-"63
+"152
 [s S3150 . 2 `uc 1 spi_serial_clk_mod_select 1 0 `S3145 1 spi_control 1 1 ]
-[v _spi_slave spi_slave `S3150  1 e 2 0 ]
-[s S330 . 1 `uc 1 Port_Name 1 0 :3:0 
-`uc 1 Pin_Name 1 0 :3:3 
-`uc 1 Led_Status 1 0 :1:6 
-]
-"71
-[v _led_Room1 led_Room1 `S330  1 e 1 0 ]
-"77
-[v _led_Room2 led_Room2 `S330  1 e 1 0 ]
-"83
-[v _led_Room3 led_Room3 `S330  1 e 1 0 ]
-"89
-[v _led_Room4 led_Room4 `S330  1 e 1 0 ]
-"95
-[v _led_TV led_TV `S330  1 e 1 0 ]
-"101
-[v _led_Air_con led_Air_con `S330  1 e 1 0 ]
-[s S621 . 6 `*.37(v 1 ADC_IntterruptHandeler 2 0 `E2806 1 ADC_Channel 1 2 `E2831 1 ADC_Conversion_Clock 1 3 `E2821 1 ADC_Acquisition_Time 1 4 `uc 1 voltage_ref 1 5 :1:0 
-`uc 1 format_status 1 5 :1:1 
-`uc 1 ADC_Resreved 1 5 :6:2 
-]
-"109
-[v _adc_1 adc_1 `S621  1 e 6 0 ]
-"10 C:\Users\Yossri\Downloads\projects\Smart Home Project\code\Application.c
+[v _spi_master spi_master `S3150  1 e 2 0 ]
+"11 C:\Users\Yossri\Downloads\projects\Smart Home Project\code\Application.c
 [v _ret ret `ui  1 e 2 0 ]
 "53 C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4620.h
 [v _PORTA PORTA `VEuc  1 e 1 @3968 ]
@@ -1142,6 +1116,13 @@ ADC_20_TAD 7
 [v _TMR1L TMR1L `VEuc  1 e 1 @4046 ]
 "5342
 [v _TMR1H TMR1H `VEuc  1 e 1 @4047 ]
+[s S4559 . 1 `uc 1 SWDTEN 1 0 :1:0 
+]
+"5495
+[s S4561 . 1 `uc 1 SWDTE 1 0 :1:0 
+]
+[u S4563 . 1 `S4559 1 . 1 0 `S4561 1 . 1 0 ]
+[v _WDTCONbits WDTCONbits `VES4563  1 e 1 @4049 ]
 [s S3416 . 1 `uc 1 T0PS 1 0 :3:0 
 `uc 1 PSA 1 0 :1:3 
 `uc 1 T0SE 1 0 :1:4 
@@ -1237,6 +1218,10 @@ ADC_20_TAD 7
 "56
 [s S81 . 6 `S24 1 RS 1 0 `S24 1 EN 1 1 `[4]S24 1 data_pin 4 2 ]
 [v _lcd1 lcd1 `S81  1 e 6 0 ]
+[s S330 . 1 `uc 1 Port_Name 1 0 :3:0 
+`uc 1 Pin_Name 1 0 :3:3 
+`uc 1 Led_Status 1 0 :1:6 
+]
 "89
 [v _led_Block led_Block `S330  1 e 1 0 ]
 "95
@@ -1320,12 +1305,220 @@ ADC_20_TAD 7
 "14 C:\Users\Yossri\Downloads\projects\Smart Home Project\code\Application.c
 [v _main main `(i  1 e 2 0 ]
 {
-"94
+"599
 } 0
-"95
+"617
+[v _softwareReset softwareReset `(v  1 e 1 0 ]
+{
+"624
+} 0
+"168 C:\Users\Yossri\Downloads\projects\Smart Home Project\code\ECU_Layer/Ch_LCD/ecu_ch_lcd.c
+[v _lcd_send_ATpos_string_data lcd_send_ATpos_string_data `(ui  1 e 2 0 ]
+{
+"171
+[v lcd_send_ATpos_string_data@ret ret `ui  1 a 2 22 ]
+[s S24 . 1 `uc 1 port 1 0 :3:0 
+`uc 1 pin 1 0 :3:3 
+`uc 1 direction 1 0 :1:6 
+`uc 1 logic 1 0 :1:7 
+]
+"168
+[s S81 . 6 `S24 1 RS 1 0 `S24 1 EN 1 1 `[4]S24 1 data_pin 4 2 ]
+[v lcd_send_ATpos_string_data@_LCD_ _LCD_ `*.39CS81  1 p 2 16 ]
+[v lcd_send_ATpos_string_data@row row `uc  1 p 1 18 ]
+"169
+[v lcd_send_ATpos_string_data@coulmns coulmns `uc  1 p 1 19 ]
+[v lcd_send_ATpos_string_data@str str `*.32uc  1 p 2 20 ]
+"182
+} 0
+"150
+[v _lcd_send_string_data lcd_send_string_data `(ui  1 e 2 0 ]
+{
+"152
+[v lcd_send_string_data@ret ret `ui  1 a 2 14 ]
+[s S24 . 1 `uc 1 port 1 0 :3:0 
+`uc 1 pin 1 0 :3:3 
+`uc 1 direction 1 0 :1:6 
+`uc 1 logic 1 0 :1:7 
+]
+"150
+[s S81 . 6 `S24 1 RS 1 0 `S24 1 EN 1 1 `[4]S24 1 data_pin 4 2 ]
+[v lcd_send_string_data@_LCD_ _LCD_ `*.39CS81  1 p 2 10 ]
+[v lcd_send_string_data@str str `*.32uc  1 p 2 12 ]
+"166
+} 0
+"134
+[v _lcd_send_ATpos_char_data lcd_send_ATpos_char_data `(ui  1 e 2 0 ]
+{
+"137
+[v lcd_send_ATpos_char_data@ret ret `ui  1 a 2 21 ]
+[s S24 . 1 `uc 1 port 1 0 :3:0 
+`uc 1 pin 1 0 :3:3 
+`uc 1 direction 1 0 :1:6 
+`uc 1 logic 1 0 :1:7 
+]
+"134
+[s S81 . 6 `S24 1 RS 1 0 `S24 1 EN 1 1 `[4]S24 1 data_pin 4 2 ]
+[v lcd_send_ATpos_char_data@_LCD_ _LCD_ `*.39CS81  1 p 2 16 ]
+[v lcd_send_ATpos_char_data@row row `uc  1 p 1 18 ]
+"135
+[v lcd_send_ATpos_char_data@coulmns coulmns `uc  1 p 1 19 ]
+[v lcd_send_ATpos_char_data@data data `uc  1 p 1 20 ]
+"148
+} 0
+"292
+[v _lcd_set_cursor lcd_set_cursor `(v  1 s 1 lcd_set_cursor ]
+{
+[s S24 . 1 `uc 1 port 1 0 :3:0 
+`uc 1 pin 1 0 :3:3 
+`uc 1 direction 1 0 :1:6 
+`uc 1 logic 1 0 :1:7 
+]
+[s S81 . 6 `S24 1 RS 1 0 `S24 1 EN 1 1 `[4]S24 1 data_pin 4 2 ]
+[v lcd_set_cursor@_LCD_ _LCD_ `*.39CS81  1 p 2 10 ]
+[v lcd_set_cursor@row row `uc  1 p 1 12 ]
+[v lcd_set_cursor@coulmn coulmn `uc  1 p 1 13 ]
+"311
+} 0
+"106
+[v _lcd_send_char_data lcd_send_char_data `(ui  1 e 2 0 ]
+{
+"108
+[v lcd_send_char_data@ret ret `ui  1 a 2 8 ]
+[s S24 . 1 `uc 1 port 1 0 :3:0 
+`uc 1 pin 1 0 :3:3 
+`uc 1 direction 1 0 :1:6 
+`uc 1 logic 1 0 :1:7 
+]
+"106
+[s S81 . 6 `S24 1 RS 1 0 `S24 1 EN 1 1 `[4]S24 1 data_pin 4 2 ]
+[v lcd_send_char_data@_LCD_ _LCD_ `*.39CS81  1 p 2 5 ]
+[v lcd_send_char_data@data data `uc  1 p 1 7 ]
+"132
+} 0
+"601 C:\Users\Yossri\Downloads\projects\Smart Home Project\code\Application.c
 [v _intialization intialization `(v  1 e 1 0 ]
 {
-"105
+"606
+} 0
+"109 C:\Users\Yossri\Downloads\projects\Smart Home Project\code\ECU_Layer/ecu_intialize.c
+[v _ecu_intialize ecu_intialize `(ui  1 e 2 0 ]
+{
+"119
+} 0
+"21 C:\Users\Yossri\Downloads\projects\Smart Home Project\code\ECU_Layer/Ch_LCD/ecu_ch_lcd.c
+[v _lcd_intialize lcd_intialize `(ui  1 e 2 0 ]
+{
+"30
+[v lcd_intialize@data_pin_counter data_pin_counter `uc  1 a 1 16 ]
+"23
+[v lcd_intialize@ret ret `ui  1 a 2 14 ]
+[s S24 . 1 `uc 1 port 1 0 :3:0 
+`uc 1 pin 1 0 :3:3 
+`uc 1 direction 1 0 :1:6 
+`uc 1 logic 1 0 :1:7 
+]
+"21
+[s S81 . 6 `S24 1 RS 1 0 `S24 1 EN 1 1 `[4]S24 1 data_pin 4 2 ]
+[v lcd_intialize@_LCD_ _LCD_ `*.39CS81  1 p 2 10 ]
+"76
+} 0
+"78
+[v _lcd_send_command lcd_send_command `(ui  1 e 2 0 ]
+{
+"80
+[v lcd_send_command@ret ret `ui  1 a 2 8 ]
+[s S24 . 1 `uc 1 port 1 0 :3:0 
+`uc 1 pin 1 0 :3:3 
+`uc 1 direction 1 0 :1:6 
+`uc 1 logic 1 0 :1:7 
+]
+"78
+[s S81 . 6 `S24 1 RS 1 0 `S24 1 EN 1 1 `[4]S24 1 data_pin 4 2 ]
+[v lcd_send_command@_LCD_ _LCD_ `*.39CS81  1 p 2 5 ]
+[v lcd_send_command@command command `uc  1 p 1 7 ]
+"104
+} 0
+"285
+[v _lcd_send_enable lcd_send_enable `(v  1 s 1 lcd_send_enable ]
+{
+[s S24 . 1 `uc 1 port 1 0 :3:0 
+`uc 1 pin 1 0 :3:3 
+`uc 1 direction 1 0 :1:6 
+`uc 1 logic 1 0 :1:7 
+]
+[s S81 . 6 `S24 1 RS 1 0 `S24 1 EN 1 1 `[4]S24 1 data_pin 4 2 ]
+[v lcd_send_enable@_LCD_ _LCD_ `*.39CS81  1 p 2 11 ]
+"290
+} 0
+"276
+[v _lcd_send_4_bit_data lcd_send_4_bit_data `(v  1 s 1 lcd_send_4_bit_data ]
+{
+"278
+[v lcd_send_4_bit_data@pin_counter pin_counter `uc  1 a 1 4 ]
+[s S24 . 1 `uc 1 port 1 0 :3:0 
+`uc 1 pin 1 0 :3:3 
+`uc 1 direction 1 0 :1:6 
+`uc 1 logic 1 0 :1:7 
+]
+"276
+[s S81 . 6 `S24 1 RS 1 0 `S24 1 EN 1 1 `[4]S24 1 data_pin 4 2 ]
+[v lcd_send_4_bit_data@_LCD_ _LCD_ `*.39CS81  1 p 2 11 ]
+[v lcd_send_4_bit_data@_data_command _data_command `uc  1 p 1 13 ]
+"283
+} 0
+"17 C:\Users\Yossri\Downloads\projects\Smart Home Project\code\ECU_Layer/LED/ecu_Led.c
+[v _Led_Intialize Led_Intialize `(ui  1 e 2 0 ]
+{
+[s S24 . 1 `uc 1 port 1 0 :3:0 
+`uc 1 pin 1 0 :3:3 
+`uc 1 direction 1 0 :1:6 
+`uc 1 logic 1 0 :1:7 
+]
+"26
+[v Led_Intialize@_pin_config_ _pin_config_ `S24  1 a 1 6 ]
+"19
+[v Led_Intialize@ret ret `ui  1 a 2 4 ]
+[s S330 . 1 `uc 1 Port_Name 1 0 :3:0 
+`uc 1 Pin_Name 1 0 :3:3 
+`uc 1 Led_Status 1 0 :1:6 
+]
+"17
+[v Led_Intialize@Led Led `*.39CS330  1 p 2 2 ]
+"25
+[v Led_Intialize@F2820 F2820 `S24  1 s 1 F2820 ]
+"36
+} 0
+"16 C:\Users\Yossri\Downloads\projects\Smart Home Project\code\ECU_Layer/Key_Pad/ecu_key_pad.c
+[v _Key_Pad_Intialize Key_Pad_Intialize `(ui  1 e 2 0 ]
+{
+"25
+[v Key_Pad_Intialize@counter counter `uc  1 a 1 8 ]
+"18
+[v Key_Pad_Intialize@ret ret `ui  1 a 2 6 ]
+[s S24 . 1 `uc 1 port 1 0 :3:0 
+`uc 1 pin 1 0 :3:3 
+`uc 1 direction 1 0 :1:6 
+`uc 1 logic 1 0 :1:7 
+]
+"16
+[s S304 . 8 `[4]S24 1 Key_Pad_Rows 4 0 `[4]S24 1 Key_Pad_Coulmns 4 4 ]
+[v Key_Pad_Intialize@_key_pad _key_pad `*.39CS304  1 p 2 2 ]
+"34
+} 0
+"147 C:\Users\Yossri\Downloads\projects\Smart Home Project\code\MCAL_Layer/GPIO/hal_GPIO.c
+[v _GPIO_Pin_Intialize GPIO_Pin_Intialize `(ui  1 e 2 0 ]
+{
+"149
+[v GPIO_Pin_Intialize@ret ret `ui  1 a 2 0 ]
+[s S24 . 1 `uc 1 port 1 0 :3:0 
+`uc 1 pin 1 0 :3:3 
+`uc 1 direction 1 0 :1:6 
+`uc 1 logic 1 0 :1:7 
+]
+"147
+[v GPIO_Pin_Intialize@_Pin_Config_ _Pin_Config_ `*.39CS24  1 p 2 11 ]
+"160
 } 0
 "18 C:\Users\Yossri\Downloads\projects\Smart Home Project\code\MCAL_Layer/SPI/hal_spi.c
 [v _SPI_Init SPI_Init `(ui  1 e 2 0 ]
@@ -1336,7 +1529,7 @@ ADC_20_TAD 7
 `uc 1 Reserved 1 0 :2:6 
 ]
 [s S3150 . 2 `uc 1 spi_serial_clk_mod_select 1 0 `S3145 1 spi_control 1 1 ]
-[v SPI_Init@_SPI_ _SPI_ `*.39CS3150  1 p 2 30 ]
+[v SPI_Init@_SPI_ _SPI_ `*.39CS3150  1 p 2 4 ]
 "54
 } 0
 "134
@@ -1348,13 +1541,13 @@ ADC_20_TAD 7
 `uc 1 logic 1 0 :1:7 
 ]
 "139
-[v MSSP_SPI_Slave_Mode_GPIO_PIN_Configurations@SPI_SCK SPI_SCK `S24  1 a 1 29 ]
+[v MSSP_SPI_Slave_Mode_GPIO_PIN_Configurations@SPI_SCK SPI_SCK `S24  1 a 1 3 ]
 "140
-[v MSSP_SPI_Slave_Mode_GPIO_PIN_Configurations@SPI_SS SPI_SS `S24  1 a 1 28 ]
+[v MSSP_SPI_Slave_Mode_GPIO_PIN_Configurations@SPI_SS SPI_SS `S24  1 a 1 2 ]
 "138
-[v MSSP_SPI_Slave_Mode_GPIO_PIN_Configurations@SPI_SDI SPI_SDI `S24  1 a 1 27 ]
+[v MSSP_SPI_Slave_Mode_GPIO_PIN_Configurations@SPI_SDI SPI_SDI `S24  1 a 1 1 ]
 "137
-[v MSSP_SPI_Slave_Mode_GPIO_PIN_Configurations@SPI_SDO SPI_SDO `S24  1 a 1 26 ]
+[v MSSP_SPI_Slave_Mode_GPIO_PIN_Configurations@SPI_SDO SPI_SDO `S24  1 a 1 0 ]
 [s S3145 . 1 `uc 1 ClockPolarity 1 0 :2:0 
 `uc 1 SampleSelect 1 0 :2:2 
 `uc 1 ClockSelect 1 0 :2:4 
@@ -1362,7 +1555,7 @@ ADC_20_TAD 7
 ]
 "134
 [s S3150 . 2 `uc 1 spi_serial_clk_mod_select 1 0 `S3145 1 spi_control 1 1 ]
-[v MSSP_SPI_Slave_Mode_GPIO_PIN_Configurations@_SPI_ _SPI_ `*.39CS3150  1 p 2 23 ]
+[v MSSP_SPI_Slave_Mode_GPIO_PIN_Configurations@_SPI_ _SPI_ `*.39CS3150  1 p 2 10 ]
 "136
 [v MSSP_SPI_Slave_Mode_GPIO_PIN_Configurations@F2872 F2872 `S24  1 s 1 F2872 ]
 "137
@@ -1382,11 +1575,11 @@ ADC_20_TAD 7
 `uc 1 logic 1 0 :1:7 
 ]
 "127
-[v MSSP_SPI_Msster_Mode_GPIO_PIN_Configurations@SPI_SCK SPI_SCK `S24  1 a 1 25 ]
+[v MSSP_SPI_Msster_Mode_GPIO_PIN_Configurations@SPI_SCK SPI_SCK `S24  1 a 1 12 ]
 "126
-[v MSSP_SPI_Msster_Mode_GPIO_PIN_Configurations@SPI_SDI SPI_SDI `S24  1 a 1 24 ]
+[v MSSP_SPI_Msster_Mode_GPIO_PIN_Configurations@SPI_SDI SPI_SDI `S24  1 a 1 11 ]
 "125
-[v MSSP_SPI_Msster_Mode_GPIO_PIN_Configurations@SPI_SDO SPI_SDO `S24  1 a 1 23 ]
+[v MSSP_SPI_Msster_Mode_GPIO_PIN_Configurations@SPI_SDO SPI_SDO `S24  1 a 1 10 ]
 "124
 [v MSSP_SPI_Msster_Mode_GPIO_PIN_Configurations@F2863 F2863 `S24  1 s 1 F2863 ]
 "125
@@ -1395,163 +1588,107 @@ ADC_20_TAD 7
 [v MSSP_SPI_Msster_Mode_GPIO_PIN_Configurations@F2867 F2867 `S24  1 s 1 F2867 ]
 "132
 } 0
-"17 C:\Users\Yossri\Downloads\projects\Smart Home Project\code\ECU_Layer/LED/ecu_Led.c
-[v _Led_Intialize Led_Intialize `(ui  1 e 2 0 ]
-{
-[s S24 . 1 `uc 1 port 1 0 :3:0 
-`uc 1 pin 1 0 :3:3 
-`uc 1 direction 1 0 :1:6 
-`uc 1 logic 1 0 :1:7 
-]
-"26
-[v Led_Intialize@_pin_config_ _pin_config_ `S24  1 a 1 33 ]
-"19
-[v Led_Intialize@ret ret `ui  1 a 2 31 ]
-[s S330 . 1 `uc 1 Port_Name 1 0 :3:0 
-`uc 1 Pin_Name 1 0 :3:3 
-`uc 1 Led_Status 1 0 :1:6 
-]
-"17
-[v Led_Intialize@Led Led `*.39CS330  1 p 2 28 ]
-"25
-[v Led_Intialize@F2820 F2820 `S24  1 s 1 F2820 ]
-"36
-} 0
-"147 C:\Users\Yossri\Downloads\projects\Smart Home Project\code\MCAL_Layer/GPIO/hal_GPIO.c
-[v _GPIO_Pin_Intialize GPIO_Pin_Intialize `(ui  1 e 2 0 ]
-{
-"149
-[v GPIO_Pin_Intialize@ret ret `ui  1 a 2 26 ]
-[s S24 . 1 `uc 1 port 1 0 :3:0 
-`uc 1 pin 1 0 :3:3 
-`uc 1 direction 1 0 :1:6 
-`uc 1 logic 1 0 :1:7 
-]
-"147
-[v GPIO_Pin_Intialize@_Pin_Config_ _Pin_Config_ `*.39CS24  1 p 2 24 ]
-"160
-} 0
-"22
+"22 C:\Users\Yossri\Downloads\projects\Smart Home Project\code\MCAL_Layer/GPIO/hal_GPIO.c
 [v _GPIO_Pin_Direction_Intialize GPIO_Pin_Direction_Intialize `(ui  1 e 2 0 ]
 {
 "24
-[v GPIO_Pin_Direction_Intialize@ret ret `ui  1 a 2 21 ]
+[v GPIO_Pin_Direction_Intialize@ret ret `ui  1 a 2 8 ]
 [s S24 . 1 `uc 1 port 1 0 :3:0 
 `uc 1 pin 1 0 :3:3 
 `uc 1 direction 1 0 :1:6 
 `uc 1 logic 1 0 :1:7 
 ]
 "22
-[v GPIO_Pin_Direction_Intialize@_Pin_Config_ _Pin_Config_ `*.39CS24  1 p 2 13 ]
+[v GPIO_Pin_Direction_Intialize@_Pin_Config_ _Pin_Config_ `*.39CS24  1 p 2 0 ]
 "43
 } 0
-"30 C:\Users\Yossri\Downloads\projects\Smart Home Project\code\MCAL_Layer/MCAL_ADC/mcal_adc.c
-[v _ADC_Intialization ADC_Intialization `(ui  1 e 2 0 ]
-{
-"32
-[v ADC_Intialization@ret ret `ui  1 a 2 19 ]
-[s S621 . 6 `*.37(v 1 ADC_IntterruptHandeler 2 0 `E2806 1 ADC_Channel 1 2 `E2831 1 ADC_Conversion_Clock 1 3 `E2821 1 ADC_Acquisition_Time 1 4 `uc 1 voltage_ref 1 5 :1:0 
-`uc 1 format_status 1 5 :1:1 
-`uc 1 ADC_Resreved 1 5 :6:2 
-]
-"30
-[v ADC_Intialization@adc_ adc_ `*.39CS621  1 p 2 16 ]
-"81
-} 0
-"294
-[v _ADC_Select_format_status ADC_Select_format_status `(v  1 s 1 ADC_Select_format_status ]
-{
-[s S621 . 6 `*.37(v 1 ADC_IntterruptHandeler 2 0 `E2806 1 ADC_Channel 1 2 `E2831 1 ADC_Conversion_Clock 1 3 `E2821 1 ADC_Acquisition_Time 1 4 `uc 1 voltage_ref 1 5 :1:0 
-`uc 1 format_status 1 5 :1:1 
-`uc 1 ADC_Resreved 1 5 :6:2 
-]
-[v ADC_Select_format_status@adc_ adc_ `*.39CS621  1 p 2 13 ]
-"308
-} 0
-"309
-[v _ADC_Select_Voltage_Reference ADC_Select_Voltage_Reference `(v  1 s 1 ADC_Select_Voltage_Reference ]
-{
-[s S621 . 6 `*.37(v 1 ADC_IntterruptHandeler 2 0 `E2806 1 ADC_Channel 1 2 `E2831 1 ADC_Conversion_Clock 1 3 `E2821 1 ADC_Acquisition_Time 1 4 `uc 1 voltage_ref 1 5 :1:0 
-`uc 1 format_status 1 5 :1:1 
-`uc 1 ADC_Resreved 1 5 :6:2 
-]
-[v ADC_Select_Voltage_Reference@adc_ adc_ `*.39CS621  1 p 2 13 ]
-"323
-} 0
-"10 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\xxtofl.c
-[v ___xxtofl __xxtofl `(d  1 e 4 0 ]
-{
-[v ___xxtofl@sign sign `uc  1 a 1 wreg ]
-"13
-[v ___xxtofl@arg arg `ul  1 a 4 23 ]
-"12
-[v ___xxtofl@exp exp `uc  1 a 1 22 ]
-"10
-[v ___xxtofl@sign sign `uc  1 a 1 wreg ]
-[v ___xxtofl@val val `l  1 p 4 13 ]
-"15
-[v ___xxtofl@sign sign `uc  1 a 1 21 ]
-"44
-} 0
-"7 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\lwdiv.c
-[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
+"7 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
 {
 "10
-[v ___lwdiv@quotient quotient `ui  1 a 2 17 ]
-"11
-[v ___lwdiv@counter counter `uc  1 a 1 19 ]
+[v ___awmod@sign sign `uc  1 a 1 5 ]
+[v ___awmod@counter counter `uc  1 a 1 4 ]
 "7
-[v ___lwdiv@dividend dividend `ui  1 p 2 13 ]
-[v ___lwdiv@divisor divisor `ui  1 p 2 15 ]
-"30
+[v ___awmod@dividend dividend `i  1 p 2 0 ]
+[v ___awmod@divisor divisor `i  1 p 2 2 ]
+"34
 } 0
-"43 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\fltol.c
-[v ___fltol __fltol `(l  1 e 4 0 ]
+"7 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
 {
-"45
-[v ___fltol@exp1 exp1 `uc  1 a 1 48 ]
-[v ___fltol@sign1 sign1 `uc  1 a 1 47 ]
-"43
-[v ___fltol@f1 f1 `d  1 p 4 39 ]
-"70
-} 0
-"8 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\sprcmul.c
-[v ___flmul __flmul `(d  1 e 4 0 ]
-{
-[s S4938 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
-"13
-[s S4943 . 4 `s 1 wordA 2 0 `s 1 wordB 2 2 ]
-[u S4946 . 4 `l 1 i 4 0 `d 1 f 4 0 `S4938 1 fAsBytes 4 0 `S4943 1 fAsWords 4 0 ]
-[v ___flmul@prod prod `S4946  1 a 4 7 ]
-"12
-[v ___flmul@grs grs `ul  1 a 4 2 ]
-[s S5014 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
-"14
-[u S5017 . 2 `s 1 i 2 0 `us 1 n 2 0 `S5014 1 nAsBytes 2 0 ]
-[v ___flmul@temp temp `S5017  1 a 2 11 ]
 "10
-[v ___flmul@bexp bexp `uc  1 a 1 6 ]
+[v ___awdiv@quotient quotient `i  1 a 2 6 ]
 "11
-[v ___flmul@aexp aexp `uc  1 a 1 1 ]
-"9
-[v ___flmul@sign sign `uc  1 a 1 0 ]
-"8
-[v ___flmul@b b `d  1 p 4 27 ]
-[v ___flmul@a a `d  1 p 4 31 ]
-"205
+[v ___awdiv@sign sign `uc  1 a 1 5 ]
+[v ___awdiv@counter counter `uc  1 a 1 4 ]
+"7
+[v ___awdiv@dividend dividend `i  1 p 2 0 ]
+[v ___awdiv@divisor divisor `i  1 p 2 2 ]
+"41
+} 0
+"18 C:\Users\Yossri\Downloads\projects\Smart Home Project\code\MCAL_Layer/Timer0/mcal_timer0.c
+[v _Timer0_Intialization Timer0_Intialization `(ui  1 e 2 0 ]
+{
+"20
+[v Timer0_Intialization@ret ret `ui  1 a 2 7 ]
+[s S3407 . 6 `*.37(v 1 TIMER0_IntterruptHandeler 2 0 `uc 1 Prescaler_Select 1 2 `us 1 TIMER0_PRE_LOAD_VALUE 2 3 `uc 1 TIMER0_PRESCALER_STATUS 1 5 :1:0 
+`uc 1 Timer0_Source_Edge 1 5 :1:1 
+`uc 1 Timer0_Mode 1 5 :1:2 
+`uc 1 Timer0_SELECT_BIT_Mode 1 5 :1:3 
+`uc 1 Timer0_Resreved 1 5 :4:4 
+]
+"18
+[v Timer0_Intialization@timer0_ timer0_ `*.39CS3407  1 p 2 3 ]
+"68
+} 0
+"125
+[v _Timer0_Prescaler_Config Timer0_Prescaler_Config `(v  1 s 1 Timer0_Prescaler_Config ]
+{
+[s S3407 . 6 `*.37(v 1 TIMER0_IntterruptHandeler 2 0 `uc 1 Prescaler_Select 1 2 `us 1 TIMER0_PRE_LOAD_VALUE 2 3 `uc 1 TIMER0_PRESCALER_STATUS 1 5 :1:0 
+`uc 1 Timer0_Source_Edge 1 5 :1:1 
+`uc 1 Timer0_Mode 1 5 :1:2 
+`uc 1 Timer0_SELECT_BIT_Mode 1 5 :1:3 
+`uc 1 Timer0_Resreved 1 5 :4:4 
+]
+[v Timer0_Prescaler_Config@timer0_ timer0_ `*.39CS3407  1 p 2 0 ]
+"137
+} 0
+"139
+[v _Timer0_Mode_Select Timer0_Mode_Select `(v  1 s 1 Timer0_Mode_Select ]
+{
+[s S3407 . 6 `*.37(v 1 TIMER0_IntterruptHandeler 2 0 `uc 1 Prescaler_Select 1 2 `us 1 TIMER0_PRE_LOAD_VALUE 2 3 `uc 1 TIMER0_PRESCALER_STATUS 1 5 :1:0 
+`uc 1 Timer0_Source_Edge 1 5 :1:1 
+`uc 1 Timer0_Mode 1 5 :1:2 
+`uc 1 Timer0_SELECT_BIT_Mode 1 5 :1:3 
+`uc 1 Timer0_Resreved 1 5 :4:4 
+]
+[v Timer0_Mode_Select@timer0_ timer0_ `*.39CS3407  1 p 2 0 ]
+"165
+} 0
+"167
+[v _Timer0_Bit_Mode_Select Timer0_Bit_Mode_Select `(v  1 s 1 Timer0_Bit_Mode_Select ]
+{
+[s S3407 . 6 `*.37(v 1 TIMER0_IntterruptHandeler 2 0 `uc 1 Prescaler_Select 1 2 `us 1 TIMER0_PRE_LOAD_VALUE 2 3 `uc 1 TIMER0_PRESCALER_STATUS 1 5 :1:0 
+`uc 1 Timer0_Source_Edge 1 5 :1:1 
+`uc 1 Timer0_Mode 1 5 :1:2 
+`uc 1 Timer0_SELECT_BIT_Mode 1 5 :1:3 
+`uc 1 Timer0_Resreved 1 5 :4:4 
+]
+[v Timer0_Bit_Mode_Select@timer0_ timer0_ `*.39CS3407  1 p 2 0 ]
+"178
 } 0
 "74 C:\Users\Yossri\Downloads\projects\Smart Home Project\code\MCAL_Layer/SPI/hal_spi.c
 [v _SPI_Send_Byte SPI_Send_Byte `(ui  1 e 2 0 ]
 {
 [v SPI_Send_Byte@_data _data `Cuc  1 a 1 wreg ]
 [v SPI_Send_Byte@_data _data `Cuc  1 a 1 wreg ]
-[v SPI_Send_Byte@_data _data `Cuc  1 a 1 15 ]
+[v SPI_Send_Byte@_data _data `Cuc  1 a 1 2 ]
 "80
 } 0
 "90
 [v _SPI_Read_Byte SPI_Read_Byte `(ui  1 e 2 0 ]
 {
-[v SPI_Read_Byte@_data _data `*.39uc  1 p 2 13 ]
+[v SPI_Read_Byte@_data _data `*.39uc  1 p 2 0 ]
 "94
 } 0
 "45 C:\Users\Yossri\Downloads\projects\Smart Home Project\code\ECU_Layer/LED/ecu_Led.c
@@ -1563,104 +1700,91 @@ ADC_20_TAD 7
 `uc 1 logic 1 0 :1:7 
 ]
 "54
-[v Led_Turn_On@_pin_config_ _pin_config_ `S24  1 a 1 29 ]
+[v Led_Turn_On@_pin_config_ _pin_config_ `S24  1 a 1 2 ]
 "47
-[v Led_Turn_On@ret ret `ui  1 a 2 27 ]
+[v Led_Turn_On@ret ret `ui  1 a 2 0 ]
 [s S330 . 1 `uc 1 Port_Name 1 0 :3:0 
 `uc 1 Pin_Name 1 0 :3:3 
 `uc 1 Led_Status 1 0 :1:6 
 ]
 "45
-[v Led_Turn_On@Led Led `*.39CS330  1 p 2 24 ]
+[v Led_Turn_On@Led Led `*.39CS330  1 p 2 11 ]
 "53
 [v Led_Turn_On@F2825 F2825 `S24  1 s 1 F2825 ]
 "64
 } 0
-"73
-[v _Led_Turn_Off Led_Turn_Off `(ui  1 e 2 0 ]
+"36 C:\Users\Yossri\Downloads\projects\Smart Home Project\code\ECU_Layer/Key_Pad/ecu_key_pad.c
+[v _Key_Pad_Get_Value Key_Pad_Get_Value `(ui  1 e 2 0 ]
 {
+"46
+[v Key_Pad_Get_Value@coulmns coulmns `uc  1 a 1 8 ]
+[v Key_Pad_Get_Value@rows rows `uc  1 a 1 7 ]
+"45
+[v Key_Pad_Get_Value@coulmns_logic coulmns_logic `E2744  1 a 1 6 ]
+"38
+[v Key_Pad_Get_Value@ret ret `ui  1 a 2 4 ]
 [s S24 . 1 `uc 1 port 1 0 :3:0 
 `uc 1 pin 1 0 :3:3 
 `uc 1 direction 1 0 :1:6 
 `uc 1 logic 1 0 :1:7 
 ]
-"82
-[v Led_Turn_Off@_pin_config_ _pin_config_ `S24  1 a 1 29 ]
-"75
-[v Led_Turn_Off@ret ret `ui  1 a 2 27 ]
-[s S330 . 1 `uc 1 Port_Name 1 0 :3:0 
-`uc 1 Pin_Name 1 0 :3:3 
-`uc 1 Led_Status 1 0 :1:6 
-]
-"73
-[v Led_Turn_Off@Led Led `*.39CS330  1 p 2 24 ]
-"81
-[v Led_Turn_Off@F2830 F2830 `S24  1 s 1 F2830 ]
-"92
+"36
+[s S304 . 8 `[4]S24 1 Key_Pad_Rows 4 0 `[4]S24 1 Key_Pad_Coulmns 4 4 ]
+[v Key_Pad_Get_Value@_key_pad _key_pad `*.39CS304  1 p 2 0 ]
+[v Key_Pad_Get_Value@value value `*.39uc  1 p 2 2 ]
+"67
 } 0
 "75 C:\Users\Yossri\Downloads\projects\Smart Home Project\code\MCAL_Layer/GPIO/hal_GPIO.c
 [v _GPIO_Pin_Write_Logic GPIO_Pin_Write_Logic `(ui  1 e 2 0 ]
 {
 "77
-[v GPIO_Pin_Write_Logic@ret ret `ui  1 a 2 22 ]
+[v GPIO_Pin_Write_Logic@ret ret `ui  1 a 2 9 ]
 [s S24 . 1 `uc 1 port 1 0 :3:0 
 `uc 1 pin 1 0 :3:3 
 `uc 1 direction 1 0 :1:6 
 `uc 1 logic 1 0 :1:7 
 ]
 "75
-[v GPIO_Pin_Write_Logic@_Pin_Config_ _Pin_Config_ `*.39CS24  1 p 2 13 ]
-[v GPIO_Pin_Write_Logic@Logic Logic `E2744  1 p 1 15 ]
+[v GPIO_Pin_Write_Logic@_Pin_Config_ _Pin_Config_ `*.39CS24  1 p 2 0 ]
+[v GPIO_Pin_Write_Logic@Logic Logic `E2744  1 p 1 2 ]
 "96
 } 0
-"258 C:\Users\Yossri\Downloads\projects\Smart Home Project\code\MCAL_Layer/MCAL_ADC/mcal_adc.c
-[v _ADC_Start_Conversion_Interrupt_Mode ADC_Start_Conversion_Interrupt_Mode `(ui  1 e 2 0 ]
+"106
+[v _GPIO_Pin_Read_Logic GPIO_Pin_Read_Logic `(ui  1 e 2 0 ]
 {
-"260
-[v ADC_Start_Conversion_Interrupt_Mode@ret ret `ui  1 a 2 25 ]
-[s S621 . 6 `*.37(v 1 ADC_IntterruptHandeler 2 0 `E2806 1 ADC_Channel 1 2 `E2831 1 ADC_Conversion_Clock 1 3 `E2821 1 ADC_Acquisition_Time 1 4 `uc 1 voltage_ref 1 5 :1:0 
-`uc 1 format_status 1 5 :1:1 
-`uc 1 ADC_Resreved 1 5 :6:2 
+"108
+[v GPIO_Pin_Read_Logic@ret ret `ui  1 a 2 10 ]
+[s S24 . 1 `uc 1 port 1 0 :3:0 
+`uc 1 pin 1 0 :3:3 
+`uc 1 direction 1 0 :1:6 
+`uc 1 logic 1 0 :1:7 
 ]
-"258
-[v ADC_Start_Conversion_Interrupt_Mode@adc_ adc_ `*.39CS621  1 p 2 22 ]
-[v ADC_Start_Conversion_Interrupt_Mode@channel channel `E2806  1 p 1 24 ]
-"273
+"106
+[v GPIO_Pin_Read_Logic@_Pin_Config_ _Pin_Config_ `*.39CS24  1 p 2 0 ]
+[v GPIO_Pin_Read_Logic@Logic Logic `*.39E2744  1 p 2 2 ]
+"118
 } 0
-"147
-[v _ADC_Start_Conversion ADC_Start_Conversion `(ui  1 e 2 0 ]
+"11 C:\Users\Yossri\Downloads\projects\Smart Home Project\code\MCAL_Layer/EEPROM/mcal_eeprom.c
+[v _EEPROM_Data_WriteByte EEPROM_Data_WriteByte `(ui  1 e 2 0 ]
 {
-"149
-[v ADC_Start_Conversion@ret ret `ui  1 a 2 15 ]
-[s S621 . 6 `*.37(v 1 ADC_IntterruptHandeler 2 0 `E2806 1 ADC_Channel 1 2 `E2831 1 ADC_Conversion_Clock 1 3 `E2821 1 ADC_Acquisition_Time 1 4 `uc 1 voltage_ref 1 5 :1:0 
-`uc 1 format_status 1 5 :1:1 
-`uc 1 ADC_Resreved 1 5 :6:2 
-]
-"147
-[v ADC_Start_Conversion@adc_ adc_ `*.39CS621  1 p 2 13 ]
-"159
+"21
+[v EEPROM_Data_WriteByte@Global_int_status Global_int_status `uc  1 a 1 3 ]
+"13
+[v EEPROM_Data_WriteByte@ret ret `ui  1 a 2 4 ]
+"11
+[v EEPROM_Data_WriteByte@bAdd bAdd `us  1 p 2 0 ]
+[v EEPROM_Data_WriteByte@bData bData `uc  1 p 1 2 ]
+"49
 } 0
-"124
-[v _ADC_Channel_Selection ADC_Channel_Selection `(ui  1 e 2 0 ]
+"51
+[v _EEPROM_Data_ReadByte EEPROM_Data_ReadByte `(ui  1 e 2 0 ]
 {
-"126
-[v ADC_Channel_Selection@ret ret `ui  1 a 2 20 ]
-[s S621 . 6 `*.37(v 1 ADC_IntterruptHandeler 2 0 `E2806 1 ADC_Channel 1 2 `E2831 1 ADC_Conversion_Clock 1 3 `E2821 1 ADC_Acquisition_Time 1 4 `uc 1 voltage_ref 1 5 :1:0 
-`uc 1 format_status 1 5 :1:1 
-`uc 1 ADC_Resreved 1 5 :6:2 
-]
-"124
-[v ADC_Channel_Selection@adc_ adc_ `*.39CS621  1 p 2 16 ]
-[v ADC_Channel_Selection@channel channel `E2806  1 p 1 18 ]
-"137
-} 0
-"274
-[v _ADC_Set_Channel_As_Inbut ADC_Set_Channel_As_Inbut `(v  1 s 1 ADC_Set_Channel_As_Inbut ]
-{
-[v ADC_Set_Channel_As_Inbut@channel channel `E2806  1 a 1 wreg ]
-[v ADC_Set_Channel_As_Inbut@channel channel `E2806  1 a 1 wreg ]
-[v ADC_Set_Channel_As_Inbut@channel channel `E2806  1 a 1 15 ]
-"292
+"53
+[v EEPROM_Data_ReadByte@ret ret `ui  1 a 2 4 ]
+"51
+[v EEPROM_Data_ReadByte@bAdd bAdd `us  1 p 2 0 ]
+[v EEPROM_Data_ReadByte@bData bData `*.39uc  1 p 2 2 ]
+"77
 } 0
 "41 C:\Users\Yossri\Downloads\projects\Smart Home Project\code\MCAL_Layer/Interrupt/mcal_interrupt_manager.c
 [v _InterruptManagerHigh InterruptManagerHigh `IIH(v  1 e 1 0 ]
@@ -1696,6 +1820,140 @@ ADC_20_TAD 7
 [v _TIMER0_ISR TIMER0_ISR `(v  1 e 1 0 ]
 {
 "194
+} 0
+"607 C:\Users\Yossri\Downloads\projects\Smart Home Project\code\Application.c
+[v _timer0_isr timer0_isr `(v  1 e 1 0 ]
+{
+"616
+} 0
+"617
+[v i2_softwareReset softwareReset `(v  1 e 1 0 ]
+{
+"624
+} 0
+"168 C:\Users\Yossri\Downloads\projects\Smart Home Project\code\ECU_Layer/Ch_LCD/ecu_ch_lcd.c
+[v i2_lcd_send_ATpos_string_data lcd_send_ATpos_string_data `(ui  1 e 2 0 ]
+{
+"171
+[v i2lcd_send_ATpos_string_data@ret ret `ui  1 a 2 36 ]
+[s S24 . 1 `uc 1 port 1 0 :3:0 
+`uc 1 pin 1 0 :3:3 
+`uc 1 direction 1 0 :1:6 
+`uc 1 logic 1 0 :1:7 
+]
+"168
+[s S81 . 6 `S24 1 RS 1 0 `S24 1 EN 1 1 `[4]S24 1 data_pin 4 2 ]
+[v i2lcd_send_ATpos_string_data@_LCD_ _LCD_ `*.39CS81  1 p 2 30 ]
+[v i2lcd_send_ATpos_string_data@row row `uc  1 p 1 32 ]
+"169
+[v i2lcd_send_ATpos_string_data@coulmns coulmns `uc  1 p 1 33 ]
+[v i2lcd_send_ATpos_string_data@str str `*.32uc  1 p 2 34 ]
+"182
+} 0
+"292
+[v i2_lcd_set_cursor lcd_set_cursor `(v  1 s 1 i2_lcd_set_cursor ]
+{
+[s S24 . 1 `uc 1 port 1 0 :3:0 
+`uc 1 pin 1 0 :3:3 
+`uc 1 direction 1 0 :1:6 
+`uc 1 logic 1 0 :1:7 
+]
+[s S81 . 6 `S24 1 RS 1 0 `S24 1 EN 1 1 `[4]S24 1 data_pin 4 2 ]
+[v i2lcd_set_cursor@_LCD_ _LCD_ `*.39CS81  1 p 2 24 ]
+[v i2lcd_set_cursor@row row `uc  1 p 1 26 ]
+[v i2lcd_set_cursor@coulmn coulmn `uc  1 p 1 27 ]
+"311
+} 0
+"78
+[v i2_lcd_send_command lcd_send_command `(ui  1 e 2 0 ]
+{
+"80
+[v i2lcd_send_command@ret ret `ui  1 a 2 22 ]
+[s S24 . 1 `uc 1 port 1 0 :3:0 
+`uc 1 pin 1 0 :3:3 
+`uc 1 direction 1 0 :1:6 
+`uc 1 logic 1 0 :1:7 
+]
+"78
+[s S81 . 6 `S24 1 RS 1 0 `S24 1 EN 1 1 `[4]S24 1 data_pin 4 2 ]
+[v i2lcd_send_command@_LCD_ _LCD_ `*.39CS81  1 p 2 19 ]
+[v i2lcd_send_command@command command `uc  1 p 1 21 ]
+"104
+} 0
+"150
+[v i2_lcd_send_string_data lcd_send_string_data `(ui  1 e 2 0 ]
+{
+"152
+[v i2lcd_send_string_data@ret ret `ui  1 a 2 28 ]
+[s S24 . 1 `uc 1 port 1 0 :3:0 
+`uc 1 pin 1 0 :3:3 
+`uc 1 direction 1 0 :1:6 
+`uc 1 logic 1 0 :1:7 
+]
+"150
+[s S81 . 6 `S24 1 RS 1 0 `S24 1 EN 1 1 `[4]S24 1 data_pin 4 2 ]
+[v i2lcd_send_string_data@_LCD_ _LCD_ `*.39CS81  1 p 2 24 ]
+[v i2lcd_send_string_data@str str `*.32uc  1 p 2 26 ]
+"166
+} 0
+"106
+[v i2_lcd_send_char_data lcd_send_char_data `(ui  1 e 2 0 ]
+{
+"108
+[v i2lcd_send_char_data@ret ret `ui  1 a 2 22 ]
+[s S24 . 1 `uc 1 port 1 0 :3:0 
+`uc 1 pin 1 0 :3:3 
+`uc 1 direction 1 0 :1:6 
+`uc 1 logic 1 0 :1:7 
+]
+"106
+[s S81 . 6 `S24 1 RS 1 0 `S24 1 EN 1 1 `[4]S24 1 data_pin 4 2 ]
+[v i2lcd_send_char_data@_LCD_ _LCD_ `*.39CS81  1 p 2 19 ]
+[v i2lcd_send_char_data@data data `uc  1 p 1 21 ]
+"132
+} 0
+"285
+[v i2_lcd_send_enable lcd_send_enable `(v  1 s 1 i2_lcd_send_enable ]
+{
+[s S24 . 1 `uc 1 port 1 0 :3:0 
+`uc 1 pin 1 0 :3:3 
+`uc 1 direction 1 0 :1:6 
+`uc 1 logic 1 0 :1:7 
+]
+[s S81 . 6 `S24 1 RS 1 0 `S24 1 EN 1 1 `[4]S24 1 data_pin 4 2 ]
+[v i2lcd_send_enable@_LCD_ _LCD_ `*.39CS81  1 p 2 11 ]
+"290
+} 0
+"276
+[v i2_lcd_send_4_bit_data lcd_send_4_bit_data `(v  1 s 1 i2_lcd_send_4_bit_data ]
+{
+"278
+[v i2lcd_send_4_bit_data@pin_counter pin_counter `uc  1 a 1 18 ]
+[s S24 . 1 `uc 1 port 1 0 :3:0 
+`uc 1 pin 1 0 :3:3 
+`uc 1 direction 1 0 :1:6 
+`uc 1 logic 1 0 :1:7 
+]
+"276
+[s S81 . 6 `S24 1 RS 1 0 `S24 1 EN 1 1 `[4]S24 1 data_pin 4 2 ]
+[v i2lcd_send_4_bit_data@_LCD_ _LCD_ `*.39CS81  1 p 2 11 ]
+[v i2lcd_send_4_bit_data@_data_command _data_command `uc  1 p 1 13 ]
+"283
+} 0
+"75 C:\Users\Yossri\Downloads\projects\Smart Home Project\code\MCAL_Layer/GPIO/hal_GPIO.c
+[v i2_GPIO_Pin_Write_Logic GPIO_Pin_Write_Logic `(ui  1 e 2 0 ]
+{
+"77
+[v i2GPIO_Pin_Write_Logic@ret ret `ui  1 a 2 9 ]
+[s S24 . 1 `uc 1 port 1 0 :3:0 
+`uc 1 pin 1 0 :3:3 
+`uc 1 direction 1 0 :1:6 
+`uc 1 logic 1 0 :1:7 
+]
+"75
+[v i2GPIO_Pin_Write_Logic@_Pin_Config_ _Pin_Config_ `*.39CS24  1 p 2 0 ]
+[v i2GPIO_Pin_Write_Logic@Logic Logic `E2744  1 p 1 2 ]
+"96
 } 0
 "178 C:\Users\Yossri\Downloads\projects\Smart Home Project\code\MCAL_Layer/SPI/hal_spi.c
 [v _SPI_ISR SPI_ISR `(v  1 e 1 0 ]
@@ -1782,23 +2040,4 @@ ADC_20_TAD 7
 [v _ADC_ISR ADC_ISR `(v  1 e 1 0 ]
 {
 "339
-} 0
-"107 C:\Users\Yossri\Downloads\projects\Smart Home Project\code\Application.c
-[v _ADC1_ISR ADC1_ISR `(v  1 e 1 0 ]
-{
-"110
-} 0
-"201 C:\Users\Yossri\Downloads\projects\Smart Home Project\code\MCAL_Layer/MCAL_ADC/mcal_adc.c
-[v _ADC_Get_Conversion_Result ADC_Get_Conversion_Result `(ui  1 e 2 0 ]
-{
-"203
-[v ADC_Get_Conversion_Result@ret ret `ui  1 a 2 7 ]
-[s S621 . 6 `*.37(v 1 ADC_IntterruptHandeler 2 0 `E2806 1 ADC_Channel 1 2 `E2831 1 ADC_Conversion_Clock 1 3 `E2821 1 ADC_Acquisition_Time 1 4 `uc 1 voltage_ref 1 5 :1:0 
-`uc 1 format_status 1 5 :1:1 
-`uc 1 ADC_Resreved 1 5 :6:2 
-]
-"201
-[v ADC_Get_Conversion_Result@adc_ adc_ `*.39CS621  1 p 2 0 ]
-[v ADC_Get_Conversion_Result@conversion_Result conversion_Result `*.39us  1 p 2 2 ]
-"222
 } 0

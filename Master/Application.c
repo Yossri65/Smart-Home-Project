@@ -566,10 +566,10 @@ int main(void) {
                               ret = lcd_send_char_data(&lcd1,(Degree_sent /10)+ASCII_ZERO);
                               ret = lcd_send_char_data(&lcd1,(Degree_sent %10)+ASCII_ZERO);
                           }else{/*Nothing*/}
-                          
+                          key_status = '3';
                           __delay_ms(1000);
                       }
-                      key_status = '3';
+                      
                       if ('0' == key_status) {
                                 ret = lcd_send_command(&lcd1, LCD_CLEAR);
                                 break;
